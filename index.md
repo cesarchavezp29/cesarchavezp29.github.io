@@ -48,6 +48,7 @@ BA in Economics, 2013-2017 (GPA: 3.9/4.0, *graduated with honors*)
 **Previous:**
 - Research Professional, Georgetown University (2023-2024)
 - Research Analyst, International Monetary Fund (2021-2023)
+  
 ---
 
 ## Working Papers
