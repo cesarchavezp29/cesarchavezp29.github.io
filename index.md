@@ -52,7 +52,12 @@ BA in Economics, 2013-2017 (GPA: 3.9/4.0, *graduated with honors*)
 ---
 
 ## Working Papers
+**When Ideas Become Mainstream? Theory and Empirical Evidence from Econometrics Techniques**
+*Solo author* | November 2025
 
+This paper demonstrates that diffusion operates independently across three levels—awareness, adoption, and embedding—each governed by distinct mechanisms. Analyzing six econometric methods using 21,911 citations, 2,744 market observations, and 3,963 researchers (1960-2024), I find that awareness spreads smoothly through citations, but actual adoption faces substantial resistance varying 814-fold across methods.
+
+[Download PDF](/Chavez_Innovation_Diffusion_2025.pdf)
 **The Macroeconomic Consequences of Political Instability**
 - Panel analysis of 180+ countries examining effects on GDP growth and human capital
 
