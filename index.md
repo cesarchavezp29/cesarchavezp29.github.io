@@ -82,3 +82,4 @@ BA in Economics, 2013-2017 (GPA: 3.9/4.0, *graduated with honors*)
 ---
 
 *Last updated: November 2025*
+
