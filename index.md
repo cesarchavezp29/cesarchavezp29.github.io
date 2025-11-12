@@ -34,18 +34,16 @@ BA in Economics, 2013-2017 (GPA: 3.9/4.0, *graduated with honors*)
 
 ---
 
-## Current Positions
+## Current Position
 
 **Research Professional** | Center for Economics of Human Development, University of Chicago (2024-present)
 - Working with Prof. James J. Heckman on early childhood skill formation and economic preferences
 - First author on research examining cognitive skills and personality traits in Chinese children
 - Paper under review at Journal of Labor Economics
 
-**Research Assistant** | Harris School of Public Policy, University of Chicago (2024-present)
+**Previous:**
 - Working with Prof. Christopher Blattman on gang recruitment in Colombia
 - Working with Prof. Martin Castillo-Quintana on payment systems and extortion
-
-**Previous:**
 - Research Professional, Georgetown University (2023-2024)
 - Research Analyst, International Monetary Fund (2021-2023)
   
