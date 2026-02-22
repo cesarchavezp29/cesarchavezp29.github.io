@@ -1,4 +1,4 @@
 ---
 title: "Papers"
-description: "Preprints and articles by Professor Dr von Igelfeld."
+description: "Working papers and publications in development economics, political economy, and labor economics"
 ---
