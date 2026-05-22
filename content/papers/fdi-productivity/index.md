@@ -1,4 +1,5 @@
 ---
+topic: "Macroeconomics, Firms & Investment"
 title: "Does Foreign Investment Improve or Worsen Aggregate Productivity? A Panel VAR Analysis"
 date: 2022-09-20
 tags: ["international economics","FDI","productivity","panel VAR"]

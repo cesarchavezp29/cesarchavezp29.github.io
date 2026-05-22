@@ -12,7 +12,7 @@ taxonomies:
 
 menu:
     main:
-        - name: Papers
+        - name: Research
           url: papers/
           weight: 2
         - name: Projects
@@ -49,12 +49,13 @@ params:
     profileMode:
           enabled: true
           title: Carlos César Chávez Padilla
-          subtitle: "I am a Research Professional at the Center for Economics of Human Development at the University of Chicago, where I collaborate with Prof. James J. Heckman on early childhood skill formation. I am currently pursuing an MA in Public Policy at the Harris School of Public Policy and applying for Economics PhD programs for Fall 2026. My research focuses on development economics, political economy, and Latin America, particularly Peru."
+          subtitle: "I am a Research Professional at the Center for Economics of Human Development at the University of Chicago, where I collaborate with Prof. James J. Heckman on early childhood skill formation. I hold an MA in Public Policy from the Harris School of Public Policy. My research focuses on development economics, political economy, and Latin America, particularly Peru."
+          tagline: "Development Economist · University of Chicago"
           imageUrl: "picture.jpeg"
-          imageWidth: 160
-          imageHeight: 160
+          imageWidth: 200
+          imageHeight: 200
           buttons:
-            - name: Papers
+            - name: Research
               url: papers/
             - name: Projects
               url: projects/
@@ -73,7 +74,7 @@ params:
         - name: Location
           url: location/
         - name: Google Scholar
-          url: https://scholar.google.com
+          url: https://scholar.google.com/citations?user=LsVe9yQAAAAJ&hl=en
         - name: GitHub
           url: https://github.com/cesarchavezp29
 

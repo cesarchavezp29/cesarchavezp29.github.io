@@ -1,4 +1,5 @@
 ---
+topic: "Conflict, Violence & Political Instability"
 title: "The Macroeconomic Consequences of Political Instability"
 date: 2024-06-01
 tags: ["political economy","macroeconomics","political instability","growth"]

@@ -1,6 +1,8 @@
 ---
 title: "Paper Title (less than 70 characters)" 
 date: 2012-06-01
+topic: "Topic name (groups the paper on the Research page)"
+peerReviewed: false   # set to true once the paper is accepted/published
 url: /paper/
 aliases: 
     - /old_url.html

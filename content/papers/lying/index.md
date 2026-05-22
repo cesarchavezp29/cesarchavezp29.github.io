@@ -1,4 +1,5 @@
 ---
+topic: "Political Economy of Information"
 title: "A Simple Mathematical Model of Lying"
 date: 2024-12-01
 tags: ["political economy","game theory","misinformation","political manipulation"]

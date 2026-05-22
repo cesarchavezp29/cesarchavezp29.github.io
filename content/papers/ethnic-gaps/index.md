@@ -1,4 +1,5 @@
 ---
+topic: "Labor, Gender & Inequality"
 title: "Closing Peru's Ethnic Gaps Amidst Sustained Economic Growth"
 date: 2022-09-01
 tags: ["development","Peru","inequality","ethnicity","labor markets"]

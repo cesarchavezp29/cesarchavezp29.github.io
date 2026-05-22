@@ -1,4 +1,7 @@
 ---
+topic: "Macroeconomics, Firms & Investment"
+peerReviewed: true
+journal: "The International Trade Journal"
 title: "Cooperation Pay-Off: An Analysis Across Latin America's Firms"
 date: 2022-09-30
 tags: ["development","firms","Latin America","cooperation","productivity"]

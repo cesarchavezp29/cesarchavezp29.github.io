@@ -1,4 +1,5 @@
 ---
+topic: "Conflict, Violence & Political Instability"
 title: "Terrorism and Regional Development: Evidence from Peru's Internal War"
 date: 2025-12-01
 tags: ["development","conflict","Peru","terrorism"]

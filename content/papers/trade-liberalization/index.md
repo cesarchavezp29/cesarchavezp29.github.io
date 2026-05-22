@@ -1,4 +1,5 @@
 ---
+topic: "International Trade"
 title: "Innovation, Liberalization, and Competition"
 date: 2022-09-01
 tags: ["international trade","innovation","liberalization","development"]

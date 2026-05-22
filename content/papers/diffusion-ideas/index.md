@@ -1,4 +1,5 @@
 ---
+topic: "Innovation & the Economics Profession"
 title: "Diffusion of Ideas: A Theoretical Framework"
 date: 2024-12-11
 tags: ["economics profession","diffusion","innovation","methodology"]

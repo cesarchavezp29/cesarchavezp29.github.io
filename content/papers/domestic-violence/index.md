@@ -1,4 +1,5 @@
 ---
+topic: "Labor, Gender & Inequality"
 title: "Mining Presence and Domestic Violence"
 date: 2023-02-20
 tags: ["development","mining","domestic violence","Peru","gender"]

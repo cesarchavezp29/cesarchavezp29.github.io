@@ -1,4 +1,7 @@
 ---
+topic: "Labor, Gender & Inequality"
+peerReviewed: true
+journal: "Mineral Economics"
 title: "Mining Presence on Inequality, Labor Income, and Poverty"
 date: 2023-01-01
 tags: ["development","mining","Peru","inequality","poverty"]

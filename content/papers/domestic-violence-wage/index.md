@@ -1,4 +1,7 @@
 ---
+topic: "Labor, Gender & Inequality"
+peerReviewed: true
+journal: "Review of Economics"
 title: "Domestic Violence, Labor Market, And Minimum Wage: Theory And Evidence from Peru"
 date: 2022-09-20
 tags: ["labor economics","domestic violence","minimum wage","Peru","gender"]

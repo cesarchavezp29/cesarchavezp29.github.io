@@ -1,4 +1,5 @@
 ---
+topic: "International Trade"
 title: "The Limits of Tariff Coercion: When Does Economic Leverage Work?"
 date: 2026-02-05
 tags: ["international trade","tariffs","political economy","coercion"]

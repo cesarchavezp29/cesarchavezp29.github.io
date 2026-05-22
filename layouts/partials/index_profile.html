@@ -1,0 +1,46 @@
+{{- /* Custom homepage hero — overrides the PaperMod theme partial. */ -}}
+<div class="profile">
+    {{- with site.Params.profileMode }}
+    <div class="profile_inner">
+        <div class="hero">
+            <div class="hero-photo">
+                <img draggable="false" loading="eager"
+                     src="{{ (.imageUrl | default "picture.jpeg") | absURL }}"
+                     alt="{{ .title | default site.Title }}"
+                     width="200" height="200" />
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-name">{{ .title | default site.Title | markdownify }}</h1>
+                {{- with .tagline }}
+                <p class="hero-tagline">{{ . | markdownify }}</p>
+                {{- end }}
+                {{- with .subtitle }}
+                <div class="hero-bio">{{ . | markdownify }}</div>
+                {{- end }}
+                <div class="hero-social">
+                    {{- partial "social_icons.html" -}}
+                </div>
+                {{- with .buttons }}
+                <nav class="buttons hero-buttons">
+                    {{- range . }}
+                    <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+                        <span class="button-inner">{{ .name }}
+                            {{- if (findRE "://" .url) }}&nbsp;
+                            <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor"
+                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                 viewBox="0 0 24 24" height="14" width="14">
+                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14L21 3"></path>
+                            </svg>
+                            {{- end }}
+                        </span>
+                    </a>
+                    {{- end }}
+                </nav>
+                {{- end }}
+            </div>
+        </div>
+    </div>
+    {{- end }}
+</div>

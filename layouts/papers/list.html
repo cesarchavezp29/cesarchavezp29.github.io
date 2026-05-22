@@ -1,0 +1,84 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+{{- end }}
+
+{{- with .Content }}
+<div class="post-content pub-intro">{{ . }}</div>
+{{- end }}
+
+{{- $all     := .RegularPages }}
+{{- $pubs    := where $all "Params.peerReviewed" true }}
+{{- $rnr     := where $all "Params.underReview" true }}
+{{- $rest    := where $all "Params.peerReviewed" "!=" true }}
+{{- $working := where $rest "Params.underReview" "!=" true }}
+
+{{- /* Publications — peer-reviewed / accepted, newest first. */ -}}
+{{- with $pubs }}
+<section class="pub-section">
+  <h2 class="pub-section-title">Publications</h2>
+  <ul class="pub-list">
+    {{- range .ByDate.Reverse }}
+    {{- partial "pub_item.html" . }}
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+
+{{- /* Under Review / R&R — submitted, not yet accepted. */ -}}
+{{- with $rnr }}
+<section class="pub-section">
+  <h2 class="pub-section-title">Under Review</h2>
+  <ul class="pub-list">
+    {{- range .ByDate.Reverse }}
+    {{- partial "pub_item.html" . }}
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+
+{{- /* Working papers — grouped by topic in this fixed order. */ -}}
+{{- $topics := slice
+  "Conflict, Violence & Political Instability"
+  "International Trade"
+  "Labor, Gender & Inequality"
+  "Macroeconomics, Firms & Investment"
+  "Political Economy of Information"
+  "Innovation & the Economics Profession" }}
+
+<section class="pub-section">
+  <h2 class="pub-section-title">Working Papers</h2>
+  {{- $grouped := slice }}
+  {{- range $topic := $topics }}
+    {{- $papers := where $working "Params.topic" $topic }}
+    {{- with $papers }}
+    {{- $grouped = $grouped | append . }}
+    <section class="pub-group">
+      <h3 class="pub-group-title">{{ $topic }}</h3>
+      <ul class="pub-list">
+        {{- range .ByDate.Reverse }}
+        {{- partial "pub_item.html" . }}
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+  {{- end }}
+
+  {{- /* Safety net: any working paper missing a known topic still shows up. */ -}}
+  {{- $ungrouped := complement $grouped $working }}
+  {{- with $ungrouped }}
+  <section class="pub-group">
+    <h3 class="pub-group-title">Other</h3>
+    <ul class="pub-list">
+      {{- range .ByDate.Reverse }}
+      {{- partial "pub_item.html" . }}
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</section>
+
+{{- end }}{{- /* end main */ -}}

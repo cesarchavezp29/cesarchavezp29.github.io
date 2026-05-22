@@ -1,4 +1,5 @@
 ---
+topic: "Conflict, Violence & Political Instability"
 title: "Estimating The Effects Of Financial Liberalization On Governability And Social Stability"
 date: 2022-09-20
 tags: ["finance","liberalization","political economy","stability"]

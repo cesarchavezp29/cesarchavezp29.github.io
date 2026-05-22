@@ -1,4 +1,5 @@
 ---
+topic: "Innovation & the Economics Profession"
 title: "When Ideas Become Mainstream? Theory and Empirical Evidence from Econometrics Techniques"
 date: 2025-11-13
 tags: ["economics profession","econometrics","diffusion","methodology"]

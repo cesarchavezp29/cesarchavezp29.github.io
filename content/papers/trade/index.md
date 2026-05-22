@@ -1,4 +1,5 @@
 ---
+topic: "International Trade"
 title: "Import Liberalization, Not Export Expansion"
 date: 2025-12-01
 tags: ["international trade","poverty","development"]

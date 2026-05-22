@@ -1,4 +1,7 @@
 ---
+topic: "Innovation & the Economics Profession"
+peerReviewed: true
+journal: "AI and Ethics"
 title: "A Theory of (Illusional) Progress"
 date: 2025-01-01
 tags: ["AI ethics","technological innovation","philosophy","civilization"]

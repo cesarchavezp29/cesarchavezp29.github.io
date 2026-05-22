@@ -1,4 +1,5 @@
 ---
+topic: "Conflict, Violence & Political Instability"
 title: "Spatial Sorting and Conflict Migration"
 date: 2025-12-01
 tags: ["development","conflict","migration","Peru","spatial economics"]

@@ -1,4 +1,5 @@
 ---
+topic: "International Trade"
 title: "Feeding the Poor: How Trade Liberalization Reduced Caloric Poverty in Peru"
 date: 2025-11-03
 tags: ["international trade","poverty","Peru","nutrition","food security"]

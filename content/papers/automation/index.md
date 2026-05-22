@@ -1,4 +1,5 @@
 ---
+topic: "Innovation & the Economics Profession"
 title: "Automation Is Not a Sufficient Statistic: A Two-Frontier Task Model of Robots, AI, and Inequality"
 date: 2026-02-10
 tags: ["automation","AI","inequality","labor economics","technology"]

@@ -1,4 +1,5 @@
 ---
+topic: "Conflict, Violence & Political Instability"
 title: "The Shining Path of the Violence"
 date: 2024-05-01
 tags: ["conflict","violence","nighttime lights","Peru","Shining Path"]

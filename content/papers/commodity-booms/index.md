@@ -1,4 +1,5 @@
 ---
+topic: "Conflict, Violence & Political Instability"
 title: "Commodity Booms and Violent Conflict"
 date: 2025-12-01
 tags: ["development","conflict","natural resources","Peru"]
