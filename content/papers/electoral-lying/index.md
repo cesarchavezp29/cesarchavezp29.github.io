@@ -1,5 +1,7 @@
 ---
 topic: "Political Economy of Information"
+underReview: true
+journal: "Under review, World Politics"
 title: "Electoral Pressure and Political Lying: A Theory of Political Lying"
 date: 2024-12-14
 tags: ["political economy","game theory","elections","misinformation"]

@@ -1,5 +1,7 @@
 ---
 topic: "International Trade"
+underReview: true
+journal: "Under review, Journal of International Economics"
 title: "Import Liberalization, Not Export Expansion"
 date: 2025-12-01
 tags: ["international trade","poverty","development"]

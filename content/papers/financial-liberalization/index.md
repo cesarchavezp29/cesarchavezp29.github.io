@@ -1,7 +1,9 @@
 ---
 topic: "Conflict, Violence & Political Instability"
+peerReviewed: true
+journal: "Foreign Trade Review"
 title: "Estimating The Effects Of Financial Liberalization On Governability And Social Stability"
-date: 2022-09-20
+date: 2024-11-01
 tags: ["finance","liberalization","political economy","stability"]
 author: "Carlos César Chávez Padilla"
 description: "Financial liberalization effects on governability and social stability"

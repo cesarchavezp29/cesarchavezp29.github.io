@@ -1,5 +1,7 @@
 ---
 topic: "Innovation & the Economics Profession"
+underReview: true
+journal: "Under review, Empirical Economics"
 title: "The Anatomy of a Nobel Prize (1969–2025)"
 date: 2025-12-01
 tags: ["economics profession","Nobel Prize","scientometrics"]
