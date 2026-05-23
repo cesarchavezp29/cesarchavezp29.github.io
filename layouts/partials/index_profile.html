@@ -1,4 +1,4 @@
-{{- /* Custom homepage hero — overrides the PaperMod theme partial. */ -}}
+{{- /* Custom homepage hero + recent research — overrides theme partial. */ -}}
 <div class="profile">
     {{- with site.Params.profileMode }}
     <div class="profile_inner">
@@ -44,3 +44,45 @@
     </div>
     {{- end }}
 </div>
+
+{{- /* Auto-populated research surfaces below the hero. */ -}}
+{{- $papers := where site.RegularPages "Section" "papers" }}
+
+{{- $pubs := where $papers "Params.peerReviewed" true }}
+{{- with first 3 ($pubs.ByDate.Reverse) }}
+<section class="home-section">
+  <h2 class="home-section-title">Recent Publications</h2>
+  <ul class="pub-list">
+    {{- range . }}
+    {{- partial "pub_item.html" . }}
+    {{- end }}
+  </ul>
+  <div class="home-section-foot"><a href="{{ "papers/" | relURL }}">→ all publications</a></div>
+</section>
+{{- end }}
+
+{{- $rest := where $papers "Params.peerReviewed" "!=" true }}
+{{- $drafts := where $rest "Params.underReview" "!=" true }}
+{{- $rnr := where $papers "Params.underReview" true }}
+{{- with first 3 ($rnr.ByDate.Reverse) }}
+<section class="home-section">
+  <h2 class="home-section-title">Under Review</h2>
+  <ul class="pub-list">
+    {{- range . }}
+    {{- partial "pub_item.html" . }}
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+
+{{- with first 3 ($drafts.ByDate.Reverse) }}
+<section class="home-section">
+  <h2 class="home-section-title">Latest Working Papers</h2>
+  <ul class="pub-list">
+    {{- range . }}
+    {{- partial "pub_item.html" . }}
+    {{- end }}
+  </ul>
+  <div class="home-section-foot"><a href="{{ "papers/" | relURL }}">→ all working papers</a></div>
+</section>
+{{- end }}
