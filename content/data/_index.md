@@ -1,6 +1,4 @@
 ---
 title: "Data"
-description: "Datasets and replication materials for research papers"
+description: "Datasets and replication materials"
 ---
-
-Data and replication materials will be posted here as papers are published.
