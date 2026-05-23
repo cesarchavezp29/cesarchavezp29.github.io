@@ -12,7 +12,7 @@ A full PDF is available [here](../cv.pdf).
 ##### Academic Employment
 
 <dl>
-  <dt>2025</dt><dd>Research Assistant, Harris School of Public Policy, University of Chicago</dd>
+  <dt>2025</dt><dd>Research Professional, Center for the Economics of Human Development, University of Chicago</dd>
   <dt>2024–2025</dt><dd>Research Assistant, Harris School of Public Policy, University of Chicago</dd>
   <dt>2023–2024</dt><dd>Research Professional (Pre-Doc), McDonough School of Business, Georgetown University</dd>
   <dt>2021–2023</dt><dd>Research Professional (Pre-Doc), International Monetary Fund, Monetary and Capital Markets Department</dd>
