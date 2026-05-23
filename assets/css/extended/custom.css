@@ -248,6 +248,92 @@ body {
 }
 .post-content h5 { color: var(--accent); }
 
+/* ---- Interactive Two-Frontier demo (shortcode) ------------- */
+.tfd {
+  margin: 18px 0 22px;
+  padding: 18px 18px 16px;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+.tfd-cap {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin: 0 0 12px;
+  text-align: left;
+  font-style: italic;
+}
+.tfd-panel { margin-bottom: 12px; }
+.tfd-head {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.tfd-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+.tfd-svg rect { transition: x 0.06s linear, width 0.06s linear; }
+.tfd-svg text { transition: x 0.06s linear, opacity 0.12s ease; }
+
+.tfd-controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 18px;
+  margin: 14px 0 10px;
+  padding: 12px 14px;
+  background: var(--theme);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+}
+.tfd-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.85rem;
+}
+.tfd-slider-l {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.tfd-slider-l span {
+  display: inline-block;
+  min-width: 38px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.tfd-slider input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.tfd-readout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding-top: 8px;
+  border-top: 1px solid var(--hairline);
+  font-size: 0.9rem;
+}
+.tfd-readout-l { color: var(--muted); }
+.tfd-readout-r { font-weight: 600; }
+.tfd-sign { font-variant-numeric: tabular-nums; }
+.tfd-pos { color: #2a9148; }
+.tfd-neg { color: #c8404a; }
+.tfd-sep { color: var(--hairline); margin: 0 6px; }
+
+@media screen and (max-width: 720px) {
+  .tfd-controls { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ---- Rich paper view (3-column reader) --------------------- */
 .main:has(.rich-paper) { max-width: 1280px; }
 .rich-paper-header {

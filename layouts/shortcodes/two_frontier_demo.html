@@ -1,0 +1,124 @@
+{{- /* Interactive Two-Frontier Task Model demo (Chavez 2026). Pure SVG + vanilla JS. */ -}}
+<figure class="tfd">
+  <figcaption class="tfd-cap">Interactive Two-Frontier identity. Drag the sliders to see how each frontier shapes its task continuum.</figcaption>
+
+  <div class="tfd-panel">
+    <div class="tfd-head">Panel A · Physical Tasks (robots)</div>
+    <svg class="tfd-svg" viewBox="0 0 1500 95" preserveAspectRatio="xMidYMid meet" aria-labelledby="tfd-pA-title">
+      <title id="tfd-pA-title">Physical task continuum showing robot displacement, surviving human labor, and reinstated tasks.</title>
+      <line x1="750" y1="6" x2="750" y2="52" stroke="#bbb" stroke-width="0.6" stroke-dasharray="2 3" />
+      <rect id="tfdA-rob"   x="0"   y="10" width="150" height="40" fill="#3a6cb8" />
+      <rect id="tfdA-hum"   x="150" y="10" width="600" height="40" fill="#d6d4cc" />
+      <rect id="tfdA-rein"  x="750" y="10" width="170" height="40" fill="#e6c884" />
+      <text id="tfdA-lblr"  x="75"  y="35" text-anchor="middle" fill="#fff"  font-size="14" font-weight="600">Robot</text>
+      <text id="tfdA-lblh"  x="450" y="35" text-anchor="middle" fill="#444"  font-size="14">Human (surviving)</text>
+      <text id="tfdA-lbli"  x="835" y="35" text-anchor="middle" fill="#3d2a15" font-size="14">Reinstated</text>
+      <line x1="0" y1="55" x2="1500" y2="55" stroke="#1c1c1e" stroke-width="1" />
+      <text x="0"   y="75" font-size="13">0</text>
+      <text id="tfdA-xIR"   x="150" y="75" text-anchor="middle" font-size="13" fill="#3a6cb8" font-weight="600">I_R</text>
+      <text x="750" y="75" text-anchor="middle" font-size="13" font-weight="600">1</text>
+      <text id="tfdA-xmax"  x="920" y="75" text-anchor="middle" font-size="13" fill="#7a5a30" font-weight="600">1 + δ_R · I_R</text>
+    </svg>
+  </div>
+
+  <div class="tfd-panel">
+    <div class="tfd-head">Panel B · Cognitive Tasks (AI)</div>
+    <svg class="tfd-svg" viewBox="0 0 1500 95" preserveAspectRatio="xMidYMid meet" aria-labelledby="tfd-pB-title">
+      <title id="tfd-pB-title">Cognitive task continuum showing AI displacement, surviving human labor, and (typically negligible) reinstatement.</title>
+      <line x1="750" y1="6" x2="750" y2="52" stroke="#bbb" stroke-width="0.6" stroke-dasharray="2 3" />
+      <rect id="tfdB-ai"    x="0"   y="10" width="75"  height="40" fill="#3a6cb8" />
+      <rect id="tfdB-hum"   x="75"  y="10" width="675" height="40" fill="#d6d4cc" />
+      <rect id="tfdB-rein"  x="750" y="10" width="0"   height="40" fill="#e6c884" />
+      <text id="tfdB-lbla"  x="38"  y="35" text-anchor="middle" fill="#fff"  font-size="14" font-weight="600">AI</text>
+      <text id="tfdB-lblh"  x="412" y="35" text-anchor="middle" fill="#444"  font-size="14">Human (surviving)</text>
+      <text id="tfdB-lbli"  x="750" y="35" text-anchor="middle" fill="#3d2a15" font-size="14" style="opacity:0">Reinstated</text>
+      <line x1="0" y1="55" x2="1500" y2="55" stroke="#1c1c1e" stroke-width="1" />
+      <text x="0"   y="75" font-size="13">0</text>
+      <text id="tfdB-xIA"   x="75"  y="75" text-anchor="middle" font-size="13" fill="#3a6cb8" font-weight="600">I_A</text>
+      <text x="750" y="75" text-anchor="middle" font-size="13" font-weight="600">1</text>
+    </svg>
+  </div>
+
+  <div class="tfd-controls">
+    <label class="tfd-slider">
+      <span class="tfd-slider-l">I<sub>R</sub> &nbsp;= <span id="tfd-vIR">0.20</span></span>
+      <input type="range" id="tfd-IR" min="0"  max="0.6"  step="0.01" value="0.20">
+    </label>
+    <label class="tfd-slider">
+      <span class="tfd-slider-l">δ<sub>R</sub> = <span id="tfd-vdR">1.13</span></span>
+      <input type="range" id="tfd-dR" min="0"  max="2"    step="0.01" value="1.13">
+    </label>
+    <label class="tfd-slider">
+      <span class="tfd-slider-l">I<sub>A</sub> &nbsp;= <span id="tfd-vIA">0.10</span></span>
+      <input type="range" id="tfd-IA" min="0"  max="0.6"  step="0.01" value="0.10">
+    </label>
+    <label class="tfd-slider">
+      <span class="tfd-slider-l">δ<sub>A</sub> = <span id="tfd-vdA">0.00</span></span>
+      <input type="range" id="tfd-dA" min="0"  max="2"    step="0.01" value="0.00">
+    </label>
+  </div>
+
+  <div class="tfd-readout">
+    <div class="tfd-readout-l">Skill premium · Proposition 1:</div>
+    <div class="tfd-readout-r">
+      <span class="tfd-sign tfd-pos">∂𝒫 / ∂I<sub>R</sub> &gt; 0</span>
+      <span class="tfd-sep">·</span>
+      <span class="tfd-sign tfd-neg">∂𝒫 / ∂I<sub>A</sub> &lt; 0</span>
+    </div>
+  </div>
+</figure>
+
+<script>
+(function(){
+  const TASK = 750;
+  const $ = (id) => document.getElementById(id);
+
+  function place(rectId, x, w){
+    const r = $(rectId);
+    r.setAttribute('x', x);
+    r.setAttribute('width', Math.max(0, w));
+  }
+  function move(lblId, x, visible){
+    const t = $(lblId);
+    t.setAttribute('x', x);
+    t.style.opacity = visible ? 1 : 0;
+  }
+
+  function update(){
+    const IR = +$('tfd-IR').value;
+    const dR = +$('tfd-dR').value;
+    const IA = +$('tfd-IA').value;
+    const dA = +$('tfd-dA').value;
+
+    $('tfd-vIR').textContent = IR.toFixed(2);
+    $('tfd-vdR').textContent = dR.toFixed(2);
+    $('tfd-vIA').textContent = IA.toFixed(2);
+    $('tfd-vdA').textContent = dA.toFixed(2);
+
+    // Panel A — Physical
+    const robW = TASK * IR, humW = TASK * (1 - IR), reinW = TASK * dR * IR;
+    place('tfdA-rob',  0,             robW);
+    place('tfdA-hum',  robW,          humW);
+    place('tfdA-rein', TASK,          reinW);
+    move('tfdA-lblr', robW / 2,                    robW > 80);
+    move('tfdA-lblh', robW + humW / 2,             humW > 110);
+    move('tfdA-lbli', TASK + reinW / 2,            reinW > 95);
+    $('tfdA-xIR').setAttribute('x', robW);
+    $('tfdA-xmax').setAttribute('x', TASK + reinW);
+    $('tfdA-xmax').style.opacity = reinW > 40 ? 1 : 0;
+
+    // Panel B — Cognitive
+    const aiW = TASK * IA, hum2W = TASK * (1 - IA), rein2W = TASK * dA * IA;
+    place('tfdB-ai',   0,             aiW);
+    place('tfdB-hum',  aiW,           hum2W);
+    place('tfdB-rein', TASK,          rein2W);
+    move('tfdB-lbla', aiW / 2,                     aiW > 60);
+    move('tfdB-lblh', aiW + hum2W / 2,             hum2W > 110);
+    move('tfdB-lbli', TASK + rein2W / 2,           rein2W > 95);
+    $('tfdB-xIA').setAttribute('x', aiW);
+  }
+
+  ['tfd-IR','tfd-dR','tfd-IA','tfd-dA'].forEach(id => $(id).addEventListener('input', update));
+  update();
+})();
+</script>

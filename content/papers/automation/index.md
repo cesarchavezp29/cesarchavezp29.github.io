@@ -47,7 +47,9 @@ The calibrated configuration is strongly asymmetric across frontiers:
 - $\hat{\delta}_R \approx 1.13$ — robots reinstate substantial new physical tasks per task displaced (strong reinstatement)
 - $\hat{\delta}_A \approx 0$ — AI displaces cognitive tasks with negligible reinstatement
 
-This asymmetry is illustrated in the figure: in *Panel A* the physical-task identity extends past $1$ (robots create new tasks beyond the surviving range), while in *Panel B* the cognitive labor band is simply compressed with no offsetting task creation.
+This asymmetry is illustrated below: in *Panel A* the physical-task identity extends past $1$ (robots create new tasks beyond the surviving range), while in *Panel B* the cognitive labor band is simply compressed with no offsetting task creation. **Drag the sliders to see how each frontier reshapes its task continuum.**
+
+{{< two_frontier_demo >}}
 
 ## Implication
 
