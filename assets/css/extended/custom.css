@@ -3,19 +3,25 @@
    Loaded last (assets/css/extended/), so it overrides the theme.
    ============================================================= */
 
-/* ---- Design tokens ----------------------------------------- */
+/* ---- Design tokens — Qhawarina palette --------------------- */
+/* Andean-inspired: warm cream background, navy text, maroon accent. */
 :root {
-  --accent:      #7a1f2b;           /* deep maroon */
+  --accent:      #7a1f2b;           /* deep maroon (textile) */
   --accent-dark: #5c1620;
-  --accent-soft: #f4ebec;           /* pale maroon wash */
-  --ink:         #1c1c1e;
-  --muted:       #5f6066;
-  --hairline:    #e6e6e9;
+  --accent-soft: #f1e3c8;           /* warm cream wash */
+  --accent-gold: #b78428;           /* Andean gold (sun) */
+  --ink:         #1a2c54;           /* dark navy (logo) */
+  --muted:       #5d6378;
+  --hairline:    #ece4d2;           /* warmed hairline */
   --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
 
-  /* Repoint the theme's accent variables to the maroon palette */
+  /* Override the theme tokens for the cream palette */
+  --theme:      #faf6ec;            /* warm cream page background */
+  --primary:    #1a2c54;            /* navy headings/links */
+  --content:    #232a3c;            /* slightly lighter navy body text */
+  --border:     #ece4d2;
   --darkcolor:  #7a1f2b;
-  --lightcolor: #f4ebec;
+  --lightcolor: #f1e3c8;
 }
 
 /* ---- Base polish ------------------------------------------- */
