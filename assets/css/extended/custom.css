@@ -209,6 +209,124 @@ body {
 }
 .post-content h5 { color: var(--accent); }
 
+/* ---- Rich paper view (3-column reader) --------------------- */
+.main:has(.rich-paper) { max-width: 1280px; }
+.rich-paper-header {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 18px;
+  margin: 8px 0 22px;
+}
+.rich-paper-title {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 1.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  color: var(--ink);
+}
+.rich-paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.rich-paper-meta .rich-meta-item:not(:last-child)::after {
+  content: "·";
+  margin-left: 14px;
+  color: var(--hairline);
+}
+.rich-paper-actions { margin-top: 12px; }
+.rich-action {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--theme);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--ink);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.rich-action:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.rich-paper-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) 290px;
+  gap: 36px;
+  align-items: start;
+}
+.rich-toc, .rich-figures {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  font-size: 0.88rem;
+}
+.rich-side-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--hairline);
+}
+.rich-toc nav ul { list-style: none; margin: 0; padding: 0; }
+.rich-toc nav li { margin: 4px 0; }
+.rich-toc nav a {
+  color: var(--muted);
+  text-decoration: none;
+  line-height: 1.4;
+  display: block;
+  padding: 3px 0;
+}
+.rich-toc nav a:hover { color: var(--accent); }
+.rich-toc nav ul ul { padding-left: 14px; margin-top: 4px; }
+
+.rich-fig { margin: 0 0 16px; }
+.rich-fig img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: #fff;
+  transition: box-shadow 0.15s ease;
+}
+.rich-fig a:hover img { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+.rich-paper-body.post-content {
+  /* Override the global post-content rules so equations and headings
+     sit better in the narrower middle column. */
+  font-size: 1.02rem;
+}
+.rich-paper-body h2 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 28px 0 12px;
+}
+.rich-paper-body h2:first-child { margin-top: 0; }
+
+@media screen and (max-width: 1100px) {
+  .rich-paper-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .rich-toc, .rich-figures {
+    position: static;
+    max-height: none;
+  }
+  .rich-figures { order: -1; }
+}
+
 /* ---- Responsive -------------------------------------------- */
 @media screen and (max-width: 768px) {
   .profile img { transform: none; }

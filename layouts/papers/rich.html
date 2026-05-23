@@ -1,0 +1,48 @@
+{{- define "main" }}
+<article class="rich-paper">
+  <header class="rich-paper-header">
+    <h1 class="rich-paper-title">{{ .Title }}</h1>
+    <div class="rich-paper-meta">
+      {{- with .Params.author }}
+      <span class="rich-meta-item">
+        {{- if reflect.IsSlice . }}{{ delimit . " · " }}{{ else }}{{ . }}{{ end -}}
+      </span>
+      {{- end }}
+      <span class="rich-meta-item">{{ .Date.Format "January 2006" }}</span>
+      {{- with .Params.journal }}<span class="rich-meta-item">{{ . }}</span>{{- end }}
+    </div>
+    {{- with .Params.editPost }}
+    <div class="rich-paper-actions">
+      <a class="rich-action" href="{{ .URL }}" rel="noopener" target="_blank">{{ .Text }}&nbsp;↗</a>
+    </div>
+    {{- end }}
+  </header>
+
+  <div class="rich-paper-layout">
+    <aside class="rich-toc">
+      {{- with .TableOfContents }}
+      <div class="rich-side-title">Sections</div>
+      {{ . }}
+      {{- end }}
+    </aside>
+
+    <div class="rich-paper-body post-content">
+      {{ .Content }}
+    </div>
+
+    <aside class="rich-figures">
+      {{- $figs := .Resources.Match "fig_*.png" }}
+      {{- if $figs }}
+      <div class="rich-side-title">Figures</div>
+      {{- range $figs }}
+      <figure class="rich-fig">
+        <a href="{{ .RelPermalink }}" target="_blank" rel="noopener">
+          <img src="{{ .RelPermalink }}" alt="{{ .Title | default "Figure" }}" loading="lazy" />
+        </a>
+      </figure>
+      {{- end }}
+      {{- end }}
+    </aside>
+  </div>
+</article>
+{{- end }}
