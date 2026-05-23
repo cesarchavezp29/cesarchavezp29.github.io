@@ -3,7 +3,7 @@ topic: "Labor, Gender & Inequality"
 peerReviewed: true
 journal: "Review of Economics"
 title: "Domestic Violence, Labor Market, And Minimum Wage: Theory And Evidence from Peru"
-date: 2022-09-20
+date: 2023-01-01
 tags: ["labor economics","domestic violence","minimum wage","Peru","gender"]
 author: "Carlos César Chávez Padilla"
 description: "Theory and evidence on minimum wage and domestic violence"

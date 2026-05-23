@@ -25,6 +25,8 @@ menu:
 params:
     description: "Carlos César Chávez Padilla - Development Economist | Research Professional at the University of Chicago, Center for Economics of Human Development | Research on development economics, political economy, and Latin America"
     author: Carlos César Chávez Padilla
+    images:
+        - og-image.png
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light

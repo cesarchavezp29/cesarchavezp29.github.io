@@ -3,7 +3,7 @@ topic: "Macroeconomics, Firms & Investment"
 peerReviewed: true
 journal: "The International Trade Journal"
 title: "Cooperation Pay-Off: An Analysis Across Latin America's Firms"
-date: 2022-09-30
+date: 2024-01-01
 tags: ["development","firms","Latin America","cooperation","productivity"]
 author: "Carlos César Chávez Padilla"
 description: "Firm cooperation and productivity in Latin America"
