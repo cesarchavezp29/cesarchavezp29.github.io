@@ -1,4 +1,4 @@
-{{- /* Custom homepage hero + recent research — overrides theme partial. */ -}}
+{{- /* Custom homepage hero + research surfaces — overrides theme partial. */ -}}
 <div class="profile">
     {{- with site.Params.profileMode }}
     <div class="profile_inner">
@@ -45,12 +45,40 @@
     {{- end }}
 </div>
 
-{{- /* Auto-populated research surfaces below the hero. */ -}}
-{{- $papers := where site.RegularPages "Section" "papers" }}
+{{- $papers   := where site.RegularPages "Section" "papers" }}
+{{- $pubs     := where $papers "Params.peerReviewed" true }}
+{{- $rnr      := where $papers "Params.underReview" true }}
+{{- $rest     := where $papers "Params.peerReviewed" "!=" true }}
+{{- $drafts   := where $rest "Params.underReview" "!=" true }}
 
-{{- $pubs := where $papers "Params.peerReviewed" true }}
+{{- /* Stats row — animated counters on scroll. */ -}}
+<section class="home-stats reveal">
+  <div class="stat"><span class="stat-num" data-target="{{ len $papers }}">0</span><span class="stat-lbl">Papers</span></div>
+  <div class="stat"><span class="stat-num" data-target="{{ len $pubs }}">0</span><span class="stat-lbl">Publications</span></div>
+  <div class="stat"><span class="stat-num" data-target="{{ len $rnr }}">0</span><span class="stat-lbl">Under Review</span></div>
+  <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-lbl">Topics</span></div>
+</section>
+
+{{- /* Featured Research — link to the Automation rich-view paper. */ -}}
+{{- with site.GetPage "papers/automation" }}
+<section class="home-section home-featured reveal">
+  <h2 class="home-section-title">Featured Research</h2>
+  <a href="{{ .RelPermalink }}" class="featured-card">
+    <div class="featured-text">
+      <div class="featured-eyebrow">Interactive Paper</div>
+      <h3 class="featured-title">{{ .Title }}</h3>
+      <p class="featured-summary">A two-frontier task model showing why aggregate automation hides opposite skill-premium effects of robots and AI. <strong>Includes a live simulation of the two-frontier identity.</strong></p>
+      <span class="featured-cta">Open paper &nbsp;→</span>
+    </div>
+    {{- with .Resources.GetMatch "fig_*.png" }}
+    <div class="featured-thumb"><img src="{{ .RelPermalink }}" alt="" loading="lazy" /></div>
+    {{- end }}
+  </a>
+</section>
+{{- end }}
+
 {{- with first 3 ($pubs.ByDate.Reverse) }}
-<section class="home-section">
+<section class="home-section reveal">
   <h2 class="home-section-title">Recent Publications</h2>
   <ul class="pub-list">
     {{- range . }}
@@ -61,11 +89,8 @@
 </section>
 {{- end }}
 
-{{- $rest := where $papers "Params.peerReviewed" "!=" true }}
-{{- $drafts := where $rest "Params.underReview" "!=" true }}
-{{- $rnr := where $papers "Params.underReview" true }}
 {{- with first 3 ($rnr.ByDate.Reverse) }}
-<section class="home-section">
+<section class="home-section reveal">
   <h2 class="home-section-title">Under Review</h2>
   <ul class="pub-list">
     {{- range . }}
@@ -76,7 +101,7 @@
 {{- end }}
 
 {{- with first 3 ($drafts.ByDate.Reverse) }}
-<section class="home-section">
+<section class="home-section reveal">
   <h2 class="home-section-title">Latest Working Papers</h2>
   <ul class="pub-list">
     {{- range . }}
@@ -86,3 +111,45 @@
   <div class="home-section-foot"><a href="{{ "papers/" | relURL }}">→ all working papers</a></div>
 </section>
 {{- end }}
+
+<script>
+(function(){
+  // Mark JS available so reveal classes can apply transitions.
+  document.documentElement.classList.add('js');
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        revealIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => revealIO.observe(el));
+
+  // Animated counters
+  function countTo(el){
+    const target = +el.dataset.target;
+    const duration = 1100;
+    const start = performance.now();
+    function frame(now){
+      const t = Math.min(1, (now - start) / duration);
+      const ease = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * ease);
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        countTo(e.target);
+        counterIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num').forEach(el => counterIO.observe(el));
+})();
+</script>
