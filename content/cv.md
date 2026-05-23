@@ -74,3 +74,6 @@ Research Assistant for Prof. Castillo-Quintana and Prof. Felipe Balmaceda on a m
 
 **Christopher Blattman** — Ramalee E. Pearson Professor of Global Conflict Studies, Harris School of Public Policy, University of Chicago. [blattman@uchicago.edu](mailto:blattman@uchicago.edu).
 Part-time research assistant analyzing the determinants of recruitment vulnerability in gangs in Colombia, combining qualitative field insights with quantitative data analysis.
+
+**James J. Heckman** — Henry Schultz Distinguished Service Professor of Economics, and Director of the Center for the Economics of Human Development, University of Chicago. [jjh@uchicago.edu](mailto:jjh@uchicago.edu).
+Research Professional collaborating with Prof. Heckman on early childhood skill formation; coauthor of "Relating Cognitive Skills and Personality Traits to Economic Preferences" (R&R, *Journal of Labor Economics*).
