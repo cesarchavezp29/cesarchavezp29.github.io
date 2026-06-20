@@ -33,7 +33,7 @@ Development economist working on human capital and political economy, combining 
 **Research Professional, Center for the Economics of Human Development** · 2024–present  
 *University of Chicago, Chicago, IL*
 - Work with Prof. James J. Heckman on early childhood skill formation and economic preferences.
-- First author on research examining how cognitive skills and personality traits relate to economic preferences in Chinese children, using structural modeling with CRRA and Expo-Power utility specifications.
+- Research examining how cognitive skills and personality traits relate to economic preferences in Chinese children, using structural modeling with CRRA and Expo-Power utility specifications.
 - Paper under review at *Journal of Labor Economics*.
 
 **Research Assistant, Harris School of Public Policy** · 2024–present  
@@ -65,7 +65,7 @@ Development economist working on human capital and political economy, combining 
 
 ##### Selected Research
 
-- **Relating Cognitive Skills and Personality Traits to Economic Preferences: A Study of Chinese Children** (with S. Feng, J.J. Heckman, Z. Yang) — *first author · R&R, Journal of Labor Economics.* A structural model with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences.
+- **Relating Cognitive Skills and Personality Traits to Economic Preferences: A Study of Chinese Children** (with S. Feng, J.J. Heckman, Z. Yang) — *R&R, Journal of Labor Economics.* A structural model with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences.
 - **Innovation, Liberalization, and Competition** — *forthcoming, Journal of Business.*
 - **Commodity Booms and Violent Conflict** — *under review, American Journal of Political Science.*
 - **Electoral Pressure and Political Lying** — *under review, World Politics.* A dynamic game of credibility against electoral pressure; on PolitiFact data (U.S. House, 2007–2025) final-term members lie 5.6–8.0 pp more than early-term members.
@@ -115,6 +115,7 @@ A complete, continuously updated list is on the [Research](../papers/) page.
 ##### Conference Presentations
 
 <dl>
+  <dt>2026</dt><dd>Jinan University, Guangzhou (with S. Feng, J.J. Heckman, Z. Yang) · Institute for Fiscal Studies, London · Encuentro de Economistas, UNMSM, Lima</dd>
   <dt>2023</dt><dd>IEA World Congress, Medellín, Colombia</dd>
   <dt>2022</dt><dd>LACEA-LAMES Annual Meeting, PUCP, Lima · Bolivian Conference on Development Economics, La Paz</dd>
   <dt>2021–2022</dt><dd>Annual Conference of Peruvian Economists, Lima</dd>
