@@ -10,75 +10,113 @@
 <div class="post-content pub-intro">{{ . }}</div>
 {{- end }}
 
-{{- $all     := .RegularPages }}
-{{- $pubs    := where $all "Params.peerReviewed" true }}
-{{- $rnr     := where $all "Params.underReview" true }}
-{{- $rest    := where $all "Params.peerReviewed" "!=" true }}
-{{- $working := where $rest "Params.underReview" "!=" true }}
+{{- $all := .RegularPages.ByDate.Reverse }}
 
-{{- /* Publications — peer-reviewed / accepted, newest first. */ -}}
-{{- with $pubs }}
-<section class="pub-section">
-  <h2 class="pub-section-title">Publications</h2>
-  <ul class="pub-list">
-    {{- range .ByDate.Reverse }}
-    {{- partial "pub_item.html" . }}
-    {{- end }}
-  </ul>
-</section>
-{{- end }}
+{{- /* distinct topics, for the topic filter */ -}}
+{{- $topics := slice }}
+{{- range $all }}{{ with .Params.topic }}{{ $topics = $topics | append . }}{{ end }}{{ end }}
+{{- $topics = $topics | uniq | sort }}
 
-{{- /* Under Review / R&R — submitted, not yet accepted. */ -}}
-{{- with $rnr }}
-<section class="pub-section">
-  <h2 class="pub-section-title">Under Review</h2>
-  <ul class="pub-list">
-    {{- range .ByDate.Reverse }}
-    {{- partial "pub_item.html" . }}
-    {{- end }}
-  </ul>
-</section>
-{{- end }}
+<div class="pub-controls" role="group" aria-label="Filter and sort papers">
+  <input type="search" id="pub-search" class="pub-input" placeholder="Search papers&hellip;" aria-label="Search papers">
+  <div class="pub-controls-row">
+    <select id="pub-sort" class="pub-select" aria-label="Sort papers">
+      <option value="date-desc">Newest first</option>
+      <option value="date-asc">Oldest first</option>
+      <option value="title">Title A&ndash;Z</option>
+    </select>
+    <select id="pub-topic" class="pub-select" aria-label="Filter by topic">
+      <option value="">All topics</option>
+      {{- range $topics }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+    </select>
+    <div class="pub-chips" id="pub-status" role="group" aria-label="Filter by status">
+      <button type="button" class="pub-chip is-active" data-status="">All</button>
+      <button type="button" class="pub-chip" data-status="Published">Published</button>
+      <button type="button" class="pub-chip" data-status="Under review">Under review</button>
+      <button type="button" class="pub-chip" data-status="Working paper">Working papers</button>
+    </div>
+  </div>
+  <p class="pub-count" id="pub-count"></p>
+</div>
 
-{{- /* Working papers — grouped by topic in this fixed order. */ -}}
-{{- $topics := slice
-  "Conflict, Violence & Political Instability"
-  "International Trade"
-  "Labor, Gender & Inequality"
-  "Macroeconomics, Firms & Investment"
-  "Political Economy of Information"
-  "Innovation & the Economics Profession" }}
-
-<section class="pub-section">
-  <h2 class="pub-section-title">Working Papers</h2>
-  {{- $grouped := slice }}
-  {{- range $topic := $topics }}
-    {{- $papers := where $working "Params.topic" $topic }}
-    {{- with $papers }}
-    {{- $grouped = $grouped | append . }}
-    <section class="pub-group">
-      <h3 class="pub-group-title">{{ $topic }}</h3>
-      <ul class="pub-list">
-        {{- range .ByDate.Reverse }}
-        {{- partial "pub_item.html" . }}
-        {{- end }}
-      </ul>
-    </section>
-    {{- end }}
+<ul class="pub-list pub-list--flat" id="pub-list">
+  {{- range $all }}
+  {{- $j := .Params.journal | default "" }}
+  {{- $jl := lower $j }}
+  {{- $status := "Working paper" }}
+  {{- if .Params.peerReviewed }}{{ $status = "Published" }}
+  {{- else if .Params.underReview }}{{ $status = "Under review" }}
+  {{- else if $j }}
+    {{- if or (in $jl "under review") (in $jl "r&r") (in $jl "revise") (in $jl "submitted") }}{{ $status = "Under review" }}
+    {{- else }}{{ $status = "Published" }}{{ end }}
   {{- end }}
-
-  {{- /* Safety net: any working paper missing a known topic still shows up. */ -}}
-  {{- $ungrouped := complement $grouped $working }}
-  {{- with $ungrouped }}
-  <section class="pub-group">
-    <h3 class="pub-group-title">Other</h3>
-    <ul class="pub-list">
-      {{- range .ByDate.Reverse }}
-      {{- partial "pub_item.html" . }}
-      {{- end }}
-    </ul>
-  </section>
+  {{- $venue := $j }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
+  {{- $cls := cond (eq $status "Published") "pub" (cond (eq $status "Under review") "rev" "wp") }}
+  <li class="pub-item" data-date="{{ .Date.Format "2006-01-02" }}" data-status="{{ $status }}" data-topic="{{ .Params.topic }}" data-title="{{ lower .Title }}">
+    <div class="pub-head">
+      <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
+      <span class="pub-meta">{{ .Date.Format "2006" }}{{ with $venue }}&nbsp;&middot;&nbsp;{{ . }}{{ end }}</span>
+    </div>
+    <div class="pub-tags">
+      <span class="pub-badge pub-badge--{{ $cls }}">{{ $status }}</span>
+      {{- with .Params.topic }}<span class="pub-topic-tag">{{ . }}</span>{{ end }}
+    </div>
+    {{- with .Summary }}
+    <p class="pub-summary">{{ . | plainify | htmlUnescape }}</p>
+    {{- end }}
+  </li>
   {{- end }}
-</section>
+</ul>
+<p class="pub-empty" id="pub-empty" hidden>No papers match these filters.</p>
+
+<script>
+(function () {
+  var list = document.getElementById('pub-list');
+  if (!list) return;
+  var items = Array.prototype.slice.call(list.children);
+  var search = document.getElementById('pub-search');
+  var sortSel = document.getElementById('pub-sort');
+  var topicSel = document.getElementById('pub-topic');
+  var statusWrap = document.getElementById('pub-status');
+  var empty = document.getElementById('pub-empty');
+  var count = document.getElementById('pub-count');
+  var status = '';
+
+  function apply() {
+    var q = (search.value || '').toLowerCase().trim();
+    var topic = topicSel.value;
+    var visible = items.filter(function (it) {
+      if (q && it.getAttribute('data-title').indexOf(q) < 0) return false;
+      if (topic && it.getAttribute('data-topic') !== topic) return false;
+      if (status && it.getAttribute('data-status') !== status) return false;
+      return true;
+    });
+    var key = sortSel.value;
+    visible.sort(function (a, b) {
+      if (key === 'title') return a.getAttribute('data-title').localeCompare(b.getAttribute('data-title'));
+      var da = a.getAttribute('data-date'), db = b.getAttribute('data-date');
+      return key === 'date-asc' ? da.localeCompare(db) : db.localeCompare(da);
+    });
+    items.forEach(function (it) { it.style.display = 'none'; });
+    visible.forEach(function (it) { it.style.display = ''; list.appendChild(it); });
+    empty.hidden = visible.length > 0;
+    if (count) count.textContent = visible.length + (visible.length === 1 ? ' paper' : ' papers');
+  }
+
+  search.addEventListener('input', apply);
+  sortSel.addEventListener('change', apply);
+  topicSel.addEventListener('change', apply);
+  statusWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest('.pub-chip');
+    if (!btn) return;
+    status = btn.getAttribute('data-status');
+    Array.prototype.forEach.call(statusWrap.children, function (c) {
+      c.classList.toggle('is-active', c === btn);
+    });
+    apply();
+  });
+  apply();
+})();
+</script>
 
 {{- end }}{{- /* end main */ -}}

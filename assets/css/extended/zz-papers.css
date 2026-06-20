@@ -1,0 +1,111 @@
+/* =============================================================
+   Wider frame + interactive Research list.
+   Loaded after custom.css (zz- sorts last in css/extended/*).
+   ============================================================= */
+
+/* ---- Widen the content frame (less blank on the sides) ----- */
+:root { --main-width: 900px; }
+.main:has(.pub-controls) { max-width: 1160px; }   /* Research page: room for the list */
+
+/* ---- Filter / sort control bar ----------------------------- */
+.pub-controls {
+  margin: 1.2rem 0 1.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.pub-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.98rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+}
+.pub-input:focus, .pub-select:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+.pub-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.7rem;
+}
+.pub-select {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.pub-chips { display: inline-flex; flex-wrap: wrap; gap: 0.35rem; margin-left: auto; }
+.pub-chip {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.pub-chip:hover { color: var(--accent); border-color: var(--accent-soft); }
+.pub-chip.is-active { color: #fff; background: var(--accent); border-color: var(--accent); }
+.pub-count { margin: 0.7rem 0 0; font-size: 0.82rem; color: var(--muted); }
+
+/* ---- The list --------------------------------------------- */
+.pub-list--flat { list-style: none; margin: 0; padding: 0; }
+.pub-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.pub-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.3rem 1rem;
+}
+.pub-title {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.pub-title:hover { color: var(--accent); }
+.pub-meta { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+.pub-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.45rem 0 0; }
+.pub-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.5rem;
+  border-radius: 4px;
+}
+.pub-badge--pub { color: #1f5c3d; background: #e6f0ea; }
+.pub-badge--rev { color: #8a5a12; background: #f6ecd6; }
+.pub-badge--wp  { color: #4a5168; background: #eceef4; }
+.pub-topic-tag {
+  font-size: 0.74rem;
+  color: var(--muted);
+  background: var(--accent-soft);
+  padding: 0.12rem 0.5rem;
+  border-radius: 4px;
+}
+.pub-summary {
+  margin: 0.5rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--content);
+  max-width: 70ch;
+}
+.pub-empty { padding: 1.5rem 0; color: var(--muted); font-style: italic; }
+
+@media (max-width: 640px) {
+  .pub-chips { margin-left: 0; width: 100%; }
+  .pub-meta { white-space: normal; }
+}
