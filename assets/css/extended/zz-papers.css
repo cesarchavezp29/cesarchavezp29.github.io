@@ -86,9 +86,10 @@
   padding: 0.12rem 0.5rem;
   border-radius: 4px;
 }
-.pub-badge--pub { color: #1f5c3d; background: #e6f0ea; }
-.pub-badge--rev { color: #8a5a12; background: #f6ecd6; }
-.pub-badge--wp  { color: #4a5168; background: #eceef4; }
+/* status badges use only the palette accents: navy / gold / maroon */
+.pub-badge--pub { color: var(--ink);    background: #e7ebf3; }   /* published — navy */
+.pub-badge--rev { color: #8a6410;       background: #f6ecd6; }   /* under review — gold */
+.pub-badge--wp  { color: var(--accent); background: var(--accent-soft); }  /* working — maroon */
 .pub-topic-tag {
   font-size: 0.74rem;
   color: var(--muted);

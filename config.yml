@@ -10,6 +10,12 @@ pagination:
 taxonomies:
     tag: tags
 
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
 menu:
     main:
         - name: Research
@@ -30,8 +36,17 @@ menu:
         - name: Data
           url: data/
           weight: 7
+        - name: Search
+          url: search/
+          weight: 8
 
 params:
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        threshold: 0.4
+        minMatchCharLength: 2
+        keys: ["title", "permalink", "summary", "content"]
     description: "Carlos César Chávez Padilla - Development Economist | Research Professional at the University of Chicago, Center for Economics of Human Development | Research on development economics, political economy, and Latin America"
     author: Carlos César Chávez Padilla
     images:
