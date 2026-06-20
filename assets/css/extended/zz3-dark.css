@@ -121,3 +121,31 @@
 .search-chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .dark .search-chip { background: var(--entry); color: var(--content); border-color: var(--hairline); }
 .search-topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.6rem; }
+
+/* ---- Research map: bubbles sized by field output ---------- */
+.research-map { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 1rem 1.6rem; margin: 0.6rem 0 1.2rem; }
+.rm-node { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-decoration: none; width: 190px; }
+.rm-bubble { display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; color: #fff; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16); transition: transform 0.18s ease; }
+.rm-bubble b { font-family: var(--serif); font-size: 1.9rem; line-height: 1; }
+.rm-bubble i { font-size: 0.66rem; font-style: normal; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; margin-top: 0.15rem; }
+.rm-node:hover .rm-bubble { transform: scale(1.07); }
+.rm-name { font-size: 0.84rem; font-weight: 600; color: var(--ink); text-align: center; line-height: 1.25; }
+.rm-node:hover .rm-name { color: var(--accent); }
+
+/* ---- Word cloud from abstracts ---------------------------- */
+.word-cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 0.25rem 0.7rem; max-width: 820px; margin: 0.6rem auto; }
+.wc-word { font-family: var(--serif); font-weight: 600; background: none; border: none; cursor: pointer; padding: 0 0.1rem; line-height: 1.15; }
+.wc-word:nth-child(4n+1) { color: var(--accent); }
+.wc-word:nth-child(4n+2) { color: var(--ink); }
+.wc-word:nth-child(4n+3) { color: var(--accent-gold); }
+.wc-word:nth-child(4n)   { color: #c0613f; }
+.wc-word:hover { text-decoration: underline; }
+.dark .wc-word:nth-child(4n+2) { color: var(--content); }
+
+/* ---- Strong cover/logo cap (small, to the side) ----------- */
+.post-single .entry-cover img { width: 120px !important; height: auto !important; max-height: none !important; }
+/* list card with a cover: small logo to the side, text to the right */
+.post-entry:has(.entry-cover) { display: grid; grid-template-columns: 130px 1fr; gap: 1.3rem; align-items: center; }
+.post-entry .entry-cover { max-width: 130px; margin: 0; }
+.post-entry .entry-cover img { width: 100%; height: auto; border-radius: 12px; }
+@media (max-width: 560px) { .post-entry:has(.entry-cover) { grid-template-columns: 88px 1fr; gap: 0.9rem; } .post-entry .entry-cover { max-width: 88px; } }

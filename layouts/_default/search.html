@@ -27,20 +27,23 @@
     {{- end }}
   </div>
 
-  <h2 class="search-suggest-title">Explore by field</h2>
-  <div class="topic-cards search-topics">
-    {{- range $topics }}
-    {{- $n := len (where $papers "Params.topic" .) }}
-    <a class="topic-card" href="{{ (printf "papers/?topic=%s" (urlquery .)) | relURL }}">
-      <span class="topic-name">{{ . }}</span>
-      <span class="topic-count">{{ $n }}</span>
-    </a>
+  <h2 class="search-suggest-title">Research map — fields sized by output</h2>
+  <div class="research-map" id="researchMap" role="list"></div>
+
+  <h2 class="search-suggest-title">What the abstracts talk about</h2>
+  <div class="word-cloud" id="wordCloud">
+    {{- $wc := site.Data.wordcloud }}
+    {{- $maxc := 1 }}{{ range $wc }}{{ if gt .count $maxc }}{{ $maxc = .count }}{{ end }}{{ end }}
+    {{- range $wc }}
+    {{- $sz := add 0.85 (mul 2.0 (div (float .count) (float $maxc))) }}
+    <button type="button" class="wc-word" data-q="{{ .word }}" title="{{ .count }} mentions" style="font-size:{{ printf "%.2f" $sz }}rem">{{ .word }}</button>
     {{- end }}
   </div>
 </div>
 
 <script>
-var PAPERS = [{{ range $papers }}{{ .Permalink }},{{ end }}];
+var PAPERS = [{{ range $papers }}{{ .Permalink | jsonify }},{{ end }}];
+var FIELDS = [{{ range $topics }}{ "name": {{ . | jsonify }}, "count": {{ len (where $papers "Params.topic" .) }}, "url": {{ (printf "papers/?topic=%s" (urlquery .)) | relURL | jsonify }} },{{ end }}];
 (function () {
   var input = document.getElementById('searchInput');
   var suggest = document.getElementById('searchSuggest');
@@ -60,7 +63,7 @@ var PAPERS = [{{ range $papers }}{{ .Permalink }},{{ end }}];
   input.addEventListener('input', toggle);
   input.addEventListener('keyup', toggle);
 
-  document.querySelectorAll('.search-chip[data-q]').forEach(function (b) {
+  document.querySelectorAll('[data-q]').forEach(function (b) {
     b.addEventListener('click', function () {
       input.value = b.getAttribute('data-q');
       input.dispatchEvent(new Event('input', { bubbles: true }));
@@ -73,6 +76,22 @@ var PAPERS = [{{ range $papers }}{{ .Permalink }},{{ end }}];
   if (sp) sp.addEventListener('click', function () {
     if (PAPERS.length) window.location.href = PAPERS[Math.floor(Math.random() * PAPERS.length)];
   });
+
+  // research map: a bubble per field, area proportional to paper count
+  var rm = document.getElementById('researchMap');
+  if (rm && FIELDS.length) {
+    var max = Math.max.apply(null, FIELDS.map(function (f) { return f.count; }));
+    var COLORS = ['#7a1f2b', '#1a2c54', '#b78428', '#9c3a45', '#2d3f6b', '#c0613f', '#5c1620', '#3d5280'];
+    FIELDS.slice().sort(function (a, b) { return b.count - a.count; }).forEach(function (f, i) {
+      var d = Math.round(84 + 116 * Math.sqrt(f.count / max));
+      var a = document.createElement('a');
+      a.className = 'rm-node'; a.href = f.url; a.setAttribute('role', 'listitem');
+      a.innerHTML = '<span class="rm-bubble" style="width:' + d + 'px;height:' + d + 'px;background:' + COLORS[i % COLORS.length] + '">'
+        + '<b>' + f.count + '</b><i>' + (f.count === 1 ? 'paper' : 'papers') + '</i></span>'
+        + '<span class="rm-name">' + f.name + '</span>';
+      rm.appendChild(a);
+    });
+  }
   toggle();
 })();
 </script>
