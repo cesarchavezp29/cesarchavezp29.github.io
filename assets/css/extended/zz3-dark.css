@@ -1,0 +1,61 @@
+/* =============================================================
+   Cite button + dark-mode variant of the Qhawarina palette.
+   Loads last. Dark overrides every hardcoded light surface.
+   ============================================================= */
+
+/* ---- Cite (BibTeX) button --------------------------------- */
+.cite-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.cite-btn:hover { text-decoration: underline; }
+.cite-bib { display: none; }
+
+/* ---- Back-to-top: match the palette ----------------------- */
+.top-link { background: var(--accent); color: #fff; border-radius: 8px; }
+.top-link:hover { background: var(--accent-dark); }
+
+/* ---- Dark mode: tokens ------------------------------------ */
+.dark {
+  --theme: #15192b;          /* page background */
+  --entry: #1c2138;          /* cards / inputs */
+  --primary: #ece3d0;        /* headings / links */
+  --secondary: #b3ad9e;
+  --content: #d8d1c2;        /* body text */
+  --code-block-bg: #232842;
+  --border: #2c3354;
+  /* custom palette tokens */
+  --ink: #ece3d0;            /* was navy → light text on dark */
+  --accent: #db8a96;         /* lighter maroon/rose for contrast */
+  --accent-dark: #c76b78;
+  --accent-soft: #2b2440;    /* was cream → dark tint */
+  --accent-gold: #d6a84e;
+  --muted: #9aa0b5;
+  --hairline: #2c3354;
+}
+.dark body, .dark .list, .dark .nav, .dark .footer { background: var(--theme); }
+
+/* ---- Dark mode: hardcoded light surfaces ------------------ */
+.dark .hero-bio { background: var(--entry); border-color: var(--accent-gold); }
+.dark #pub-list .pub-item, .dark #talk-list .pub-item { background: var(--entry); border-color: var(--hairline); }
+.dark .pub-input, .dark .pub-select, .dark .pub-chip { background: var(--entry); color: var(--content); border-color: var(--hairline); }
+.dark .pub-chip.is-active { background: var(--accent); color: #15192b; border-color: var(--accent); }
+.dark .topic-card { background: var(--entry); }
+.dark .topic-card:hover { background: var(--accent); border-color: var(--accent); }
+.dark .topic-card:hover .topic-name { color: #15192b; }
+.dark .topic-count { background: var(--accent); color: #15192b; }
+.dark .topic-card:hover .topic-count { background: #15192b; color: var(--accent-gold); }
+.dark .pub-badge--pub { color: #c9d4ee; background: #25305a; }
+.dark .pub-badge--rev { color: #e6c477; background: #3a3320; }
+.dark .pub-badge--wp  { color: #e9bcc2; background: #3a2630; }
+.dark .pub-topic-tag { background: var(--accent-soft); color: var(--muted); }
+.dark .stat-num { color: var(--accent-gold); }
+/* keep the featured card navy in both modes */
+.dark .featured-card { background: linear-gradient(135deg, #1a2c54 0%, #243561 60%, #2c2540 100%); }
+.dark #searchResults li a { background: var(--entry); }

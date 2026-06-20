@@ -1,0 +1,32 @@
+{{- /* Cite button: copies a BibTeX entry built from the paper's front matter. Papers only. */ -}}
+{{- if eq .Section "papers" }}
+{{- $author := "Ch\\'avez Padilla, Carlos C\\'esar" }}
+{{- $year := .Date.Format "2006" }}
+{{- $base := .File.ContentBaseName }}{{ if eq $base "index" }}{{ $base = path.Base (path.Dir .File.Path) }}{{ end }}
+{{- $key := printf "chavez%s%s" $year (replace $base "-" "") }}
+{{- $j := .Params.journal | default "" }}
+{{- $jl := lower $j }}
+{{- $published := and (ne $j "") (not (or (in $jl "under review") (in $jl "r&r") (in $jl "revise") (in $jl "forthcoming") (in $jl "submitted"))) }}
+{{- $bib := "" }}
+{{- if $published }}
+{{- $bib = printf "@article{%s,\n  author  = {%s},\n  title   = {%s},\n  journal = {%s},\n  year    = {%s}\n}" $key $author .Title $j $year }}
+{{- else }}
+{{- $note := cond (ne $j "") $j "Working paper" }}
+{{- $bib = printf "@unpublished{%s,\n  author = {%s},\n  title  = {%s},\n  note   = {%s},\n  year   = {%s}\n}" $key $author .Title $note $year }}
+{{- end }}
+&nbsp;&middot;&nbsp;<button type="button" class="cite-btn" aria-label="Copy citation">Cite</button>
+<pre class="cite-bib" hidden>{{ $bib }}</pre>
+<script>
+(function () {
+  var btn = document.currentScript.previousElementSibling.previousElementSibling;
+  var pre = document.currentScript.previousElementSibling;
+  if (!btn || !btn.classList.contains('cite-btn')) return;
+  btn.addEventListener('click', function () {
+    var text = pre.textContent;
+    var done = function () { var o = btn.textContent; btn.textContent = 'Copied ✓'; setTimeout(function () { btn.textContent = o; }, 1600); };
+    if (navigator.clipboard) { navigator.clipboard.writeText(text).then(done, done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta); done(); }
+  });
+})();
+</script>
+{{- end }}
