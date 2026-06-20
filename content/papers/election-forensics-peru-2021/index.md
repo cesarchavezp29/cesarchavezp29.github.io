@@ -4,6 +4,7 @@ title: "Fraud Allegations as Identification: A Within-Election Forensic Test Usi
 date: 2026-02-01
 tags: ["election forensics","fraud","Peru","2021 election","identification","political economy"]
 author: "Carlos César Chávez Padilla"
+journal: "Political Analysis (under review)"
 description: "A within-election forensic test that turns the losing candidate's own nullification challenges into an identification strategy, applied to Peru's 2021 presidential runoff."
 summary: "Standard election forensics cannot separate genuine polarization from manipulation. This paper uses the polling stations a losing candidate formally challenged as a treatment group, comparing their forensic properties to the unchallenged remainder of the same election — turning the fraud allegations themselves into the counterfactual."
 editPost:
@@ -11,6 +12,12 @@ editPost:
     Text: "PDF"
 
 ---
+
+---
+
+##### Status
+
+Under review, *Political Analysis*.
 
 ---
 
@@ -34,4 +41,4 @@ Election Forensics, Electoral Fraud, Identification, Nullification Challenges, P
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "Fraud Allegations as Identification: A Within-Election Forensic Test Using Institutional Challenge Records." Working paper.
+Chávez Padilla, Carlos César. 2026. "Fraud Allegations as Identification: A Within-Election Forensic Test Using Institutional Challenge Records." Under review, *Political Analysis*.
