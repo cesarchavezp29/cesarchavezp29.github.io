@@ -79,6 +79,8 @@
 .qh-label { margin-top: 0.4rem; font-size: 0.86rem; font-weight: 600; color: var(--ink); }
 .qh-sub { margin-top: 0.2rem; font-size: 0.74rem; color: var(--muted); line-height: 1.35; }
 .qh-note { font-size: 0.92rem; color: var(--content); line-height: 1.55; }
+.qh-chart-wrap { position: relative; height: 340px; margin: 1.2rem 0 0.5rem; }
+@media (max-width: 560px) { .qh-chart-wrap { height: 260px; } }
 .dark .qh-card { background: var(--entry); border-color: var(--hairline); border-top-color: var(--accent); }
 
 /* ---- Search page: creative landing ------------------------ */
@@ -131,6 +133,9 @@
 .rm-node:hover .rm-bubble { transform: scale(1.07); }
 .rm-name { font-size: 0.84rem; font-weight: 600; color: var(--ink); text-align: center; line-height: 1.25; }
 .rm-node:hover .rm-name { color: var(--accent); }
+/* entrance animation: bubbles pop in, staggered, when the map scrolls into view */
+.rm-node { opacity: 0; transform: translateY(18px) scale(0.85); transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.research-map.rm-animate .rm-node { opacity: 1; transform: none; }
 
 /* ---- Word cloud from abstracts ---------------------------- */
 .word-cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 0.25rem 0.7rem; max-width: 820px; margin: 0.6rem auto; }
@@ -144,8 +149,12 @@
 
 /* ---- Strong cover/logo cap (small, to the side) ----------- */
 .post-single .entry-cover img { width: 120px !important; height: auto !important; max-height: none !important; }
-/* list card with a cover: small logo to the side, text to the right */
-.post-entry:has(.entry-cover) { display: grid; grid-template-columns: 130px 1fr; gap: 1.3rem; align-items: center; }
-.post-entry .entry-cover { max-width: 130px; margin: 0; }
+/* list card with a cover: small logo in col 1 (spanning rows), title+description stacked in col 2 */
+.post-entry:has(.entry-cover) { display: grid; grid-template-columns: 130px 1fr; column-gap: 1.4rem; align-items: center; }
+.post-entry:has(.entry-cover) > .entry-cover { grid-column: 1; grid-row: 1 / -1; max-width: 130px; margin: 0; }
+.post-entry:has(.entry-cover) > :not(.entry-cover) { grid-column: 2; }
 .post-entry .entry-cover img { width: 100%; height: auto; border-radius: 12px; }
-@media (max-width: 560px) { .post-entry:has(.entry-cover) { grid-template-columns: 88px 1fr; gap: 0.9rem; } .post-entry .entry-cover { max-width: 88px; } }
+@media (max-width: 560px) {
+  .post-entry:has(.entry-cover) { grid-template-columns: 84px 1fr; column-gap: 0.9rem; }
+  .post-entry:has(.entry-cover) > .entry-cover { max-width: 84px; }
+}

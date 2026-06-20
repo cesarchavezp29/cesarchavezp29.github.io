@@ -27,6 +27,34 @@ Qhawarina is a real-time economic monitoring platform for Peru that provides now
 </div>
 <p class="qh-note">Built in 2026 and <strong>still updating daily</strong> &mdash; the prices, inflation, GDP, and poverty pipelines refresh every day on <a href="https://github.com/cesarchavezp29/qhawarina">GitHub</a>. Only the political-risk index is paused, since it needs a news classifier to run. The code and methodology are fully open.</p>
 
+### Live demo — daily supermarket price index
+
+Real prices scraped every day across 42,000+ products. Base 100 = February 10, 2026; hover for any day.
+
+<div class="qh-chart-wrap"><canvas id="qhPriceChart"></canvas></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+(function () {
+  fetch('/qhawarina-prices.json').then(function (r) { return r.json(); }).then(function (d) {
+    var el = document.getElementById('qhPriceChart');
+    if (!el || !window.Chart) return;
+    new Chart(el, {
+      type: 'line',
+      data: { labels: d.dates, datasets: [
+        { label: 'All items', data: d.all, borderColor: '#7a1f2b', backgroundColor: 'rgba(122,31,43,0.07)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2 },
+        { label: 'Food', data: d.food, borderColor: '#1a2c54', fill: false, tension: 0.25, pointRadius: 0, borderWidth: 1.5 }
+      ]},
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { labels: { boxWidth: 14, font: { size: 12 } } } },
+        scales: { x: { ticks: { maxTicksLimit: 8, maxRotation: 0 } }, y: { title: { display: true, text: 'Index (base 100)' } } }
+      }
+    });
+  });
+})();
+</script>
+
 ---
 
 ## Key Features

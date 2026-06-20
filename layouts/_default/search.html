@@ -90,7 +90,12 @@ var FIELDS = [{{ range $topics }}{ "name": {{ . | jsonify }}, "count": {{ len (w
         + '<b>' + f.count + '</b><i>' + (f.count === 1 ? 'paper' : 'papers') + '</i></span>'
         + '<span class="rm-name">' + f.name + '</span>';
       rm.appendChild(a);
+      a.style.transitionDelay = (i * 0.05) + 's';
     });
+    var io = new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { rm.classList.add('rm-animate'); io.disconnect(); }
+    }, { threshold: 0.12 });
+    io.observe(rm);
   }
   toggle();
 })();
