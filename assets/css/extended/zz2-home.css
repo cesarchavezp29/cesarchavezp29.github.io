@@ -5,8 +5,8 @@
    ============================================================= */
 
 /* ---- Wider frame everywhere so the side gutters aren't empty */
-:root { --main-width: 1080px; }
-.main:has(.profile) { max-width: 1300px; }
+:root { --main-width: 1320px; }
+.main:has(.profile) { max-width: 1400px; }
 .main .profile { padding: 40px var(--gap) 8px; }
 
 /* ---- Single-page cover (e.g. Qhawarina logo): small, to the side */

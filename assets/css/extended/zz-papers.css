@@ -5,7 +5,7 @@
 
 /* ---- Widen the content frame (less blank on the sides) ----- */
 :root { --main-width: 900px; }
-.main:has(.pub-controls) { max-width: 1160px; }   /* Research page: room for the list */
+.main:has(.pub-controls) { max-width: 1360px; }   /* Research page: room for the list */
 
 /* ---- Filter / sort control bar ----------------------------- */
 .pub-controls {
