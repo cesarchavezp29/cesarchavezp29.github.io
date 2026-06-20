@@ -4,9 +4,29 @@
    Loads after zz-papers.css.
    ============================================================= */
 
-/* ---- Wider home so content fills the sides ----------------- */
+/* ---- Wider frame everywhere so the side gutters aren't empty */
+:root { --main-width: 1080px; }
 .main:has(.profile) { max-width: 1300px; }
 .main .profile { padding: 40px var(--gap) 8px; }
+
+/* ---- Single-page cover (e.g. Qhawarina logo): small, to the side */
+.post-single .entry-cover {
+  float: right;
+  width: 130px;
+  margin: 0.2rem 0 1rem 1.6rem;
+}
+.post-single .entry-cover img {
+  width: 130px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(26, 44, 84, 0.18);
+}
+.post-single .entry-cover figcaption,
+.post-single .entry-cover span { display: none; }
+@media (max-width: 640px) {
+  .post-single .entry-cover { float: none; width: 96px; margin: 0 0 1rem; }
+  .post-single .entry-cover img { width: 96px; }
+}
 
 /* ---- Hero: photo + text, spanning the width ---------------- */
 .hero { gap: 56px; }

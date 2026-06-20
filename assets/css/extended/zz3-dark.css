@@ -80,3 +80,44 @@
 .qh-sub { margin-top: 0.2rem; font-size: 0.74rem; color: var(--muted); line-height: 1.35; }
 .qh-note { font-size: 0.92rem; color: var(--content); line-height: 1.55; }
 .dark .qh-card { background: var(--entry); border-color: var(--hairline); border-top-color: var(--accent); }
+
+/* ---- Search page: creative landing ------------------------ */
+.search-hero { text-align: center; padding: 1.4rem 0 0.4rem; }
+.search-hero-title { font-family: var(--serif); font-size: 2.4rem; color: var(--ink); margin: 0 0 0.4rem; letter-spacing: -0.01em; }
+.search-hero-sub { color: var(--muted); margin: 0 0 1.5rem; font-size: 1.02rem; }
+#searchbox { max-width: 700px; margin: 0 auto; }
+#searchInput {
+  width: 100%; box-sizing: border-box;
+  padding: 0.95rem 1.25rem; font-size: 1.18rem;
+  color: var(--ink); background: #fff;
+  border: 2px solid var(--hairline); border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(26, 44, 84, 0.07);
+  transition: border-color 0.15s ease;
+}
+#searchInput:focus { outline: none; border-color: var(--accent); }
+.dark #searchInput { background: var(--entry); color: var(--content); }
+#searchResults { max-width: 700px; margin: 0.7rem auto 0; text-align: left; list-style: none; padding: 0; }
+.search-actions { margin: 1.2rem 0 0.4rem; }
+.search-surprise {
+  font: inherit; font-size: 0.95rem; font-weight: 600;
+  color: var(--accent); background: none;
+  border: 1.5px solid var(--accent); border-radius: 999px;
+  padding: 0.55rem 1.3rem; cursor: pointer; transition: all 0.15s ease;
+}
+.search-surprise:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
+.search-suggest { max-width: 940px; margin: 2.2rem auto 0; }
+.search-suggest-title {
+  font-family: var(--serif); font-size: 0.95rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent);
+  margin: 1.7rem 0 0.85rem;
+}
+.search-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.search-chip {
+  font: inherit; font-size: 0.9rem; color: var(--ink);
+  background: var(--accent-soft); border: 1px solid #e8dcc0;
+  border-radius: 999px; padding: 0.42rem 0.95rem; cursor: pointer;
+  text-decoration: none; transition: all 0.15s ease;
+}
+.search-chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.dark .search-chip { background: var(--entry); color: var(--content); border-color: var(--hairline); }
+.search-topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.6rem; }

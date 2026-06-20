@@ -1,65 +1,77 @@
 {{- define "main" }}
 
-<header class="page-header">
-  <h1>{{ .Title }}
-    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px">
-      <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
-  </h1>
-  {{- with .Description }}<div class="post-description">{{ . }}</div>{{- end }}
-</header>
-
-<div id="searchbox">
-  <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
-    aria-label="search" type="search" autocomplete="off" maxlength="64">
-  <ul id="searchResults" aria-label="search results"></ul>
-</div>
-
 {{- $papers := where site.RegularPages "Section" "papers" }}
 {{- $data := where site.RegularPages "Section" "data" }}
 {{- $topics := slice }}
 {{- range $papers }}{{ with .Params.topic }}{{ $topics = $topics | append . }}{{ end }}{{ end }}
 {{- $topics = $topics | uniq | sort }}
 
-<div class="search-suggest" id="searchSuggest">
-  <div class="search-stats">
-    <span><strong>{{ len $papers }}</strong> papers</span>
-    <span><strong>{{ len $topics }}</strong> fields</span>
-    <span><strong>{{ len $data }}</strong> datasets</span>
+<section class="search-hero">
+  <h1 class="search-hero-title">Search the work</h1>
+  <p class="search-hero-sub">{{ len $papers }} papers · {{ len $topics }} fields · {{ len $data }} datasets — full-text, instant.</p>
+  <div id="searchbox">
+    <input id="searchInput" autofocus placeholder="Search…"
+      aria-label="search" type="search" autocomplete="off" maxlength="64">
+    <ul id="searchResults" aria-label="search results"></ul>
   </div>
+  <div class="search-actions">
+    <button type="button" id="surprise" class="search-surprise">🎲 &nbsp;Surprise me — open a random paper</button>
+  </div>
+</section>
 
-  <h2 class="search-suggest-title">Try a search</h2>
+<div class="search-suggest" id="searchSuggest">
+  <h2 class="search-suggest-title">Popular searches</h2>
   <div class="search-chips">
-    {{- range slice "Peru" "political instability" "minimum wage" "monetary policy" "automation" "election" "inequality" "trade" "central bank" }}
+    {{- range slice "Peru" "political instability" "minimum wage" "monetary policy" "automation" "election fraud" "inequality" "trade" "central bank" }}
     <button type="button" class="search-chip" data-q="{{ . }}">{{ . }}</button>
     {{- end }}
   </div>
 
-  <h2 class="search-suggest-title">Browse by field</h2>
-  <div class="search-chips">
+  <h2 class="search-suggest-title">Explore by field</h2>
+  <div class="topic-cards search-topics">
     {{- range $topics }}
-    <a class="search-chip search-chip--topic" href="{{ (printf "papers/?topic=%s" (urlquery .)) | relURL }}">{{ . }}</a>
+    {{- $n := len (where $papers "Params.topic" .) }}
+    <a class="topic-card" href="{{ (printf "papers/?topic=%s" (urlquery .)) | relURL }}">
+      <span class="topic-name">{{ . }}</span>
+      <span class="topic-count">{{ $n }}</span>
+    </a>
     {{- end }}
   </div>
 </div>
 
 <script>
+var PAPERS = [{{ range $papers }}{{ .Permalink }},{{ end }}];
 (function () {
   var input = document.getElementById('searchInput');
   var suggest = document.getElementById('searchSuggest');
-  if (!input || !suggest) return;
-  function toggle() { suggest.style.display = input.value.trim() ? 'none' : ''; }
+  if (!input) return;
+
+  // rotating placeholder while empty
+  var hints = ["political instability", "minimum wage bunching", "monetary policy in Peru",
+    "election forensics", "automation and inequality", "Lava Jato", "coups and TFP"];
+  var hi = 0, timer = setInterval(function () {
+    if (input.value) return;
+    hi = (hi + 1) % hints.length;
+    input.setAttribute('placeholder', 'Try “' + hints[hi] + '”');
+  }, 2200);
+  input.setAttribute('placeholder', 'Try “' + hints[0] + '”');
+
+  function toggle() { if (suggest) suggest.style.display = input.value.trim() ? 'none' : ''; }
   input.addEventListener('input', toggle);
   input.addEventListener('keyup', toggle);
+
   document.querySelectorAll('.search-chip[data-q]').forEach(function (b) {
     b.addEventListener('click', function () {
       input.value = b.getAttribute('data-q');
       input.dispatchEvent(new Event('input', { bubbles: true }));
       input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
-      input.focus();
-      toggle();
+      input.focus(); toggle();
     });
+  });
+
+  var sp = document.getElementById('surprise');
+  if (sp) sp.addEventListener('click', function () {
+    if (PAPERS.length) window.location.href = PAPERS[Math.floor(Math.random() * PAPERS.length)];
   });
   toggle();
 })();
