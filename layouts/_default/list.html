@@ -26,9 +26,11 @@
         {{- if (ne (.Param "hideSummary") true) }}
         <div class="entry-content"><p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p></div>
         {{- end }}
-        {{- with .Params.sparkline }}
-        <div class="entry-spark"><img src="{{ . }}" alt="" loading="lazy">
-          {{- with $.Params.sparkline_label }}<span class="entry-spark-label">{{ . }}</span>{{ end }}
+        {{- $sp := .Params.sparkline }}{{ $spl := .Params.sparkline_label }}{{ $sp2 := .Params.sparkline2 }}{{ $spl2 := .Params.sparkline2_label }}
+        {{- if $sp }}
+        <div class="entry-sparks">
+          <div class="entry-spark"><img src="{{ $sp }}" alt="" loading="lazy">{{ with $spl }}<span class="entry-spark-label">{{ . }}</span>{{ end }}</div>
+          {{- with $sp2 }}<div class="entry-spark"><img src="{{ . }}" alt="" loading="lazy">{{ with $spl2 }}<span class="entry-spark-label">{{ . }}</span>{{ end }}</div>{{ end }}
         </div>
         {{- end }}
         {{- if not (.Param "hideMeta") }}

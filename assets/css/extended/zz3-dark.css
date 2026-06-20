@@ -140,7 +140,7 @@
 /* ---- Section pages: content grid + sidebar (fills the width) */
 .section-layout { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 2.6rem; align-items: start; }
 .section-intro { margin-bottom: 1.3rem; }
-.entry-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.4rem; }
+.entry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; }
 .entry-grid .post-entry { margin: 0; }
 .section-side { position: sticky; top: 1rem; }
 .side-block { margin-bottom: 1.9rem; }
@@ -153,10 +153,13 @@
 .side-year { font-size: 0.8rem; color: var(--muted); flex: 0 0 auto; }
 .side-foot { margin-top: 0.7rem; font-size: 0.88rem; }
 .side-foot a { color: var(--accent); font-weight: 600; }
-/* sparkline on the card — small but visible */
-.entry-spark { margin: 0.4rem 0 0.2rem; }
+/* sparklines on the card — small but visible, side by side */
+.entry-sparks { display: flex; flex-wrap: wrap; gap: 1.4rem; margin: 0.6rem 0 0.2rem; }
+.entry-spark { flex: 1 1 220px; min-width: 0; }
 .entry-spark img { width: 100%; max-width: 300px; height: auto; display: block; }
 .entry-spark-label { display: block; font-size: 0.74rem; color: var(--muted); margin-top: 0.15rem; }
+/* the Qhawarina card spans the full row even when alone */
+.has-spark { grid-column: 1 / -1; }
 @media (max-width: 900px) {
   .section-layout { grid-template-columns: 1fr; gap: 1.5rem; }
   .section-side { position: static; }
