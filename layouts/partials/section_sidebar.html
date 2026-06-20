@@ -1,0 +1,27 @@
+{{- /* Sidebar for section list pages: research areas + recent papers. */ -}}
+{{- $papers := where site.RegularPages "Section" "papers" }}
+{{- $topics := slice }}
+{{- range $papers }}{{ with .Params.topic }}{{ $topics = $topics | append . }}{{ end }}{{ end }}
+{{- $topics = $topics | uniq | sort }}
+
+<section class="side-block">
+  <h3 class="side-title">Research areas</h3>
+  <div class="topic-cards">
+    {{- range $topics }}
+    {{- $n := len (where $papers "Params.topic" .) }}
+    <a class="topic-card" href="{{ (printf "papers/?topic=%s" (urlquery .)) | relURL }}">
+      <span class="topic-name">{{ . }}</span><span class="topic-count">{{ $n }}</span>
+    </a>
+    {{- end }}
+  </div>
+</section>
+
+<section class="side-block">
+  <h3 class="side-title">Recent papers</h3>
+  <ul class="side-list">
+    {{- range first 6 $papers.ByDate.Reverse }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a><span class="side-year">{{ .Date.Format "2006" }}</span></li>
+    {{- end }}
+  </ul>
+  <div class="side-foot"><a href="{{ "papers/" | relURL }}">All papers &nbsp;&rarr;</a></div>
+</section>

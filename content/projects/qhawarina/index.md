@@ -5,6 +5,8 @@ tags: ["nowcasting","dynamic factor models","poverty","inflation","GDP","Peru"]
 author: "Carlos César Chávez Padilla"
 description: "A comprehensive nowcasting platform for Peru's economy using dynamic factor models, daily price indices, and political risk monitoring."
 summary: "Real-time monitoring system for Peru's economic indicators including GDP, inflation, poverty, and political risk using state-of-the-art econometric methods and daily data scraping."
+sparkline: "/qhawarina-sparkline.svg"
+sparkline_label: "Daily price index · live"
 cover:
     image: "qhawarina.png"
     alt: "Qhawarina Platform"
