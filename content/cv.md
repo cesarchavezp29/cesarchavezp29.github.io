@@ -5,7 +5,7 @@ hidemeta: true
 description: "Curriculum Vitae of Carlos César Chávez Padilla"
 ---
 
-A full PDF is available [here](../cv.pdf). The LaTeX source is maintained on Overleaf.
+**Download:** [Academic CV](../cv.pdf) · [Resume (1-page)](../resume.pdf) · [Resume — policy (1-page)](../resume-policy.pdf). LaTeX sources maintained on Overleaf.
 
 Development economist working on human capital and political economy, combining structural estimation with high-frequency data. Research Professional with **James J. Heckman** at the University of Chicago, and builder of [**Qhawarina**](../projects/qhawarina/), a real-time open-data platform for Peru.
 
