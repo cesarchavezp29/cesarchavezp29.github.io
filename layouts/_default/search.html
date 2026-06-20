@@ -1,13 +1,68 @@
 {{- define "main" }}
 
 <header class="page-header">
-<h1>{{ .Title }} &nbsp;</h1>
+  <h1>{{ .Title }}
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px">
+      <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </h1>
+  {{- with .Description }}<div class="post-description">{{ . }}</div>{{- end }}
 </header>
 
 <div id="searchbox">
-    <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s↵" .Title) }}"
-        aria-label="search" type="search" autocomplete="off" maxlength="64">
-    <ul id="searchResults" aria-label="search results"></ul>
+  <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
+    aria-label="search" type="search" autocomplete="off" maxlength="64">
+  <ul id="searchResults" aria-label="search results"></ul>
 </div>
+
+{{- $papers := where site.RegularPages "Section" "papers" }}
+{{- $data := where site.RegularPages "Section" "data" }}
+{{- $topics := slice }}
+{{- range $papers }}{{ with .Params.topic }}{{ $topics = $topics | append . }}{{ end }}{{ end }}
+{{- $topics = $topics | uniq | sort }}
+
+<div class="search-suggest" id="searchSuggest">
+  <div class="search-stats">
+    <span><strong>{{ len $papers }}</strong> papers</span>
+    <span><strong>{{ len $topics }}</strong> fields</span>
+    <span><strong>{{ len $data }}</strong> datasets</span>
+  </div>
+
+  <h2 class="search-suggest-title">Try a search</h2>
+  <div class="search-chips">
+    {{- range slice "Peru" "political instability" "minimum wage" "monetary policy" "automation" "election" "inequality" "trade" "central bank" }}
+    <button type="button" class="search-chip" data-q="{{ . }}">{{ . }}</button>
+    {{- end }}
+  </div>
+
+  <h2 class="search-suggest-title">Browse by field</h2>
+  <div class="search-chips">
+    {{- range $topics }}
+    <a class="search-chip search-chip--topic" href="{{ (printf "papers/?topic=%s" (urlquery .)) | relURL }}">{{ . }}</a>
+    {{- end }}
+  </div>
+</div>
+
+<script>
+(function () {
+  var input = document.getElementById('searchInput');
+  var suggest = document.getElementById('searchSuggest');
+  if (!input || !suggest) return;
+  function toggle() { suggest.style.display = input.value.trim() ? 'none' : ''; }
+  input.addEventListener('input', toggle);
+  input.addEventListener('keyup', toggle);
+  document.querySelectorAll('.search-chip[data-q]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      input.value = b.getAttribute('data-q');
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+      input.focus();
+      toggle();
+    });
+  });
+  toggle();
+})();
+</script>
 
 {{- end }}{{/* end main */}}
