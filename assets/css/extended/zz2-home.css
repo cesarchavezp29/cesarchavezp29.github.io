@@ -1,0 +1,125 @@
+/* =============================================================
+   Homepage: wide two-column layout that fills the frame,
+   interactive research-area cards, palette-tinted featured card.
+   Loads after zz-papers.css.
+   ============================================================= */
+
+/* ---- Wider home so content fills the sides ----------------- */
+.main:has(.profile) { max-width: 1300px; }
+.main .profile { padding: 40px var(--gap) 8px; }
+
+/* ---- Hero: photo + text, spanning the width ---------------- */
+.hero { gap: 56px; }
+
+/* Bio framed in a clean line, so it reads as a statement */
+.hero-bio {
+  margin-top: 18px;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid var(--ink);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+}
+.hero-bio p { color: var(--content); }
+
+/* ---- Stats strip ------------------------------------------- */
+.home-stats { margin: 8px var(--gap) 30px; }
+
+/* ---- Two-column grid (fills the empty sides) --------------- */
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(290px, 1fr);
+  gap: 48px;
+  margin: 0 var(--gap) 40px;
+  align-items: start;
+}
+.home-section { margin: 0 0 30px; }
+.home-section-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-soft);
+}
+.home-section-foot { margin-top: 0.9rem; font-size: 0.92rem; }
+.home-section-foot a { color: var(--accent); font-weight: 600; }
+.home-recent .pub-item:first-child { padding-top: 0; }
+
+/* ---- Sidebar: research-area cards (interactive) ------------ */
+.home-side { position: sticky; top: 1rem; }
+.topic-cards { display: flex; flex-direction: column; gap: 0.55rem; }
+.topic-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+.topic-card:hover {
+  border-left-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateX(2px);
+}
+.topic-name { font-size: 0.93rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.topic-count {
+  flex: 0 0 auto;
+  min-width: 1.6rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+.topic-card:hover .topic-count { background: #fff; }
+
+/* ---- Featured card: tinted navy, not flat white ----------- */
+.featured-card {
+  display: block;
+  padding: 1.4rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--ink) 0%, #243561 60%, #2c2540 100%);
+  color: #f3ede0;
+  box-shadow: 0 12px 30px rgba(26, 44, 84, 0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.featured-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(26, 44, 84, 0.3); }
+.featured-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+.featured-title {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+.featured-summary { font-size: 0.9rem; line-height: 1.55; color: #d8d2e4; margin: 0 0 0.9rem; }
+.featured-cta { font-size: 0.9rem; font-weight: 600; color: var(--accent-gold); }
+
+/* ---- Reveal-on-scroll ------------------------------------- */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.js .reveal.in-view { opacity: 1; transform: none; }
+
+/* ---- Responsive: collapse to one column ------------------- */
+@media (max-width: 900px) {
+  .home-grid { grid-template-columns: 1fr; gap: 28px; }
+  .home-side { position: static; }
+  .hero { gap: 32px; flex-direction: column; text-align: center; align-items: center; }
+}

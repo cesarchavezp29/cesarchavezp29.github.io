@@ -115,6 +115,23 @@
     });
     apply();
   });
+
+  // deep-link from the homepage: /papers/?topic=...&status=...
+  var params = new URLSearchParams(location.search);
+  var pt = params.get('topic');
+  if (pt) {
+    for (var i = 0; i < topicSel.options.length; i++) {
+      if (topicSel.options[i].value === pt) { topicSel.value = pt; break; }
+    }
+  }
+  var ps = params.get('status');
+  if (ps) {
+    var chip = statusWrap.querySelector('.pub-chip[data-status="' + ps + '"]');
+    if (chip) {
+      status = ps;
+      Array.prototype.forEach.call(statusWrap.children, function (c) { c.classList.toggle('is-active', c === chip); });
+    }
+  }
   apply();
 })();
 </script>
