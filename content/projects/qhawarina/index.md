@@ -18,6 +18,15 @@ disableAnchoredHeadings: false
 
 Qhawarina is a real-time economic monitoring platform for Peru that provides nowcasts of key macroeconomic variables using dynamic factor models (DFM) and high-frequency data. The platform combines traditional monthly indicators with daily scraped data from supermarkets and news sources to provide up-to-date economic intelligence.
 
+<div class="qh-cards">
+  <div class="qh-card"><div class="qh-val">42K+</div><div class="qh-label">Products / day</div><div class="qh-sub">daily supermarket price index</div></div>
+  <div class="qh-card"><div class="qh-val">+2.8%</div><div class="qh-label">GDP nowcast</div><div class="qh-sub">year-on-year &middot; beats AR(1) by 31%</div></div>
+  <div class="qh-card"><div class="qh-val">2.4%</div><div class="qh-label">Inflation nowcast</div><div class="qh-sub">monthly &middot; bridge R&sup2; 0.81</div></div>
+  <div class="qh-card"><div class="qh-val">24.5K</div><div class="qh-label">Articles classified</div><div class="qh-sub">political-risk index &middot; 506 days</div></div>
+  <div class="qh-card"><div class="qh-val">25</div><div class="qh-label">Departments</div><div class="qh-sub">monthly poverty nowcast</div></div>
+</div>
+<p class="qh-note">Built in 2026 and <strong>still updating daily</strong> &mdash; the prices, inflation, GDP, and poverty pipelines refresh every day on <a href="https://github.com/cesarchavezp29/qhawarina">GitHub</a>. Only the political-risk index is paused, since it needs a news classifier to run. The code and methodology are fully open.</p>
+
 ---
 
 ## Key Features

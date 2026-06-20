@@ -59,3 +59,24 @@
 /* keep the featured card navy in both modes */
 .dark .featured-card { background: linear-gradient(135deg, #1a2c54 0%, #243561 60%, #2c2540 100%); }
 .dark #searchResults li a { background: var(--entry); }
+
+/* ---- Qhawarina indicator cards ---------------------------- */
+.qh-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+.qh-card {
+  padding: 1.05rem 1.1rem;
+  background: var(--accent-soft);
+  border: 1px solid #e8dcc0;
+  border-top: 3px solid var(--accent);
+  border-radius: 10px;
+  text-align: center;
+}
+.qh-val { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.qh-label { margin-top: 0.4rem; font-size: 0.86rem; font-weight: 600; color: var(--ink); }
+.qh-sub { margin-top: 0.2rem; font-size: 0.74rem; color: var(--muted); line-height: 1.35; }
+.qh-note { font-size: 0.92rem; color: var(--content); line-height: 1.55; }
+.dark .qh-card { background: var(--entry); border-color: var(--hairline); border-top-color: var(--accent); }
