@@ -4,6 +4,7 @@ underReview: true
 journal: "Under review, Journal of International Economics"
 title: "Import Liberalization, Not Export Expansion"
 date: 2025-12-01
+featured: true
 tags: ["international trade","poverty","development"]
 author: "Carlos César Chávez Padilla"
 description: "Trade-induced poverty reduction through import liberalization"

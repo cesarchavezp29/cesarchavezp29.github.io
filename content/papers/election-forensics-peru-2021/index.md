@@ -2,6 +2,7 @@
 topic: "Conflict, Violence & Political Instability"
 title: "Fraud Allegations as Identification: A Within-Election Forensic Test Using Institutional Challenge Records"
 date: 2026-02-01
+featured: true
 tags: ["election forensics","fraud","Peru","2021 election","identification","political economy"]
 author: "Carlos César Chávez Padilla"
 journal: "Political Analysis (under review)"

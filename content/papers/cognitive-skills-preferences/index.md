@@ -1,6 +1,7 @@
 ---
 title: "Relating Cognitive Skills and Personality Traits to Economic Preferences: A Study of Chinese Children"
 date: 2025-01-01
+featured: true
 topic: "Labor, Gender & Inequality"
 underReview: true
 journal: "R&R, Journal of Labor Economics"

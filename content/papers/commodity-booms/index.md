@@ -4,6 +4,7 @@ underReview: true
 journal: "Under review, American Journal of Political Science"
 title: "Commodity Booms and Violent Conflict"
 date: 2025-12-01
+featured: true
 tags: ["development","conflict","natural resources","Peru"]
 author: "Carlos César Chávez Padilla"
 description: "Resolving the resource curse puzzle"

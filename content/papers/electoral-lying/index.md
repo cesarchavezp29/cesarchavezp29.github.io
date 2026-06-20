@@ -4,6 +4,7 @@ underReview: true
 journal: "Under review, World Politics"
 title: "Electoral Pressure and Political Lying: A Theory of Political Lying"
 date: 2024-12-14
+featured: true
 tags: ["political economy","game theory","elections","misinformation"]
 author: "Carlos César Chávez Padilla"
 description: "Theory of political lying under electoral pressure"

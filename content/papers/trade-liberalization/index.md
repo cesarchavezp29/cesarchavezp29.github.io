@@ -4,6 +4,7 @@ peerReviewed: true
 journal: "Journal of Business (forthcoming)"
 title: "Innovation, Liberalization, and Competition"
 date: 2026-01-01
+featured: true
 tags: ["international trade","innovation","liberalization","development"]
 author: "Carlos César Chávez Padilla"
 description: "Long-term effects of trade liberalization on innovation in developing economies"

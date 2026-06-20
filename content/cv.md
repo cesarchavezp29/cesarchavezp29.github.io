@@ -7,6 +7,8 @@ description: "Curriculum Vitae of Carlos César Chávez Padilla"
 
 A full PDF is available [here](../cv.pdf). The LaTeX source is maintained on Overleaf.
 
+Development economist working on human capital and political economy, combining structural estimation with high-frequency data. Research Professional with **James J. Heckman** at the University of Chicago, and builder of [**Qhawarina**](../projects/qhawarina/), a real-time open-data platform for Peru.
+
 ---
 
 ##### Education
@@ -61,34 +63,42 @@ A full PDF is available [here](../cv.pdf). The LaTeX source is maintained on Ove
 
 ---
 
-##### Working Papers
+##### Selected Research
 
-**Under review**
+- **Relating Cognitive Skills and Personality Traits to Economic Preferences: A Study of Chinese Children** (with S. Feng, J.J. Heckman, Z. Yang) — *first author · R&R, Journal of Labor Economics.* A structural model with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences.
+- **Innovation, Liberalization, and Competition** — *forthcoming, Journal of Business.*
+- **Commodity Booms and Violent Conflict** — *under review, American Journal of Political Science.*
+- **Electoral Pressure and Political Lying** — *under review, World Politics.* A dynamic game of credibility against electoral pressure; on PolitiFact data (U.S. House, 2007–2025) final-term members lie 5.6–8.0 pp more than early-term members.
+- **Import Liberalization, Not Export Expansion** — *under review, Journal of International Economics.*
+- **Fraud Allegations as Identification: A Within-Election Forensic Test** — *under review, Political Analysis.* Turns a losing candidate's own nullification challenges into the counterfactual; applied to Peru's 2021 presidential runoff.
+- **The Anatomy of a Nobel Prize** — *under review, Empirical Economics.*
 
-- **Relating Cognitive Skills and Personality Traits to Economic Preferences: A Study of Chinese Children** (with S. Feng, J.J. Heckman, Z. Yang) — *first author*. Under review, *Journal of Labor Economics*. Uses structural modeling with sophisticated error structures to separate preferences from deliberation quality; shows that cognitive ability affects decision precision more than underlying risk preferences.
+---
 
-**Work in progress**
+##### Other Working Papers
 
-- **Automation Is Not a Sufficient Statistic: Robots, AI, and Inequality.** Extends the Acemoglu-Restrepo task framework to two automation frontiers (physical and cognitive); pooling robot and AI exposure destroys 98% of explained variance in skill-premium changes ($R^2$ drops from 0.249 to 0.004 across 447 U.S. commuting zones). Derives a closed-form automation-mix threshold $\omega^*$ that determines the sign of inequality change.
-- **Electoral Pressure and Political Lying: A Theory of Political Lying.** Dynamic game where politicians trade off electoral gains against long-term credibility costs; using PolitiFact data on U.S. House members (2007–2025), final-term members lie 5.6–8.0 percentage points more than early-term members.
-- **The Macroeconomic Consequences of Political Instability.** Panel analysis of 180+ countries (1960–2022) on GDP growth and human capital using local projections.
-- **The Shining Path of Violence: Long-term Effects on Human Capital in Peru.** Geographic variation and shift-share IV strategy.
-- **Trade Liberalization and Nutrition: Evidence from Peru.** ENAHO data (2004–2023).
+- **Automation Is Not a Sufficient Statistic: Robots, AI, and Inequality.** Two automation frontiers; pooling robot and AI exposure destroys 98% of the explained variance in skill-premium changes across 447 U.S. commuting zones.
+- **The Macroeconomic Consequences of Political Instability.** Coups classified by institutional transition; a 4.2% impact-year TFP contraction concentrated in coups that displace democracies (Bjørnskov–Rode panel, 1960–2022).
+- **Missing Mass and Minimum Wages.** A bunching estimator on three Peruvian minimum-wage increases.
+- **Identifying Monetary Policy Shocks in an Administered-Rate Economy: Evidence from Peru.**
+- **The Shining Path of Violence: Long-term Effects on Human Capital in Peru.**
+- **Spatial Sorting and Conflict Migration.**
 
-A complete, continuously updated list grouped by topic is on the [Research](../papers/) page.
+A complete, continuously updated list is on the [Research](../papers/) page.
 
 ---
 
 ##### Publications
 
-- Chávez, C. (2024). "Minimum Wage and Ethnic-Gaps: Who are the Winners?" *Journal of Economics, Race, and Policy*, 7(2), 93–121.
-- Chávez, C. (2024). "Estimating the Effects of Financial Liberalisation on Governability and Social Stability." *Foreign Trade Review*, 59(4), 588–614.
-- Chávez, C. (2024). "Latin American Firm Cooperation Payoff Evidence." *The International Trade Journal*, 1–30.
-- Chávez, C. (2023). "The effects of mining presence on inequality, labor income, and poverty: evidence from Peru." *Mineral Economics*, 36(4), 615–642.
+- Chávez, C. (2024). "Minimum Wage and Ethnic Gaps: Who are the Winners?" *Journal of Economics, Race, and Policy*, 7(2), 93–121.
+- Chávez, C. (2023). "The Effects of Mining Presence on Inequality, Labor Income, and Poverty: Evidence from Peru." *Mineral Economics*, 36(4), 615–642.
 - Chávez, C. (2023). "Domestic Violence, Labor Market, and Minimum Wage: Theory and Evidence." *Review of Economics*, 74(3), 195–233.
+- Chávez, C. (2020). "The Impact of the El Niño Phenomenon on Dry-Forest-Dependent Communities' Welfare in the Northern Coast of Peru." *Ecological Economics.*
+- Chávez, C. (2024). "Estimating the Effects of Financial Liberalisation on Governability and Social Stability." *Foreign Trade Review*, 59(4), 588–614.
+- Chávez, C. (2024). "Latin American Firm Cooperation Payoff Evidence." *The International Trade Journal.*
 - Chávez, C., Salinas, G., & Yuri, Z. (2022). "Closing Peru's Ethnic Gaps Amidst Sustained Economic Growth." *IMF Working Paper* 2022/180.
 
-*Complete list at [Google Scholar](https://scholar.google.com/citations?user=LsVe9yQAAAAJ).*
+*Additional peer-reviewed articles and the full list at [Google Scholar](https://scholar.google.com/citations?user=LsVe9yQAAAAJ).*
 
 ---
 
