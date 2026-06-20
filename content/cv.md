@@ -74,7 +74,6 @@ A full PDF is available [here](../cv.pdf). The LaTeX source is maintained on Ove
 - **The Macroeconomic Consequences of Political Instability.** Panel analysis of 180+ countries (1960–2022) on GDP growth and human capital using local projections.
 - **The Shining Path of Violence: Long-term Effects on Human Capital in Peru.** Geographic variation and shift-share IV strategy.
 - **Trade Liberalization and Nutrition: Evidence from Peru.** ENAHO data (2004–2023).
-- **Congressional Responses to Social Movements: Machine Learning Evidence** (with A. Gethin).
 
 A complete, continuously updated list grouped by topic is on the [Research](../papers/) page.
 

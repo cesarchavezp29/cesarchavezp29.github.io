@@ -1,0 +1,76 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header"><h1>{{ .Title }}</h1></header>
+{{- end }}
+{{- with .Content }}<div class="post-content pub-intro">{{ . }}</div>{{- end }}
+
+{{- $talks := sort site.Data.talks "year" "desc" }}
+{{- $years := slice }}{{ range $talks }}{{ $years = $years | append (string .year) }}{{ end }}{{ $years = $years | uniq }}
+{{- $types := slice }}{{ range $talks }}{{ $types = $types | append .type }}{{ end }}{{ $types = $types | uniq | sort }}
+
+<div class="pub-controls" role="group" aria-label="Filter talks">
+  <input type="search" id="talk-search" class="pub-input" placeholder="Search talks&hellip;" aria-label="Search talks">
+  <div class="pub-controls-row">
+    <select id="talk-type" class="pub-select" aria-label="Filter by type">
+      <option value="">All types</option>
+      {{- range $types }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+    </select>
+    <div class="pub-chips" id="talk-year" role="group" aria-label="Filter by year">
+      <button type="button" class="pub-chip is-active" data-year="">All years</button>
+      {{- range $years }}<button type="button" class="pub-chip" data-year="{{ . }}">{{ . }}</button>{{ end }}
+    </div>
+  </div>
+</div>
+
+<ul class="pub-list pub-list--flat" id="talk-list">
+  {{- range $talks }}
+  <li class="pub-item" data-year="{{ .year }}" data-type="{{ .type }}" data-text="{{ lower (printf "%s %s %s %s" .title .venue .location (.coauthors | default "")) }}">
+    <div class="pub-head">
+      <span class="pub-title">{{ .title }}</span>
+      <span class="pub-meta">{{ .year }}</span>
+    </div>
+    <p class="talk-venue">{{ .venue }}{{ with .location }}&nbsp;&middot;&nbsp;{{ . }}{{ end }}{{ with .coauthors }}&nbsp;&middot;&nbsp;{{ . }}{{ end }}</p>
+    <div class="pub-tags"><span class="pub-badge pub-badge--wp">{{ .type }}</span></div>
+  </li>
+  {{- end }}
+</ul>
+<p class="pub-empty" id="talk-empty" hidden>No talks match these filters.</p>
+
+<script>
+(function () {
+  var list = document.getElementById('talk-list');
+  if (!list) return;
+  var items = Array.prototype.slice.call(list.children);
+  var search = document.getElementById('talk-search');
+  var typeSel = document.getElementById('talk-type');
+  var yearWrap = document.getElementById('talk-year');
+  var empty = document.getElementById('talk-empty');
+  var year = '';
+  function apply() {
+    var q = (search.value || '').toLowerCase().trim();
+    var ty = typeSel.value;
+    var vis = items.filter(function (it) {
+      if (q && it.getAttribute('data-text').indexOf(q) < 0) return false;
+      if (ty && it.getAttribute('data-type') !== ty) return false;
+      if (year && it.getAttribute('data-year') !== year) return false;
+      return true;
+    });
+    items.forEach(function (it) { it.style.display = 'none'; });
+    vis.forEach(function (it) { it.style.display = ''; });
+    empty.hidden = vis.length > 0;
+  }
+  search.addEventListener('input', apply);
+  typeSel.addEventListener('change', apply);
+  yearWrap.addEventListener('click', function (e) {
+    var b = e.target.closest('.pub-chip');
+    if (!b) return;
+    year = b.getAttribute('data-year');
+    Array.prototype.forEach.call(yearWrap.children, function (c) { c.classList.toggle('is-active', c === b); });
+    apply();
+  });
+  apply();
+})();
+</script>
+
+{{- end }}{{- /* end main */ -}}

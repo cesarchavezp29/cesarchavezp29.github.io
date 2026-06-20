@@ -1,0 +1,49 @@
+# Talks and conference presentations. Rendered by layouts/talks/list.html (interactive).
+- title: "Relating Cognitive Skills and Personality Traits to Economic Preferences"
+  coauthors: "with S. Feng, J. J. Heckman, Z. Yang"
+  venue: "Jinan University"
+  location: "Guangzhou, China"
+  year: 2026
+  type: "Invited seminar"
+
+- title: "Intergenerational Mobility"
+  venue: "Institute for Fiscal Studies (IFS)"
+  location: "London, United Kingdom"
+  year: 2026
+  type: "Seminar"
+
+- title: "Encuentro de Economistas"
+  venue: "Universidad Nacional Mayor de San Marcos (UNMSM)"
+  location: "Lima, Peru"
+  year: 2026
+  type: "Conference"
+
+- title: "IEA World Congress"
+  venue: "International Economic Association"
+  location: "Medellín, Colombia"
+  year: 2023
+  type: "Conference"
+
+- title: "LACEA–LAMES Annual Meeting"
+  venue: "Pontificia Universidad Católica del Perú (PUCP)"
+  location: "Lima, Peru"
+  year: 2022
+  type: "Conference"
+
+- title: "Bolivian Conference on Development Economics"
+  venue: "Bolivian Academy of Economic Sciences"
+  location: "La Paz, Bolivia"
+  year: 2022
+  type: "Conference"
+
+- title: "Annual Conference of Peruvian Economists"
+  venue: "Banco Central de Reserva del Perú"
+  location: "Lima, Peru"
+  year: 2022
+  type: "Conference"
+
+- title: "Annual Conference of Peruvian Economists"
+  venue: "Banco Central de Reserva del Perú"
+  location: "Lima, Peru"
+  year: 2021
+  type: "Conference"
