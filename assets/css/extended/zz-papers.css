@@ -136,6 +136,21 @@
   #pub-list, #talk-list { grid-template-columns: 1fr; }
 }
 
+/* ---- Section list cards (Projects, Data, Archive): framed -- */
+.post-entry {
+  background: #fdfbf5;
+  border: 1px solid var(--hairline);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+.post-entry:hover {
+  border-left-color: var(--accent-gold);
+  box-shadow: 0 8px 22px rgba(26, 44, 84, 0.12);
+  transform: translateY(-2px);
+}
+.dark .post-entry { background: var(--entry); border-color: var(--hairline); }
+
 @media (max-width: 640px) {
   .pub-chips { margin-left: 0; width: 100%; }
   .pub-meta { white-space: normal; }
