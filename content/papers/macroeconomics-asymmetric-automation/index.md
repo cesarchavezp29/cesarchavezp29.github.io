@@ -1,11 +1,11 @@
 ---
 title: "The Macroeconomics of Automation: Sorting Frictions and the Asymmetry Between Robots and AI"
-date: 2026-07-29
+date: 2026-08-10
 topic: "Innovation & the Economics Profession"
 tags: ["automation","robots","artificial intelligence","task reinstatement","sorting frictions","labor share","skill premium","directed technical change","optimal policy"]
 author: "Carlos César Chávez Padilla"
-description: "A two-frontier growth model estimated on U.S. commuting-zone data: robots out-produce AI per unit of frontier advance, a cognitive-specific sorting friction carries the gap, and optimal policy subsidizes robot research over AI research."
-summary: "Estimates reinstatement and sorting-disruption rates for the robot and AI frontiers from commuting-zone moments under design-based inference. Robots deliver more productivity per unit of advance in every sorting-parameter draw; AI raises the skill premium and does twice the labor-share damage; a planner subsidizes robot research at 1.4 to 2.1 times the AI rate."
+description: "A two-frontier growth model in which robots and AI advance at once: robots out-produce AI per unit of frontier advance, the ranking needs only that physical task creation exceed 62 percent of what it displaces, and optimal policy subsidizes robot research over AI research."
+summary: "Estimates the cognitive frontier from commuting-zone wage and employment responses under design-based inference and calibrates the physical frontier from firm-level evidence, carrying its full range through every result. Robots deliver about a fifth more productivity per unit of advance than AI; AI raises the skill premium and erodes the labor share twice as fast; a planner subsidizes robot research at 1.3 to 2.0 times the AI rate."
 editPost:
     URL: "/macroeconomics-asymmetric-automation.pdf"
     Text: "PDF"
@@ -22,7 +22,7 @@ editPost:
 
 ##### Abstract
 
-Does automation rebuild work around the people it displaces, and does the answer differ for robots and AI? Reinstatement and sorting rates come from commuting-zone moments under design-based inference, the physical rate bracketed by Danish evidence. I model both frontiers advancing together, each reinstating tasks it destroys, workers sorting across the rest. Cognitive displacement scrambles sorting, a friction the physical frontier lacks. Robots deliver more productivity per unit of advance than AI in every sorting-parameter draw, in 98.5 percent adding the physical rate's sampling error, and under either estimate of AI's disputed reinstatement rate. The point-estimate gap is about a quarter. The steady-state ranking depends on how transitional sorting is, which I bound. AI raises the skill premium and does twice the labor-share damage. A planner subsidizes robot research at 1.4 to 2.1 times the AI rate across the central ninety percent, and a uniform automation tax locally lowers welfare.
+Does automation rebuild work around those it displaces, and does the answer differ for robots and AI? I model both frontiers advancing together, each reinstating tasks it destroys, workers sorting across the rest. Cognitive displacement scrambles sorting, a friction the physical frontier lacks. Displacement scales and the cognitive channel are estimated from commuting-zone moments under design-based inference. Physical task creation is calibrated from firm-level evidence and carried through every result across its full range. Robots deliver about a fifth more productivity per unit of advance than AI over the transition horizon, and the ranking needs only physical task creation worth more than 62 percent of what it displaces. AI raises the skill premium and erodes the labor share twice as fast. A planner subsidizes robot research at 1.3 to 2.0 times the AI rate, and a uniform automation tax locally lowers welfare.
 
 ---
 
