@@ -4,8 +4,8 @@ title: "The Price of Corruption: Evidence from Lava Jato and the Construction Cl
 date: 2026-08-12
 tags: ["corruption","procurement","collusion","bid-rigging","Peru","infrastructure","auctions"]
 author: "Carlos César Chávez Padilla"
-description: "Two judicial records of Peruvian road corruption, Odebrecht bribery and a sanctioned bid-rigging cartel, used to price the distortion in procurement, validate collusion-detection screens against ground truth, and locate who bears the cost."
-summary: "Reconstructs the universe of cartelized road tenders from an antitrust resolution, prices the distortion in the bids, validates collusion-detection screens against the adjudicated label, and shows the household cost is sharply local rather than regional."
+description: "Two judicial records of Peruvian road corruption, Odebrecht bribery and a sanctioned bid-rigging cartel, used to measure what the corruption cost the State and the households living beside the works, and to grade collusion-detection screens on tenders whose status a ruling settles one at a time."
+summary: "Reconstructs the cartelized road tenders from an antitrust resolution, measures the procurement price of corruption and where it lands on nearby households, and grades collusion-detection screens against a tender-by-tender adjudication."
 editPost:
     URL: "/price-of-corruption.pdf"
     Text: "PDF"
@@ -23,15 +23,7 @@ editPost:
 
 ##### Abstract
 
-Corrupt procurement costs more, and its household consequences are sharply local. We study two judicial
-records of Peruvian road corruption, Odebrecht bribery in concessions and a cartel that rigged road tenders.
-Bribed projects overran budgets by more than half, against under a fifth. Colluded winners bid near the ceiling
-of the allowed band, competitive winners at its floor, and the same firm bids four points higher on a rigged
-tender in the same year. Matched comparisons show large declines in income and consumption and
-higher poverty in districts immediately around a colluded work. Over the surrounding forty kilometres these
-are close to zero, so the contrast is a change in local incidence rather than a net regional loss. Within that
-radius the shortfall sits in labour earnings, most robustly independent earnings, and opens within two years.
-Adjudicated labels let us score collusion screens: winning-bid levels reach an AUC of 0.87, dispersion 0.50.
+Corrupt public works are rarely identified, so their cost is hard to measure. Two Peruvian legal records identify them: the Odebrecht bribery case and a 2021 ruling against thirty-two firms for fixing road contract prices. Projects with a documented bribe went over budget by 53 percent, the rest by 17. Where firms fixed the price the winner charged 108 percent of the government's cost estimate, against 90 percent when they competed, and the same firm charged four percent more on a contract it had fixed. Households next to a corrupt road did worse than those next to a comparable clean one, though across a wider forty-kilometre area we cannot detect a difference. The ruling also lets us test the methods used to catch price fixing. Ranking contracts by the winning price puts a fixed one above a clean one 87 percent of the time. Ranking them by how far apart the bids are does no better than chance.
 
 ---
 
