@@ -1,6 +1,6 @@
 ---
 topic: "Conflict, Violence & Political Instability"
-title: "Fraud Allegations as Identification: A Within-Election Forensic Test Using Institutional Challenge Records"
+title: "Auditing the Challenger: Legal Challenge Records as Adversarially Selected Forensic Samples"
 date: 2026-02-01
 featured: true
 tags: ["election forensics","fraud","Peru","2021 election","identification","political economy"]
@@ -9,7 +9,7 @@ journal: "Political Analysis (under review)"
 description: "A within-election forensic test that turns the losing candidate's own nullification challenges into an identification strategy, applied to Peru's 2021 presidential runoff."
 summary: "Standard election forensics cannot separate genuine polarization from manipulation. This paper uses the polling stations a losing candidate formally challenged as a treatment group, comparing their forensic properties to the unchallenged remainder of the same election — turning the fraud allegations themselves into the counterfactual."
 editPost:
-    URL: "/election-forensics-peru-2021.pdf"
+    URL: "/auditing-the-challenger.pdf"
     Text: "PDF"
 
 ---
@@ -24,7 +24,7 @@ Under review, *Political Analysis*.
 
 ##### Download
 
-+ [Paper (PDF)](/election-forensics-peru-2021.pdf)
++ [Paper (PDF)](/auditing-the-challenger.pdf)
 
 ---
 
