@@ -53,6 +53,7 @@
 .dark .topic-card:hover .topic-count { background: #15192b; color: var(--accent-gold); }
 .dark .pub-badge--pub { color: #c9d4ee; background: #25305a; }
 .dark .pub-badge--rev { color: #e6c477; background: #3a3320; }
+.dark .pub-badge--acc { color: #0f1424; background: #b9c8ea; }
 .dark .pub-badge--wp  { color: #e9bcc2; background: #3a2630; }
 .dark .pub-topic-tag { background: var(--accent-soft); color: var(--muted); }
 .dark .stat-num { color: var(--accent-gold); }

@@ -19,10 +19,9 @@
   <h2 class="featured-research-title">Selected research</h2>
   <ul class="pub-list pub-list--flat featured-list">
     {{- range . }}
-    {{- $j := .Params.journal | default "" }}{{ $jl := lower $j }}
-    {{- $status := "Working paper" }}{{ if .Params.peerReviewed }}{{ $status = "Published" }}{{ else if .Params.underReview }}{{ $status = "Under review" }}{{ else if $j }}{{ if or (in $jl "under review") (in $jl "r&r") (in $jl "revise") (in $jl "forthcoming") (in $jl "submitted") }}{{ $status = "Under review" }}{{ else }}{{ $status = "Published" }}{{ end }}{{ end }}
-    {{- $venue := $j }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
-    {{- $cls := cond (eq $status "Published") "pub" (cond (eq $status "Under review") "rev" "wp") }}
+    {{- $status := partial "paper_status.html" . }}
+    {{- $venue := .Params.journal | default "" }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
+    {{- $cls := index (dict "Published" "pub" "Accepted" "acc" "Under review" "rev" "Working paper" "wp") $status }}
     <li class="pub-item">
       <div class="pub-head"><a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a><span class="pub-meta">{{ .Date.Format "2006" }}{{ with $venue }}&nbsp;&middot;&nbsp;{{ . }}{{ end }}</span></div>
       <div class="pub-tags"><span class="pub-badge pub-badge--{{ $cls }}">{{ $status }}</span>{{ with .Params.topic }}<span class="pub-topic-tag">{{ . }}</span>{{ end }}</div>
@@ -53,6 +52,7 @@
     <div class="pub-chips" id="pub-status" role="group" aria-label="Filter by status">
       <button type="button" class="pub-chip is-active" data-status="">All</button>
       <button type="button" class="pub-chip" data-status="Published">Published</button>
+      <button type="button" class="pub-chip" data-status="Accepted">Accepted</button>
       <button type="button" class="pub-chip" data-status="Under review">Under review</button>
       <button type="button" class="pub-chip" data-status="Working paper">Working papers</button>
     </div>
@@ -64,17 +64,9 @@
 
 <ul class="pub-list pub-list--flat" id="pub-list">
   {{- range $all }}
-  {{- $j := .Params.journal | default "" }}
-  {{- $jl := lower $j }}
-  {{- $status := "Working paper" }}
-  {{- if .Params.peerReviewed }}{{ $status = "Published" }}
-  {{- else if .Params.underReview }}{{ $status = "Under review" }}
-  {{- else if $j }}
-    {{- if or (in $jl "under review") (in $jl "r&r") (in $jl "revise") (in $jl "submitted") }}{{ $status = "Under review" }}
-    {{- else }}{{ $status = "Published" }}{{ end }}
-  {{- end }}
-  {{- $venue := $j }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
-  {{- $cls := cond (eq $status "Published") "pub" (cond (eq $status "Under review") "rev" "wp") }}
+  {{- $status := partial "paper_status.html" . }}
+  {{- $venue := .Params.journal | default "" }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
+  {{- $cls := index (dict "Published" "pub" "Accepted" "acc" "Under review" "rev" "Working paper" "wp") $status }}
   <li class="pub-item" data-date="{{ .Date.Format "2006-01-02" }}" data-status="{{ $status }}" data-topic="{{ .Params.topic }}" data-title="{{ lower .Title }}">
     <div class="pub-head">
       <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>

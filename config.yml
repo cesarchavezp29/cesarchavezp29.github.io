@@ -47,7 +47,7 @@ params:
         threshold: 0.4
         minMatchCharLength: 2
         keys: ["title", "permalink", "summary", "content"]
-    description: "Carlos César Chávez Padilla is a Development Economist at the University of Chicago, Center for Economics of Human Development. Research on development economics, political economy, human capital, and Latin America, with a focus on Peru."
+    description: "Carlos César Chávez Padilla is a Development Economist at the University of Chicago, Center for the Economics of Human Development. Research on development economics, political economy, human capital, and Latin America, with a focus on Peru."
     author: Carlos César Chávez Padilla
 
     # --- Canonical identity. Used by schema.org JSON-LD, Open Graph and author meta.
@@ -60,7 +60,7 @@ params:
         jobTitle: "Development Economist"
         affiliation: "University of Chicago"
         affiliationURL: "https://www.uchicago.edu/"
-        affiliationUnit: "Center for Economics of Human Development"
+        affiliationUnit: "Center for the Economics of Human Development"
         affiliationUnitURL: "https://cehd.uchicago.edu/"
         # Past institutions. Declared as alumniOf so no crawler reads them as a current affiliation.
         alumniOf:
@@ -84,11 +84,14 @@ params:
             - "https://scholar.google.com/citations?user=LsVe9yQAAAAJ&hl=en"
             - "https://github.com/cesarchavezp29"
             - "https://carloschavezp29.substack.com"
-            # Add when the IDs are confirmed:
-            # - "https://orcid.org/0000-0000-0000-0000"
+            - "https://orcid.org/0000-0002-5885-7723"
+            - "https://www.linkedin.com/in/cchavezpadilla/"
+            # RePEc pch1721, not pch806: that is a different Carlos Chavez
+            # (Universidad de Talca) and RePEc itself flags the confusion.
+            # This profile is stale - it still lists UNMSM and the old Google Site.
+            - "https://ideas.repec.org/f/pch1721.html"
+            # Add when the author id is confirmed:
             # - "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=XXXXXXX"
-            # - "https://ideas.repec.org/f/pchXXXX.html"
-            # - "https://www.linkedin.com/in/XXXXXXXX/"
     images:
         - og-image.png
     ogImageWidth: 1200
@@ -118,7 +121,7 @@ params:
     profileMode:
           enabled: true
           title: Carlos César Chávez Padilla
-          subtitle: "I am a Research Professional at the Center for Economics of Human Development at the University of Chicago, where I collaborate with Prof. James J. Heckman on early childhood skill formation. I hold an MA in Public Policy from the Harris School of Public Policy. My research focuses on development economics, political economy, and Latin America, particularly Peru."
+          subtitle: "I am a Research Professional at the Center for the Economics of Human Development at the University of Chicago, where I collaborate with Prof. James J. Heckman on early childhood skill formation. I hold an MA in Public Policy from the Harris School of Public Policy. My research focuses on development economics, political economy, and Latin America, particularly Peru."
           tagline: "Development Economist · University of Chicago"
           imageUrl: "picture.jpeg"
           imageWidth: 200

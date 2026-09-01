@@ -1,0 +1,27 @@
+{{- /*
+  Single source of truth for a paper's publication status.
+  Was duplicated in four places (papers/list.html twice, index_profile.html twice),
+  and the copies had drifted: the featured list bucketed "forthcoming" as Under review.
+
+  Returns one of: Published | Accepted | Under review | Working paper.
+  Accepted covers accepted-and-forthcoming, which is a publication commitment,
+  not pipeline, and so is never reported as Under review.
+*/ -}}
+{{- $j := lower (.Params.journal | default "") -}}
+{{- $status := "Working paper" -}}
+{{- if .Params.accepted -}}
+  {{- $status = "Accepted" -}}
+{{- else if .Params.peerReviewed -}}
+  {{- $status = "Published" -}}
+{{- else if .Params.underReview -}}
+  {{- $status = "Under review" -}}
+{{- else if $j -}}
+  {{- if or (in $j "accepted") (in $j "forthcoming") -}}
+    {{- $status = "Accepted" -}}
+  {{- else if or (in $j "under review") (in $j "r&r") (in $j "revise") (in $j "submitted") -}}
+    {{- $status = "Under review" -}}
+  {{- else -}}
+    {{- $status = "Published" -}}
+  {{- end -}}
+{{- end -}}
+{{- return $status -}}

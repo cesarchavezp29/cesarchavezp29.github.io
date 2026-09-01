@@ -28,17 +28,19 @@
 
 {{- $papers := where site.RegularPages "Section" "papers" }}
 
-{{- /* derive status the same way the Research page does */ -}}
-{{- $published := slice }}{{ $review := slice }}{{ $working := slice }}
+{{- /* Status comes from partials/paper_status.html, the same source the Research page
+       and the paper pages use, so the counters can never drift from the badges. */ -}}
+{{- $published := slice }}{{ $accepted := slice }}{{ $review := slice }}{{ $working := slice }}
 {{- range $papers }}
-  {{- $jl := lower (.Params.journal | default "") }}
-  {{- if .Params.peerReviewed }}{{ $published = $published | append . }}
-  {{- else if .Params.underReview }}{{ $review = $review | append . }}
-  {{- else if $jl }}
-    {{- if or (in $jl "under review") (in $jl "r&r") (in $jl "revise") (in $jl "submitted") }}{{ $review = $review | append . }}
-    {{- else }}{{ $published = $published | append . }}{{ end }}
+  {{- $st := partial "paper_status.html" . }}
+  {{- if eq $st "Published" }}{{ $published = $published | append . }}
+  {{- else if eq $st "Accepted" }}{{ $accepted = $accepted | append . }}
+  {{- else if eq $st "Under review" }}{{ $review = $review | append . }}
   {{- else }}{{ $working = $working | append . }}{{ end }}
 {{- end }}
+{{- /* Accepted is a publication commitment, not pipeline, so it counts with Published
+       here and keeps its own precise badge everywhere a paper is listed. */ -}}
+{{- $publishedCount := add (len $published) (len $accepted) }}
 
 {{- /* distinct topics with counts, for the sidebar */ -}}
 {{- $topicNames := slice }}
@@ -50,7 +52,7 @@
        anyone without JS, while the on-screen behaviour is unchanged. */ -}}
 <section class="home-stats reveal">
   <div class="stat"><span class="stat-num" data-target="{{ len $papers }}">{{ len $papers }}</span><span class="stat-lbl">Papers</span></div>
-  <div class="stat"><span class="stat-num" data-target="{{ len $published }}">{{ len $published }}</span><span class="stat-lbl">Published</span></div>
+  <div class="stat"><span class="stat-num" data-target="{{ $publishedCount }}">{{ $publishedCount }}</span><span class="stat-lbl">Published</span></div>
   <div class="stat"><span class="stat-num" data-target="{{ len $review }}">{{ len $review }}</span><span class="stat-lbl">Under Review</span></div>
   <div class="stat"><span class="stat-num" data-target="{{ len $topicNames }}">{{ len $topicNames }}</span><span class="stat-lbl">Fields</span></div>
 </section>
@@ -61,13 +63,9 @@
       <h2 class="home-section-title">Recent Research</h2>
       <ul class="pub-list pub-list--flat home-recent">
         {{- range first 6 $papers.ByDate.Reverse }}
-        {{- $jl := lower (.Params.journal | default "") }}
-        {{- $status := "Working paper" }}
-        {{- if .Params.peerReviewed }}{{ $status = "Published" }}
-        {{- else if .Params.underReview }}{{ $status = "Under review" }}
-        {{- else if $jl }}{{ if or (in $jl "under review") (in $jl "r&r") (in $jl "revise") (in $jl "submitted") }}{{ $status = "Under review" }}{{ else }}{{ $status = "Published" }}{{ end }}{{ end }}
+        {{- $status := partial "paper_status.html" . }}
         {{- $venue := .Params.journal }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
-        {{- $cls := cond (eq $status "Published") "pub" (cond (eq $status "Under review") "rev" "wp") }}
+        {{- $cls := index (dict "Published" "pub" "Accepted" "acc" "Under review" "rev" "Working paper" "wp") $status }}
         <li class="pub-item">
           <div class="pub-head">
             <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>

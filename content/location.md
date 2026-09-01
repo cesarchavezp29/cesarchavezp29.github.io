@@ -10,7 +10,7 @@ description: "Office location at the University of Chicago"
 #### Mailing address
 
 Carlos César Chávez Padilla
-Center for Economics of Human Development
+Center for the Economics of Human Development
 University of Chicago
 1126 E. 59th Street
 Chicago, IL 60637

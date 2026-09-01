@@ -3,10 +3,11 @@ title: "Relating Cognitive Skills and Personality Traits to Economic Preferences
 date: 2025-01-01
 featured: true
 topic: "Labor, Gender & Inequality"
-underReview: true
-journal: "R&R, Journal of Labor Economics"
+accepted: true
+journal: "Accepted, Journal of Labor Economics"
+journalName: "Journal of Labor Economics"
 author: ["Carlos César Chávez Padilla", "S. Feng", "James J. Heckman", "Z. Yang"]
-description: "Structural model of cognitive ability, personality, and economic preferences in Chinese children. R&R at the Journal of Labor Economics."
+description: "Structural model of cognitive ability, personality, and economic preferences in Chinese children. Accepted at the Journal of Labor Economics."
 summary: "First author with S. Feng, J.J. Heckman, and Z. Yang. Structural modeling with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences."
 
 ---
@@ -15,7 +16,7 @@ summary: "First author with S. Feng, J.J. Heckman, and Z. Yang. Structural model
 
 ##### Status
 
-Revise and resubmit, *Journal of Labor Economics*.
+Accepted, *Journal of Labor Economics*.
 
 ---
 

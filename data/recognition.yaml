@@ -99,10 +99,11 @@
 - kind: policy
   source: RPP
   description: >-
-    A column on inequality in Peru drew on the paper's results.
+    The column "Desigualdad, percepciones y realidades" drew on the paper's
+    estimates of ethnic income gaps.
   work: Closing Peru's Ethnic Gaps Amidst Sustained Economic Growth
   date: 2022-09-01
   dateDisplay: September 2022
-  url: ""
+  url: https://rpp.pe/columnistas/centrowinaq/desigualdad-percepciones-y-realidades-noticia-1434892
   papers:
     - ethnic-gaps

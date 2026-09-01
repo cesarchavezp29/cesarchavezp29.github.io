@@ -26,7 +26,9 @@
 {{- with .Params.summary }}
 <meta name="citation_abstract" content="{{ . | plainify }}">
 {{- end }}
-{{- with .Params.journal }}
+{{- /* journalName is the bare title; journal may carry a status prefix such as
+       "Accepted, ...", which must never reach citation_journal_title. */ -}}
+{{- with (.Params.journalName | default .Params.journal) }}
 <meta name="citation_journal_title" content="{{ . }}">
 {{- end }}
 {{- with .Params.doi }}

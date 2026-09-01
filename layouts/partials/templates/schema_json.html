@@ -98,7 +98,8 @@
 {{- with .Params.summary }}{{ $article = merge $article (dict "abstract" (. | plainify)) }}{{ end }}
 {{- with .Params.topic }}{{ $article = merge $article (dict "about" .) }}{{ end }}
 {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end }}
-{{- with .Params.journal }}{{ $article = merge $article (dict "publication" .) }}{{ end }}
+{{- with (.Params.journalName | default .Params.journal) }}{{ $article = merge $article (dict "publication" .) }}{{ end }}
+{{- $st := partial "paper_status.html" . }}{{ $article = merge $article (dict "creativeWorkStatus" $st) }}
 {{- with .Params.editPost }}{{ with .URL }}{{ $article = merge $article (dict "sameAs" (slice .)) }}{{ end }}{{ end }}
 {{- with .Params.pdf }}{{ $article = merge $article (dict "encoding" (dict "@type" "MediaObject" "encodingFormat" "application/pdf" "contentUrl" (absURL .))) }}{{ end }}
 
