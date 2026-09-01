@@ -90,8 +90,9 @@ params:
             # (Universidad de Talca) and RePEc itself flags the confusion.
             # This profile is stale - it still lists UNMSM and the old Google Site.
             - "https://ideas.repec.org/f/pch1721.html"
-            # Add when the author id is confirmed:
-            # - "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=XXXXXXX"
+            # SSRN author 3072371, verified: "Author Page for Carlos Chavez Padilla",
+            # 26 papers. Like RePEc, this profile still lists UNMSM alongside UChicago.
+            - "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3072371"
     images:
         - og-image.png
     ogImageWidth: 1200
