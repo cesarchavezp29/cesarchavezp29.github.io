@@ -100,8 +100,21 @@
 {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end }}
 {{- with (.Params.journalName | default .Params.journal) }}{{ $article = merge $article (dict "publication" .) }}{{ end }}
 {{- $st := partial "paper_status.html" . }}{{ $article = merge $article (dict "creativeWorkStatus" $st) }}
-{{- with .Params.editPost }}{{ with .URL }}{{ $article = merge $article (dict "sameAs" (slice .)) }}{{ end }}{{ end }}
-{{- with .Params.pdf }}{{ $article = merge $article (dict "encoding" (dict "@type" "MediaObject" "encodingFormat" "application/pdf" "contentUrl" (absURL .))) }}{{ end }}
+{{- /* sameAs accumulates: a paper can have both a DOI and a working-paper landing
+       page, and merging one at a time would silently drop the earlier one. */ -}}
+{{- $sameAs := slice }}
+{{- with .Params.editPost }}{{ with .URL }}{{ $sameAs = $sameAs | append . }}{{ end }}{{ end }}
+{{- with .Params.doi }}
+  {{- $article = merge $article (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "DOI" "value" .)) }}
+  {{- $sameAs = $sameAs | append (printf "https://doi.org/%s" .) }}
+{{- end }}
+{{- with (uniq $sameAs) }}{{ $article = merge $article (dict "sameAs" .) }}{{ end }}
+{{- with .Params.volume }}{{ $article = merge $article (dict "volumeNumber" .) }}{{ end }}
+{{- with .Params.issue }}{{ $article = merge $article (dict "issueNumber" .) }}{{ end }}
+{{- with .Params.pdf }}
+  {{- $u := . }}{{ if not (or (hasPrefix . "http://") (hasPrefix . "https://")) }}{{ $u = absURL . }}{{ end }}
+  {{- $article = merge $article (dict "encoding" (dict "@type" "MediaObject" "encodingFormat" "application/pdf" "contentUrl" $u)) }}
+{{- end }}
 
 <script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@graph" (slice $article $person)) | jsonify | safeJS }}</script>
 {{- partial "templates/_funcs/breadcrumb_json.html" . -}}

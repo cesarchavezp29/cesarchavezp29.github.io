@@ -34,8 +34,26 @@
 {{- with .Params.doi }}
 <meta name="citation_doi" content="{{ . }}">
 {{- end }}
+{{- with .Params.issn }}
+<meta name="citation_issn" content="{{ . }}">
+{{- end }}
+{{- with .Params.volume }}
+<meta name="citation_volume" content="{{ . }}">
+{{- end }}
+{{- with .Params.issue }}
+<meta name="citation_issue" content="{{ . }}">
+{{- end }}
+{{- with .Params.firstpage }}
+<meta name="citation_firstpage" content="{{ . }}">
+{{- end }}
+{{- with .Params.lastpage }}
+<meta name="citation_lastpage" content="{{ . }}">
+{{- end }}
+{{- /* pdf may be a file in static/ or a URL at the publisher; absURL must not
+       be applied to one that is already absolute. */ -}}
 {{- with .Params.pdf }}
-<meta name="citation_pdf_url" content="{{ . | absURL }}">
+{{- $u := . }}{{ if not (or (hasPrefix . "http://") (hasPrefix . "https://")) }}{{ $u = absURL . }}{{ end }}
+<meta name="citation_pdf_url" content="{{ $u }}">
 {{- end }}
 {{- range .Params.tags }}
 <meta name="citation_keywords" content="{{ . }}">

@@ -66,7 +66,7 @@ Development economist working on human capital and political economy, combining 
 ##### Selected Research
 
 - **Relating Cognitive Skills and Personality Traits to Economic Preferences: Decision-Making under Cognitive Shocks and Guessing** (with S. Feng, J.J. Heckman, Z. Yang) — *accepted, Journal of Labor Economics.* A structural model with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences.
-- **Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data** — *Journal of Business.*
+- **Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data** — *Journal of Business*, 17(2), 2026.
 - **Commodity Booms and Violent Conflict** — *under review, American Journal of Political Science.*
 - **Electoral Pressure and Political Lying** — *under review, World Politics.* A dynamic game of credibility against electoral pressure; on PolitiFact data (U.S. House, 2007–2025) final-term members lie 5.6–8.0 pp more than early-term members.
 - **Import Liberalization, Not Export Expansion** — *under review, Journal of International Economics.*
@@ -96,7 +96,7 @@ A complete, continuously updated list is on the [Research](../papers/) page.
 - Chávez, C. (2020). "The Impact of the El Niño Phenomenon on Dry-Forest-Dependent Communities' Welfare in the Northern Coast of Peru." *Ecological Economics.*
 - Chávez, C. (2024). "Estimating the Effects of Financial Liberalisation on Governability and Social Stability." *Foreign Trade Review*, 59(4), 588–614.
 - Chávez, C. (2024). "Latin American Firm Cooperation Payoff Evidence." *The International Trade Journal.*
-- Chávez, C. "Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data." *Journal of Business.*
+- Chávez, C. (2026). "Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data." *Journal of Business*, 17(2). Universidad del Pacífico. [doi:10.21678/jb.2026.2978](https://doi.org/10.21678/jb.2026.2978)
 - Chávez, C., Salinas, G., & Yuri, Z. (2022). "Closing Peru's Ethnic Gaps Amidst Sustained Economic Growth." *IMF Working Paper* 2022/180.
 
 *Additional peer-reviewed articles and the full list at [Google Scholar](https://scholar.google.com/citations?user=LsVe9yQAAAAJ).*
