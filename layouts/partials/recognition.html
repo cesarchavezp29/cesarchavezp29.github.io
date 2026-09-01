@@ -1,0 +1,42 @@
+{{- /*
+  Selected recognition, read from data/recognition.yaml.
+  Grouped by kind, newest first inside each group. Fully server-rendered.
+  An entry with no confirmed url renders its source as plain text rather than a link.
+*/ -}}
+{{- $all := site.Data.recognition -}}
+{{- with $all }}
+{{- $groups := slice
+      (dict "key" "research" "label" "Research discussed")
+      (dict "key" "writing"  "label" "Writing selected and discussed")
+      (dict "key" "teaching" "label" "Used in teaching")
+      (dict "key" "policy"   "label" "Public and policy discussion") -}}
+<section class="home-section reveal recognition">
+  <h2 class="home-section-title">Selected Recognition</h2>
+  {{- range $g := $groups }}
+    {{- $items := where $all "kind" $g.key -}}
+    {{- with $items }}
+      {{- $sorted := sort . "date" "desc" }}
+  <div class="recog-group">
+    <h3 class="recog-kind">{{ $g.label }}</h3>
+    <ul class="recog-list">
+      {{- range $sorted }}
+      {{- $work := "" }}
+      {{- with .workURL }}{{ $work = . }}{{ else }}{{ with index (.papers | default slice) 0 }}{{ with site.GetPage (printf "papers/%s" .) }}{{ $work = .RelPermalink }}{{ end }}{{ end }}{{ end }}
+      <li class="recog-item">
+        <p class="recog-line">
+          {{- if .url }}<a class="recog-source" href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .source }}</a>
+          {{- else }}<span class="recog-source">{{ .source }}</span>{{ end }}
+          <span class="recog-sep">&mdash;</span><span class="recog-desc">{{ .description }}</span>
+          <span class="recog-sep">&mdash;</span><span class="recog-date">{{ .dateDisplay }}</span>
+        </p>
+        {{- with .work }}
+        <p class="recog-work">{{ if $work }}<a href="{{ $work }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</p>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+    {{- end }}
+  {{- end }}
+</section>
+{{- end }}

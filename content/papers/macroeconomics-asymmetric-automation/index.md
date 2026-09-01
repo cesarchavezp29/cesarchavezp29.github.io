@@ -9,7 +9,7 @@ summary: "Estimates the cognitive frontier from commuting-zone wage and employme
 editPost:
     URL: "/macroeconomics-asymmetric-automation.pdf"
     Text: "PDF"
-
+pdf: "macroeconomics-asymmetric-automation.pdf"
 ---
 
 ---

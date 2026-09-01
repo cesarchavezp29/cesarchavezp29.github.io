@@ -9,7 +9,7 @@ summary: "A pre-post distributional (bunching) estimator on three Peruvian minim
 editPost:
     URL: "/missing-mass-minimum-wages.pdf"
     Text: "PDF"
-
+pdf: "missing-mass-minimum-wages.pdf"
 ---
 
 ---

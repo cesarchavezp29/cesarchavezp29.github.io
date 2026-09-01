@@ -32,6 +32,9 @@
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
 
+{{- /* Google Scholar citation tags for individual paper pages */}}
+{{- partial "citation_meta.html" . }}
+
 {{- /* Styles */}}
 
 {{- /* includes */}}

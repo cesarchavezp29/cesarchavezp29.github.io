@@ -47,10 +47,53 @@ params:
         threshold: 0.4
         minMatchCharLength: 2
         keys: ["title", "permalink", "summary", "content"]
-    description: "Carlos César Chávez Padilla - Development Economist | Research Professional at the University of Chicago, Center for Economics of Human Development | Research on development economics, political economy, and Latin America"
+    description: "Carlos César Chávez Padilla is a Development Economist at the University of Chicago, Center for Economics of Human Development. Research on development economics, political economy, human capital, and Latin America, with a focus on Peru."
     author: Carlos César Chávez Padilla
+
+    # --- Canonical identity. Used by schema.org JSON-LD, Open Graph and author meta.
+    # Change it here and nowhere else.
+    identity:
+        name: "Carlos César Chávez Padilla"
+        givenName: "Carlos César"
+        familyName: "Chávez Padilla"
+        alternateName: ["Carlos Chávez", "Carlos Chavez", "Carlos C. Chávez Padilla"]
+        jobTitle: "Development Economist"
+        affiliation: "University of Chicago"
+        affiliationURL: "https://www.uchicago.edu/"
+        affiliationUnit: "Center for Economics of Human Development"
+        affiliationUnitURL: "https://cehd.uchicago.edu/"
+        # Past institutions. Declared as alumniOf so no crawler reads them as a current affiliation.
+        alumniOf:
+            - name: "University of Chicago, Harris School of Public Policy"
+              url: "https://harris.uchicago.edu/"
+            - name: "Universidad Nacional Mayor de San Marcos"
+              url: "https://unmsm.edu.pe/"
+        knowsAbout:
+            - "Development economics"
+            - "Political economy"
+            - "Human capital and skill formation"
+            - "Applied econometrics"
+            - "Latin America"
+            - "Peru"
+
+    # --- Identity links emitted as schema.org sameAs. Only verified URLs belong here:
+    # a wrong profile URL is a worse signal than a missing one.
+    schema:
+        publisherType: Person
+        sameAs:
+            - "https://scholar.google.com/citations?user=LsVe9yQAAAAJ&hl=en"
+            - "https://github.com/cesarchavezp29"
+            - "https://carloschavezp29.substack.com"
+            # Add when the IDs are confirmed:
+            # - "https://orcid.org/0000-0000-0000-0000"
+            # - "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=XXXXXXX"
+            # - "https://ideas.repec.org/f/pchXXXX.html"
+            # - "https://www.linkedin.com/in/XXXXXXXX/"
     images:
         - og-image.png
+    ogImageWidth: 1200
+    ogImageHeight: 630
+    ogImageAlt: "Carlos César Chávez Padilla — Development Economist, University of Chicago"
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light

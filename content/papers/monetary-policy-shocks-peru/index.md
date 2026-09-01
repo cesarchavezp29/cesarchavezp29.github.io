@@ -9,7 +9,7 @@ summary: "Across 85 quarters (2004–2025) and seven identification strategies, 
 editPost:
     URL: "/monetary-policy-shocks-peru.pdf"
     Text: "PDF"
-
+pdf: "monetary-policy-shocks-peru.pdf"
 ---
 
 ---

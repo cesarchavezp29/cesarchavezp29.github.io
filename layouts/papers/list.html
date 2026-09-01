@@ -57,7 +57,9 @@
       <button type="button" class="pub-chip" data-status="Working paper">Working papers</button>
     </div>
   </div>
-  <p class="pub-count" id="pub-count"></p>
+  {{- /* Rendered server-side so the page states its own size without JS. The filter
+         script overwrites it as the visible set changes. */ -}}
+  <p class="pub-count" id="pub-count">{{ len $all }} papers</p>
 </div>
 
 <ul class="pub-list pub-list--flat" id="pub-list">

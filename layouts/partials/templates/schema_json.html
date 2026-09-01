@@ -1,0 +1,110 @@
+{{- /*
+  schema.org JSON-LD. Overrides the PaperMod default, which emitted @type Organization
+  for the homepage and pushed relative paths (cv.pdf, location/, a mailto:) into sameAs.
+
+  Homepage      -> ProfilePage whose mainEntity is the canonical Person.
+  Paper pages   -> ScholarlyArticle + BreadcrumbList.
+  Other pages   -> BreadcrumbList.
+
+  Everything about the person is read from site.Params.identity so the canonical
+  identity has exactly one definition. Built with dict/jsonify so Hugo handles escaping.
+*/ -}}
+
+{{- $i := site.Params.identity -}}
+{{- $personID := printf "%s#person" site.Home.Permalink -}}
+
+{{- /* ---------- the canonical Person, reused by every page kind ---------- */ -}}
+{{- $affiliation := dict
+      "@type" "Organization"
+      "name" $i.affiliation
+      "url" $i.affiliationURL -}}
+{{- with $i.affiliationUnit }}
+  {{- $affiliation = merge $affiliation (dict "department" (dict
+        "@type" "Organization"
+        "name" .
+        "url" $i.affiliationUnitURL)) -}}
+{{- end }}
+
+{{- $alumni := slice -}}
+{{- range $i.alumniOf }}
+  {{- $alumni = $alumni | append (dict "@type" "CollegeOrUniversity" "name" .name "url" .url) -}}
+{{- end }}
+
+{{- $person := dict
+      "@type" "Person"
+      "@id" $personID
+      "name" $i.name
+      "givenName" $i.givenName
+      "familyName" $i.familyName
+      "alternateName" $i.alternateName
+      "url" site.Home.Permalink
+      "image" (absURL (site.Params.profileMode.imageUrl | default "picture.jpeg"))
+      "jobTitle" $i.jobTitle
+      "description" site.Params.description
+      "knowsAbout" $i.knowsAbout
+      "affiliation" $affiliation
+      "worksFor" $affiliation
+      "alumniOf" $alumni -}}
+{{- with site.Params.schema.sameAs }}
+  {{- $person = merge $person (dict "sameAs" .) -}}
+{{- end }}
+
+{{- if .IsHome -}}
+{{- $graph := slice
+      (dict
+        "@type" "ProfilePage"
+        "@id" (printf "%s#profilepage" site.Home.Permalink)
+        "url" site.Home.Permalink
+        "name" site.Title
+        "description" site.Params.description
+        "inLanguage" (site.Language.Lang | default "en")
+        "mainEntity" (dict "@id" $personID))
+      $person
+      (dict
+        "@type" "WebSite"
+        "@id" (printf "%s#website" site.Home.Permalink)
+        "url" site.Home.Permalink
+        "name" site.Title
+        "inLanguage" (site.Language.Lang | default "en")
+        "publisher" (dict "@id" $personID)) -}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@graph" $graph) | jsonify | safeJS }}</script>
+
+{{- else if and .IsPage (eq .Section "papers") -}}
+{{- /* ---------- individual paper / working paper ---------- */ -}}
+{{- $authors := slice -}}
+{{- $raw := .Params.author | default site.Params.author -}}
+{{- if reflect.IsSlice $raw }}
+  {{- range $raw }}
+    {{- if eq . $i.name }}
+      {{- $authors = $authors | append (dict "@id" $personID) -}}
+    {{- else }}
+      {{- $authors = $authors | append (dict "@type" "Person" "name" .) -}}
+    {{- end }}
+  {{- end }}
+{{- else }}
+  {{- $authors = slice (dict "@id" $personID) -}}
+{{- end }}
+
+{{- $article := dict
+      "@type" "ScholarlyArticle"
+      "@id" (printf "%s#article" .Permalink)
+      "headline" .Title
+      "name" .Title
+      "url" .Permalink
+      "inLanguage" (site.Language.Lang | default "en")
+      "author" $authors
+      "datePublished" (.Date.Format "2006-01-02")
+      "isPartOf" (dict "@id" (printf "%s#website" site.Home.Permalink)) -}}
+{{- with .Params.summary }}{{ $article = merge $article (dict "abstract" (. | plainify)) }}{{ end }}
+{{- with .Params.topic }}{{ $article = merge $article (dict "about" .) }}{{ end }}
+{{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end }}
+{{- with .Params.journal }}{{ $article = merge $article (dict "publication" .) }}{{ end }}
+{{- with .Params.editPost }}{{ with .URL }}{{ $article = merge $article (dict "sameAs" (slice .)) }}{{ end }}{{ end }}
+{{- with .Params.pdf }}{{ $article = merge $article (dict "encoding" (dict "@type" "MediaObject" "encodingFormat" "application/pdf" "contentUrl" (absURL .))) }}{{ end }}
+
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@graph" (slice $article $person)) | jsonify | safeJS }}</script>
+{{- partial "templates/_funcs/breadcrumb_json.html" . -}}
+
+{{- else if (or .IsPage .IsSection) -}}
+{{- partial "templates/_funcs/breadcrumb_json.html" . -}}
+{{- end -}}

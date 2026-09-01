@@ -38,6 +38,10 @@
   </div>
   {{- end }}
 
+  {{- if and .IsPage (eq .Section "papers") }}
+  {{- partial "recognition_paper.html" . }}
+  {{- end }}
+
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">

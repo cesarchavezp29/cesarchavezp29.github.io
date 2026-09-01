@@ -1,0 +1,108 @@
+# Independent selection, discussion, translation and teaching use of the research and
+# essays. One entry, one place: the homepage section and the individual paper pages both
+# read from this file.
+#
+# Fields
+#   kind         research | writing | teaching | policy   (groups the homepage section)
+#   source       the outlet or institution, as it names itself
+#   description  what actually happened, stated plainly. Not promotional copy.
+#   work         the piece that was selected or discussed
+#   workURL      where that piece lives (Substack for the essays, this site for papers)
+#   date         ISO, for sorting
+#   dateDisplay  what is shown, at the precision actually known
+#   url          direct link to the item itself. Left empty when not yet confirmed;
+#                the entry then renders without a link rather than with a guessed one.
+#   papers       slugs under content/papers/ that this attaches to, so the paper page
+#                can render its own recognition. Empty for the Substack essays, which
+#                have no page on this site.
+
+- kind: research
+  source: National Affairs
+  description: >-
+    Selected for Findings, the daily roundup of academic studies.
+  work: '"The Macroeconomics of Asymmetric Automation" and "Robots Reinstate, AI Doesn''t"'
+  date: 2026-04-03
+  dateDisplay: April 2026
+  url: https://www.nationalaffairs.com/blog/detail/findings-a-daily-roundup/jobs-of-the-future
+  papers:
+    - macroeconomics-asymmetric-automation
+    - robots-reinstate-ai-doesnt
+
+- kind: writing
+  source: World Bank — Development Impact
+  description: >-
+    David McKenzie summarised and discussed the essay in the blog's weekly links.
+  work: Why Macro Never Had a Credibility Revolution
+  workURL: https://carloschavezp29.substack.com/p/why-macro-never-had-a-credibility
+  date: 2026-01-16
+  dateDisplay: January 2026
+  url: https://blogs.worldbank.org/en/impactevaluations/weekly-links-january-16--2026--sports-betting-economics--small-f
+  papers: []
+
+- kind: writing
+  source: Marginal Revolution
+  description: >-
+    Tyler Cowen selected the essay for Wednesday assorted links.
+  work: Why Economists Linearize Everything
+  workURL: https://carloschavezp29.substack.com/p/why-economists-linearize-everything
+  date: 2026-02-11
+  dateDisplay: February 2026
+  url: https://marginalrevolution.com/marginalrevolution/2026/02/wednesday-assorted-links-540.html
+  papers: []
+
+- kind: writing
+  source: Arnold Kling — In My Tribe
+  description: >-
+    Discussed the essay and responded to its argument.
+  work: Why Christopher Sims Was So Great?
+  workURL: https://carloschavezp29.substack.com/p/why-christopher-sims-was-so-great
+  date: 2026-03-26
+  dateDisplay: March 2026
+  url: https://arnoldkling.substack.com/p/economics-links-3262026
+  papers: []
+
+- kind: writing
+  source: Martin Anota — Annotations
+  description: >-
+    Published a French translation of the essay.
+  work: Why Christopher Sims Was So Great?
+  workURL: https://carloschavezp29.substack.com/p/why-christopher-sims-was-so-great
+  date: 2026-03-24
+  dateDisplay: March 2026
+  url: ""
+  papers: []
+
+- kind: teaching
+  source: Claremont Graduate University
+  description: >-
+    Robert Klitgaard included the essay as a reading in PP338, Policy Design and
+    Implementation.
+  work: 'On Causality: A History of How Economics Learned to Think About Cause and Effect'
+  workURL: https://carloschavezp29.substack.com/p/on-causality
+  date: 2026-01-15
+  dateDisplay: Spring 2026
+  url: https://robertklitgaard.com/courses
+  papers: []
+
+- kind: policy
+  source: El Universo
+  description: >-
+    Manuel del Valle's column "El amestizamiento del Perú" discussed the paper's
+    findings on ethnic income gaps.
+  work: Closing Peru's Ethnic Gaps Amidst Sustained Economic Growth
+  date: 2022-10-01
+  dateDisplay: October 2022
+  url: https://www.eluniverso.com/opinion/columnistas/el-amestizamiento-del-peru-nota/
+  papers:
+    - ethnic-gaps
+
+- kind: policy
+  source: RPP
+  description: >-
+    A column on inequality in Peru drew on the paper's results.
+  work: Closing Peru's Ethnic Gaps Amidst Sustained Economic Growth
+  date: 2022-09-01
+  dateDisplay: September 2022
+  url: ""
+  papers:
+    - ethnic-gaps

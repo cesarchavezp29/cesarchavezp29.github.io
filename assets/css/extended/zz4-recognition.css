@@ -1,0 +1,87 @@
+/* ---- Selected recognition -----------------------------------
+   Deliberately quiet: no cards, no logos, no badges. A hairline-separated
+   reading list that sits inside the existing .home-section rhythm. */
+
+.recognition .recog-group { margin: 0 0 1.15rem; }
+.recognition .recog-group:last-child { margin-bottom: 0; }
+
+.recog-kind {
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.recog-list { list-style: none; margin: 0; padding: 0; }
+
+.recog-item {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--hairline);
+}
+.recog-item:first-child { border-top: none; padding-top: 0.15rem; }
+
+.recog-line {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--content);
+  max-width: 72ch;
+}
+
+.recog-source { font-weight: 600; color: var(--ink); }
+a.recog-source { color: var(--accent); text-decoration: none; }
+a.recog-source:hover { text-decoration: underline; }
+
+.recog-sep { color: var(--muted); margin: 0 0.35rem; }
+.recog-date { color: var(--muted); white-space: nowrap; }
+
+.recog-work {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--muted);
+  font-style: italic;
+  max-width: 72ch;
+}
+.recog-work a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+.recog-work a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---- Per-paper recognition ---------------------------------- */
+
+.paper-recognition {
+  margin: 1.6rem 0 0;
+  padding: 0.7rem 0 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.paper-recognition-row {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--content);
+}
+.paper-recognition-row:last-child { margin-bottom: 0; }
+
+.paper-recognition-lbl {
+  font-weight: 600;
+  color: var(--muted);
+  margin-right: 0.4rem;
+}
+
+.paper-recognition-row a { color: var(--accent); text-decoration: none; }
+.paper-recognition-row a:hover { text-decoration: underline; }
+.paper-recognition-sep { color: var(--muted); margin: 0 0.35rem; }
+
+/* ---- Dark theme -------------------------------------------- */
+
+.dark .recog-source { color: var(--primary); }
+.dark a.recog-source { color: var(--accent-gold); }
+.dark .recog-work a:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+.dark .paper-recognition-row a { color: var(--accent-gold); }
+
+@media (max-width: 640px) {
+  .recog-date { white-space: normal; }
+}

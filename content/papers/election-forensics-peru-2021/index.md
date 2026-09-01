@@ -11,7 +11,7 @@ summary: "Standard election forensics cannot separate genuine polarization from 
 editPost:
     URL: "/auditing-the-challenger.pdf"
     Text: "PDF"
-
+pdf: "auditing-the-challenger.pdf"
 ---
 
 ---

@@ -1,0 +1,25 @@
+{{- /*
+  BreadcrumbList JSON-LD built from Hugo's page ancestry.
+  Replaces the theme's version, which rebuilt the trail by splitting the URL string.
+*/ -}}
+{{- $items := slice -}}
+{{- $trail := slice . -}}
+{{- range .Ancestors }}{{ $trail = $trail | append . }}{{ end -}}
+{{- $ordered := slice -}}
+{{- range seq (len $trail) }}
+  {{- $ordered = $ordered | append (index $trail (sub (len $trail) .)) -}}
+{{- end -}}
+{{- range $index, $page := $ordered }}
+  {{- $name := $page.LinkTitle | default $page.Title -}}
+  {{- if $page.IsHome }}{{ $name = "Home" }}{{ end -}}
+  {{- with $name }}
+    {{- $items = $items | append (dict
+        "@type" "ListItem"
+        "position" (add $index 1)
+        "name" .
+        "item" $page.Permalink) -}}
+  {{- end }}
+{{- end -}}
+{{- with $items }}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" .) | jsonify | safeJS }}</script>
+{{- end -}}

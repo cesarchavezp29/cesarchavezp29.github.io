@@ -9,7 +9,7 @@ summary: "Writing beliefs and realizations as a mixture of a rational component 
 editPost:
     URL: "/who-could-have-rational-expectations.pdf"
     Text: "PDF"
-
+pdf: "who-could-have-rational-expectations.pdf"
 ---
 
 ---

@@ -1,0 +1,32 @@
+{{- /*
+  The recognition entries that name this paper, rendered inline on its own page.
+  Reads the same data/recognition.yaml as the homepage section.
+  Renders nothing when the paper has no entries.
+*/ -}}
+{{- /* ContentBaseName is the bundle directory name and is separator-independent,
+       unlike path.Base of .File.Dir, which differs between Windows and Linux CI. */ -}}
+{{- $slug := .File.ContentBaseName -}}
+{{- $mine := slice -}}
+{{- range site.Data.recognition }}
+  {{- if in (.papers | default slice) $slug }}{{ $mine = $mine | append . }}{{ end }}
+{{- end }}
+{{- with $mine }}
+{{- $discussed := where . "kind" "!=" "teaching" -}}
+{{- $taught := where . "kind" "teaching" -}}
+<aside class="paper-recognition">
+  {{- with $discussed }}
+  <p class="paper-recognition-row"><span class="paper-recognition-lbl">Discussed in:</span>
+    {{- range $i, $e := . }}{{ if $i }}<span class="paper-recognition-sep">·</span>{{ end }}
+    {{- if $e.url }}<a href="{{ $e.url }}" rel="noopener noreferrer" target="_blank">{{ $e.source }}</a>
+    {{- else }}<span>{{ $e.source }}</span>{{ end }}{{ end }}
+  </p>
+  {{- end }}
+  {{- with $taught }}
+  <p class="paper-recognition-row"><span class="paper-recognition-lbl">Used in teaching:</span>
+    {{- range $i, $e := . }}{{ if $i }}<span class="paper-recognition-sep">·</span>{{ end }}
+    {{- if $e.url }}<a href="{{ $e.url }}" rel="noopener noreferrer" target="_blank">{{ $e.source }}</a>
+    {{- else }}<span>{{ $e.source }}</span>{{ end }}{{ end }}
+  </p>
+  {{- end }}
+</aside>
+{{- end }}

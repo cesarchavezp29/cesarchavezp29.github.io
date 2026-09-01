@@ -9,7 +9,7 @@ summary: "A first-event local projection on the Bjørnskov–Rode panel of 180 c
 editPost:
     URL: "/macroeconomic-consequences-political-instability.pdf"
     Text: "PDF"
-
+pdf: "macroeconomic-consequences-political-instability.pdf"
 ---
 
 ---

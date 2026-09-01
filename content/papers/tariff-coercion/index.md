@@ -9,7 +9,7 @@ summary: "42 views, 16 downloads. Examines conditions under which tariff threats
 editPost:
     URL: "/two-margins-economic-coercion.pdf"
     Text: "PDF"
-
+pdf: "two-margins-economic-coercion.pdf"
 ---
 
 ---

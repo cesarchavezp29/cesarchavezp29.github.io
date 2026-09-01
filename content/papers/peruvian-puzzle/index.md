@@ -9,7 +9,7 @@ summary: "Between 2016 and 2023 Peru cycled through seven presidents, a self-cou
 editPost:
     URL: "/peruvian-puzzle.pdf"
     Text: "PDF"
-
+pdf: "peruvian-puzzle.pdf"
 ---
 
 ---

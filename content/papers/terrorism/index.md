@@ -6,7 +6,7 @@ tags: ["development","conflict","Peru","terrorism"]
 author: "Carlos César Chávez Padilla"
 description: "Long-term economic impacts of Peru's internal conflict on regional development"
 summary: "Studies how exposure to terrorism during Peru's internal war (1980-2000) affected long-term regional demographic, human capital, and economic trajectories."
-
+pdf: "terrorism-regional-development-peru.pdf"
 ---
 
 ---

@@ -9,7 +9,7 @@ summary: "A district-level electoral panel for Peru tests whether voters punish 
 editPost:
     URL: "/voters-punish-instability.pdf"
     Text: "PDF"
-
+pdf: "voters-punish-instability.pdf"
 ---
 
 ---

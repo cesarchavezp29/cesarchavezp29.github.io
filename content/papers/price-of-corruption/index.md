@@ -9,7 +9,7 @@ summary: "Reconstructs the cartelized road tenders from an antitrust resolution,
 editPost:
     URL: "/price-of-corruption.pdf"
     Text: "PDF"
-
+pdf: "price-of-corruption.pdf"
 ---
 
 ---

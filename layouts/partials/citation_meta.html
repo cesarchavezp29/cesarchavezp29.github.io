@@ -1,0 +1,41 @@
+{{- /*
+  Highwire Press citation tags. This is the metadata format Google Scholar reads to
+  index a working paper and to link it to its PDF; without it a paper page is just
+  another HTML document to the crawler. Emitted on individual paper pages only.
+*/ -}}
+{{- if and .IsPage (eq .Section "papers") }}
+<meta name="citation_title" content="{{ .Title | plainify }}">
+{{- $authors := .Params.author | default site.Params.author }}
+{{- if reflect.IsSlice $authors }}
+  {{- range $authors }}
+<meta name="citation_author" content="{{ . }}">
+  {{- end }}
+{{- else }}
+  {{- with $authors }}
+<meta name="citation_author" content="{{ . }}">
+  {{- end }}
+{{- end }}
+{{- with site.Params.identity.affiliation }}
+<meta name="citation_author_institution" content="{{ . }}">
+{{- end }}
+{{- if not .Date.IsZero }}
+<meta name="citation_publication_date" content="{{ .Date.Format "2006/01/02" }}">
+<meta name="citation_date" content="{{ .Date.Format "2006/01/02" }}">
+{{- end }}
+<meta name="citation_abstract_html_url" content="{{ .Permalink }}">
+{{- with .Params.summary }}
+<meta name="citation_abstract" content="{{ . | plainify }}">
+{{- end }}
+{{- with .Params.journal }}
+<meta name="citation_journal_title" content="{{ . }}">
+{{- end }}
+{{- with .Params.doi }}
+<meta name="citation_doi" content="{{ . }}">
+{{- end }}
+{{- with .Params.pdf }}
+<meta name="citation_pdf_url" content="{{ . | absURL }}">
+{{- end }}
+{{- range .Params.tags }}
+<meta name="citation_keywords" content="{{ . }}">
+{{- end }}
+{{- end }}

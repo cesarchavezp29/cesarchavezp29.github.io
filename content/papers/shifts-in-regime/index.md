@@ -9,7 +9,7 @@ summary: "Using birth-cohort variation in democratic exposure across first-trans
 editPost:
     URL: "/shifts-in-regime.pdf"
     Text: "PDF"
-
+pdf: "shifts-in-regime.pdf"
 ---
 
 ---

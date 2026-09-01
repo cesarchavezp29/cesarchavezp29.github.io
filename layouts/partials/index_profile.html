@@ -45,11 +45,14 @@
 {{- range $papers }}{{ with .Params.topic }}{{ $topicNames = $topicNames | append . }}{{ end }}{{ end }}
 {{- $topicNames = $topicNames | uniq | sort }}
 
+{{- /* Counts are rendered server-side as text. The count-up animation resets them to 0
+       and runs from there, so the real figures are in the HTML for crawlers and for
+       anyone without JS, while the on-screen behaviour is unchanged. */ -}}
 <section class="home-stats reveal">
-  <div class="stat"><span class="stat-num" data-target="{{ len $papers }}">0</span><span class="stat-lbl">Papers</span></div>
-  <div class="stat"><span class="stat-num" data-target="{{ len $published }}">0</span><span class="stat-lbl">Published</span></div>
-  <div class="stat"><span class="stat-num" data-target="{{ len $review }}">0</span><span class="stat-lbl">Under Review</span></div>
-  <div class="stat"><span class="stat-num" data-target="{{ len $topicNames }}">0</span><span class="stat-lbl">Fields</span></div>
+  <div class="stat"><span class="stat-num" data-target="{{ len $papers }}">{{ len $papers }}</span><span class="stat-lbl">Papers</span></div>
+  <div class="stat"><span class="stat-num" data-target="{{ len $published }}">{{ len $published }}</span><span class="stat-lbl">Published</span></div>
+  <div class="stat"><span class="stat-num" data-target="{{ len $review }}">{{ len $review }}</span><span class="stat-lbl">Under Review</span></div>
+  <div class="stat"><span class="stat-num" data-target="{{ len $topicNames }}">{{ len $topicNames }}</span><span class="stat-lbl">Fields</span></div>
 </section>
 
 <div class="home-grid">
@@ -79,6 +82,8 @@
       </ul>
       <div class="home-section-foot"><a href="{{ "papers/" | relURL }}">Browse all {{ len $papers }} papers &nbsp;&rarr;</a></div>
     </section>
+
+    {{ partial "recognition.html" . }}
   </main>
 
   <aside class="home-side">
@@ -112,18 +117,26 @@
 
 <script>
 (function(){
-  document.documentElement.classList.add('js');
   var reveals = document.querySelectorAll('.reveal');
+  var stats = document.querySelectorAll('.stat-num');
+
+  // Without IntersectionObserver nothing would ever be revealed, and .js .reveal is
+  // opacity:0. Only claim the js class once we know we can undo it.
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+
   var revealIO = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in-view'); revealIO.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(function(el){ revealIO.observe(el); });
 
+  // The server already rendered the true figure. Animate from 0 up to it, then restore
+  // the exact text so a dropped frame can never leave a wrong number on screen.
   function countTo(el){
     var target = +el.dataset.target, dur = 1100, start = performance.now();
     function frame(now){
       var t = Math.min(1, (now - start) / dur), ease = 1 - Math.pow(1 - t, 3);
-      el.textContent = Math.round(target * ease);
+      el.textContent = t < 1 ? Math.round(target * ease) : target;
       if (t < 1) requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
@@ -131,6 +144,6 @@
   var counterIO = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counterIO.unobserve(e.target); } });
   }, { threshold: 0.5 });
-  document.querySelectorAll('.stat-num').forEach(function(el){ counterIO.observe(el); });
+  stats.forEach(function(el){ counterIO.observe(el); });
 })();
 </script>
