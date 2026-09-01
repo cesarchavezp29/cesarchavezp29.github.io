@@ -82,7 +82,11 @@
   workURL: https://carloschavezp29.substack.com/p/on-causality
   date: 2026-01-15
   dateDisplay: Spring 2026
-  url: https://robertklitgaard.com/courses
+  # robertklitgaard.com no longer serves over HTTPS (TLS handshake fails from three
+  # independent networks, and Chrome shows an error page), so the syllabus link was
+  # removed rather than shipped dead. The entry stands on its own; restore a URL here
+  # if the site comes back or the syllabus surfaces elsewhere.
+  url: ""
   papers: []
 
 - kind: policy
