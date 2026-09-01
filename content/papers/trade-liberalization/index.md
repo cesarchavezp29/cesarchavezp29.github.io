@@ -1,8 +1,9 @@
 ---
 topic: "International Trade"
 peerReviewed: true
-journal: "Journal of Business (forthcoming)"
-title: "Innovation, Liberalization, and Competition"
+journal: "Journal of Business"
+journalName: "Journal of Business"
+title: "Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data"
 date: 2026-01-01
 featured: true
 tags: ["international trade","innovation","liberalization","development"]

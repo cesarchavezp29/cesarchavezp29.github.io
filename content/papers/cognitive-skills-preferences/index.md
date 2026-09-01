@@ -1,5 +1,5 @@
 ---
-title: "Relating Cognitive Skills and Personality Traits to Economic Preferences: A Study of Chinese Children"
+title: "Relating Cognitive Skills and Personality Traits to Economic Preferences: Decision-Making under Cognitive Shocks and Guessing"
 date: 2025-01-01
 featured: true
 topic: "Labor, Gender & Inequality"
