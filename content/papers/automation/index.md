@@ -1,6 +1,6 @@
 ---
 topic: "Innovation & the Economics Profession"
-title: "Automation Is Not a Sufficient Statistic: A Two-Frontier Task Model of Robots, AI, and Inequality"
+title: "Automation Is Not a Sufficient Statistic: Robots, AI, and Inequality"
 date: 2026-02-10
 layout: rich
 math: true
@@ -9,10 +9,16 @@ author: "Carlos César Chávez Padilla"
 description: "Two-frontier task model showing why aggregate automation masks opposite skill-premium effects of robots and AI."
 summary: "Develops a novel task-based framework showing why aggregate automation hides opposite skill-premium effects of robots and AI."
 editPost:
-    URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6212859"
-    Text: "SSRN"
+    URL: "/automation.pdf"
+    Text: "PDF"
+pdf: "automation.pdf"
 
 ---
+
+## Download
+
++ [Paper (PDF)](/automation.pdf)
++ [SSRN abstract page](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6212859)
 
 ## Abstract
 
@@ -44,10 +50,10 @@ A robot shock reduces surviving physical-labor productivity $\mathcal{A}_{SP}$, 
 
 The calibrated configuration is strongly asymmetric across frontiers:
 
-- $\hat{\delta}_R \approx 1.13$ — robots reinstate substantial new physical tasks per task displaced (strong reinstatement)
-- $\hat{\delta}_A \approx 0$ — AI displaces cognitive tasks with negligible reinstatement
+- $\hat{\delta}_R = 1.233$ — robots reinstate substantial new physical tasks per task displaced (strong reinstatement)
+- $\hat{\delta}_A = 0.256$ — cognitive reinstatement is finite, about a fifth of the physical rate, and stays well below its own much higher threshold
 
-This asymmetry is illustrated below: in *Panel A* the physical-task identity extends past $1$ (robots create new tasks beyond the surviving range), while in *Panel B* the cognitive labor band is simply compressed with no offsetting task creation. **Drag the sliders to see how each frontier reshapes its task continuum.**
+This asymmetry is illustrated below: in *Panel A* the physical-task identity extends past $1$ (robots create new tasks beyond the surviving range), while in *Panel B* the cognitive labor band is compressed against a much smaller offsetting mass. **Drag the sliders to see how each frontier reshapes its task continuum.**
 
 {{< two_frontier_demo >}}
 

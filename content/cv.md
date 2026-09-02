@@ -77,7 +77,7 @@ Development economist working on human capital and political economy, combining 
 
 ##### Other Working Papers
 
-- **Automation Is Not a Sufficient Statistic: Robots, AI, and Inequality.** Two automation frontiers; pooling robot and AI exposure destroys 98% of the explained variance in skill-premium changes across 447 U.S. commuting zones.
+- **Automation Is Not a Sufficient Statistic: Robots, AI, and Inequality.** Two automation frontiers with opposite skill-premium effects across 722 U.S. commuting zones; a pooled index of robot and AI exposure explains 4% of the cross-zone variation against 31% for the separated frontiers.
 - **The Macroeconomic Consequences of Political Instability.** Coups classified by institutional transition; a 4.2% impact-year TFP contraction concentrated in coups that displace democracies (Bjørnskov–Rode panel, 1960–2022).
 - **Missing Mass and Minimum Wages.** A bunching estimator on three Peruvian minimum-wage increases.
 - **Identifying Monetary Policy Shocks in an Administered-Rate Economy: Evidence from Peru.**
