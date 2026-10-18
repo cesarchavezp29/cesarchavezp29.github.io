@@ -1,6 +1,27 @@
 # Talks and conference presentations. Rendered by layouts/talks/list.html (interactive).
 - title: "Relating Cognitive Skills and Personality Traits to Economic Preferences"
   coauthors: "with S. Feng, J. J. Heckman, Z. Yang"
+  venue: "NBER Summer Institute"
+  location: "Cambridge, MA"
+  year: 2026
+  type: "Conference"
+
+- title: "Relating Cognitive Skills and Personality Traits to Economic Preferences"
+  coauthors: "with S. Feng, J. J. Heckman, Z. Yang"
+  venue: "Midwest Econometrics Group Meeting"
+  location: ""
+  year: 2026
+  type: "Conference"
+
+- title: "Relating Cognitive Skills and Personality Traits to Economic Preferences"
+  coauthors: "with S. Feng, J. J. Heckman, Z. Yang"
+  venue: "DePaul University"
+  location: "Chicago, IL"
+  year: 2026
+  type: "Invited seminar"
+
+- title: "Relating Cognitive Skills and Personality Traits to Economic Preferences"
+  coauthors: "with S. Feng, J. J. Heckman, Z. Yang"
   venue: "Jinan University"
   location: "Guangzhou, China"
   year: 2026
