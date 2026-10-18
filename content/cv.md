@@ -116,7 +116,7 @@ A complete, continuously updated list is on the [Research](../papers/) page.
 ##### Conference Presentations
 
 <dl>
-  <dt>2026</dt><dd>Jinan University, Guangzhou (with S. Feng, J.J. Heckman, Z. Yang) · Institute for Fiscal Studies, London · Encuentro de Economistas, UNMSM, Lima</dd>
+  <dt>2026</dt><dd>Jinan University, Guangzhou (with S. Feng, J.J. Heckman, Z. Yang) · University College London · Encuentro de Economistas, UNMSM, Lima</dd>
   <dt>2023</dt><dd>IEA World Congress, Medellín, Colombia</dd>
   <dt>2022</dt><dd>LACEA-LAMES Annual Meeting, PUCP, Lima · Bolivian Conference on Development Economics, La Paz</dd>
   <dt>2021–2022</dt><dd>Annual Conference of Peruvian Economists, Lima</dd>
