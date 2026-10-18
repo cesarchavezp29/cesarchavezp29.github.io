@@ -116,7 +116,7 @@ A complete, continuously updated list is on the [Research](../papers/) page.
 ##### Conference Presentations
 
 <dl>
-  <dt>2026</dt><dd>NBER Summer Institute, Cambridge, MA (with S. Feng, J.J. Heckman, Z. Yang) · Midwest Econometrics Group Meeting (with S. Feng, J.J. Heckman, Z. Yang) · DePaul University, Chicago (with S. Feng, J.J. Heckman, Z. Yang) · Jinan University, Guangzhou (with S. Feng, J.J. Heckman, Z. Yang) · University College London · Encuentro de Economistas, UNMSM, Lima</dd>
+  <dt>2026</dt><dd>NBER Summer Institute, Cambridge, MA (with S. Feng, J.J. Heckman, Z. Yang) · Midwest Econometrics Group Meeting (with S. Feng, J.J. Heckman, Z. Yang) · DePaul University, Chicago (with S. Feng, J.J. Heckman, Z. Yang) · Jinan University, Guangzhou (with S. Feng, J.J. Heckman, Z. Yang) · University College London (with S. Feng, J.J. Heckman, Z. Yang) · Encuentro de Economistas, UNMSM, Lima</dd>
   <dt>2023</dt><dd>IEA World Congress, Medellín, Colombia</dd>
   <dt>2022</dt><dd>LACEA-LAMES Annual Meeting, PUCP, Lima · Bolivian Conference on Development Economics, La Paz</dd>
   <dt>2021–2022</dt><dd>Annual Conference of Peruvian Economists, Lima</dd>
