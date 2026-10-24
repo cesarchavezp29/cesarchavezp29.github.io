@@ -68,7 +68,6 @@ Development economist working on human capital and political economy, combining 
 - **Relating Cognitive Skills and Personality Traits to Economic Preferences: Decision-Making under Cognitive Shocks and Guessing** (with S. Feng, J.J. Heckman, Z. Yang) — *accepted, Journal of Labor Economics.* A structural model with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences.
 - **Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data** — *Journal of Business*, 17(2), 2026.
 - **Commodity Booms and Violent Conflict** — *under review, American Journal of Political Science.*
-- **Electoral Pressure and Political Lying** — *under review, World Politics.* A dynamic game of credibility against electoral pressure; on PolitiFact data (U.S. House, 2007–2025) final-term members lie 5.6–8.0 pp more than early-term members.
 - **Import Liberalization, Not Export Expansion** — *under review, Journal of International Economics.*
 - **Fraud Allegations as Identification: A Within-Election Forensic Test** — *under review, Political Analysis.* Turns a losing candidate's own nullification challenges into the counterfactual; applied to Peru's 2021 presidential runoff.
 - **The Anatomy of a Nobel Prize** — *under review, Empirical Economics.*
