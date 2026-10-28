@@ -4,6 +4,9 @@ title: "Shifts in Regime, Shifts in Mind: Estimating the Attitudinal Effects of 
 date: 2026-01-01
 tags: ["democratization","political attitudes","formative window","World Values Survey","Latinobarómetro","emancipative values"]
 author: "Carlos César Chávez Padilla"
+underReview: true
+journal: "Under review, Political Behavior"
+journalName: "Political Behavior"
 description: "Whether coming of age under democracy durably shapes political attitudes, tested with birth-cohort variation in democratic exposure."
 summary: "Using birth-cohort variation in democratic exposure across first-transition countries, the paper finds no formative effect on regime support, and shows that the apparent formative effect on emancipative values is observationally equivalent to a secular cohort trend."
 editPost:
@@ -34,4 +37,4 @@ Democratization, Formative Window, Political Attitudes, Emancipative Values, Reg
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "Shifts in Regime, Shifts in Mind: Estimating the Attitudinal Effects of Democratization." Working paper.
+Chávez Padilla, Carlos César. 2026. "Shifts in Regime, Shifts in Mind: Estimating the Attitudinal Effects of Democratization." Under review, *Political Behavior*.

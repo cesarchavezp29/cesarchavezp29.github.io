@@ -69,8 +69,10 @@ Development economist working on human capital and political economy, combining 
 - **Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data** — *Journal of Business*, 17(2), 2026.
 - **Commodity Booms and Violent Conflict** — *under review, American Journal of Political Science.*
 - **Import Liberalization, Not Export Expansion** — *under review, Journal of International Economics.*
-- **Fraud Allegations as Identification: A Within-Election Forensic Test** — *under review, Political Analysis.* Turns a losing candidate's own nullification challenges into the counterfactual; applied to Peru's 2021 presidential runoff.
-- **The Anatomy of a Nobel Prize** — *under review, Empirical Economics.*
+- **Auditing the Challenger: Legal Challenge Records as Adversarially Selected Forensic Samples** — *under review, Election Law Journal.* Turns a losing candidate's own nullification challenges into the counterfactual; applied to Peru's 2021 presidential runoff.
+- **Terrorism and Regional Development: Evidence from Peru's Internal War** — *under review, World Development.*
+- **Cohort Effects of Democratization on Diffuse Regime Support and Emancipative Values** — *under review, Political Behavior.*
+- **The Anatomy of a Nobel Prize** — *revise and resubmit, Empirical Economics.*
 
 ---
 

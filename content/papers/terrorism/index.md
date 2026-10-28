@@ -2,6 +2,9 @@
 topic: "Conflict, Violence & Political Instability"
 title: "Terrorism and Regional Development: Evidence from Peru's Internal War"
 date: 2026-07-28
+underReview: true
+journal: "Under review, World Development"
+journalName: "World Development"
 tags: ["development","conflict","Peru","terrorism"]
 author: "Carlos César Chávez Padilla"
 description: "Long-term economic impacts of Peru's internal conflict on regional development"
