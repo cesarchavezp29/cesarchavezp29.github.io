@@ -1,6 +1,6 @@
 ---
 topic: "Conflict, Violence & Political Instability"
-title: "Shifts in Regime, Shifts in Mind: Estimating the Attitudinal Effects of Democratization"
+title: "Cohort Effects of Democratization on Diffuse Regime Support and Emancipative Values"
 date: 2026-01-01
 tags: ["democratization","political attitudes","formative window","World Values Survey","Latinobarómetro","emancipative values"]
 author: "Carlos César Chávez Padilla"
@@ -37,4 +37,4 @@ Democratization, Formative Window, Political Attitudes, Emancipative Values, Reg
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "Shifts in Regime, Shifts in Mind: Estimating the Attitudinal Effects of Democratization." Under review, *Political Behavior*.
+Chávez Padilla, Carlos César. 2026. "Cohort Effects of Democratization on Diffuse Regime Support and Emancipative Values." Under review, *Political Behavior*.
