@@ -73,6 +73,8 @@ Development economist working on human capital and political economy, combining 
 - **Terrorism and Regional Development: Evidence from Peru's Internal War** — *under review, World Development.*
 - **Cohort Effects of Democratization on Diffuse Regime Support and Emancipative Values** — *under review, Political Behavior.*
 - **The Anatomy of a Nobel Prize** — *revise and resubmit, Empirical Economics.*
+- **How Economists Adopt Methods: Methodological Choice, Specialization, and Scientific Communities** — *revise and resubmit, Journal of Economic Methodology.*
+- **The Diffusion of Econometric Methods: A Structural Model of the Credibility Revolution** — *under review, Journal of Applied Econometrics.*
 
 ---
 
