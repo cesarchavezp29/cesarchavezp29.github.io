@@ -70,8 +70,8 @@ Development economist working on human capital and political economy, combining 
 - **Commodity Booms and Violent Conflict** — *under review, American Journal of Political Science.*
 - **Import Liberalization, Not Export Expansion** — *under review, Journal of International Economics.*
 - **Auditing the Challenger: Legal Challenge Records as Adversarially Selected Forensic Samples** — *under review, Election Law Journal.* Turns a losing candidate's own nullification challenges into the counterfactual; applied to Peru's 2021 presidential runoff.
-- **Terrorism and Regional Development: Evidence from Peru's Internal War** — *under review, World Development.*
 - **Cohort Effects of Democratization on Diffuse Regime Support and Emancipative Values** — *under review, Political Behavior.*
+- **Terrorism and Regional Development: Evidence from Peru's Internal War** — *revise and resubmit, World Development.*
 - **The Anatomy of a Nobel Prize** — *revise and resubmit, Empirical Economics.*
 - **How Economists Adopt Methods: Methodological Choice, Specialization, and Scientific Communities** — *revise and resubmit, Journal of Economic Methodology.*
 - **The Diffusion of Econometric Methods: A Structural Model of the Credibility Revolution** — *under review, Journal of Applied Econometrics.*
