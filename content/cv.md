@@ -106,6 +106,19 @@ A complete, continuously updated list is on the [Research](../papers/) page.
 
 ---
 
+##### Writing
+
+Essays on economics and econometric methods at [carloschavezp29.substack.com](https://carloschavezp29.substack.com). Selected essays and their use by others:
+
+- **[On Causality: A History of How Economics Learned to Think About Cause and Effect](https://carloschavezp29.substack.com/p/on-causality).** Course reading in PP338, Policy Design and Implementation (Robert Klitgaard), Claremont Graduate University, Spring 2026. Recommended by Julian Reif on [Bluesky](https://bsky.app/profile/julianreif.bsky.social/post/3mdxv2h7smk22) and excerpted by Luke Froeb in [Managerial Econ](https://managerialecon.blogspot.com/2026/02/differences-in-differences-handwashing.html), February 2026.
+- **[Why Don't We Talk Enough About Marginal Treatment Effects?](https://carloschavezp29.substack.com/p/why-dont-we-talk-enough-about-marginal)** Cited in the theory primer of the [PyMTE](https://pymte.readthedocs.io/en/latest/theory.html) Python package documentation as the recommended first reading on the MTE framework.
+- **[Why Macro Never Had a Credibility Revolution](https://carloschavezp29.substack.com/p/why-macro-never-had-a-credibility).** Summarized and discussed by David McKenzie in the World Bank's [Development Impact](https://blogs.worldbank.org/en/impactevaluations/weekly-links-january-16--2026--sports-betting-economics--small-f) blog, and discussed by Clint Ballinger in two essays ([1](https://clintballinger.substack.com/p/the-intercept-is-where-causality), [2](https://clintballinger.substack.com/p/before-identification-and-inference)), January 2026.
+- **[Why Economists Linearize Everything](https://carloschavezp29.substack.com/p/why-economists-linearize-everything).** Selected by Tyler Cowen for [Marginal Revolution](https://marginalrevolution.com/marginalrevolution/2026/02/wednesday-assorted-links-540.html) and quoted and discussed by Arnold Kling in [In My Tribe](https://arnoldkling.substack.com/p/economics-links-2162026), February 2026.
+- **[Why Christopher Sims Was So Great?](https://carloschavezp29.substack.com/p/why-christopher-sims-was-so-great)** Selected by Tyler Cowen for [Marginal Revolution](https://marginalrevolution.com/marginalrevolution/2026/03/monday-assorted-links-552.html), discussed by Arnold Kling in [In My Tribe](https://arnoldkling.substack.com/p/economics-links-3262026) and translated into French by Martin Anota in [Annotations](https://annotationsbis.blogspot.com/2026/03/les-contributions-de-christopher-sims.html), March 2026.
+- **[The Cowles Commission in Chicago](https://carloschavezp29.substack.com/p/the-cowles-commission-in-chicago).** Quoted on the [Nanga Fakir](https://nangafakir.blogspot.com/2026/05/golden-sentences-series-continues.html) economics blog, May 2026.
+
+---
+
 ##### Honors & Awards
 
 <dl>
