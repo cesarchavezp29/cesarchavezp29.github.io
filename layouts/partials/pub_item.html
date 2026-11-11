@@ -1,8 +1,16 @@
-{{- /* One paper entry: black title, grey editorial line beneath it. Context: a paper Page. */ -}}
+{{- /* One paper entry: black title, grey editorial line beneath it, links, and a
+       collapsible abstract. Context: a paper Page. */ -}}
 <li class="pub-item" data-date="{{ .Date.Format "2006-01-02" }}" data-topic="{{ .Params.topic }}" data-title="{{ lower .Title }}">
   <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
   <div class="pub-venue">{{ partial "paper_venue.html" . }}&nbsp;&middot;&nbsp;{{ .Date.Format "2006" }}</div>
+  <div class="pub-links">
+    {{- with .Params.pdf }}<a href="{{ . | relURL }}">PDF</a><span aria-hidden="true">&middot;</span>{{ else }}{{ with .Params.editPost }}<a href="{{ .URL | relURL }}"{{ if hasPrefix .URL "http" }} rel="noopener" target="_blank"{{ end }}>{{ .Text }}</a><span aria-hidden="true">&middot;</span>{{ end }}{{ end }}
+    <a href="{{ .Permalink }}">Paper page</a>
+  </div>
   {{- with .Summary }}
-  <p class="pub-summary">{{ . | plainify | htmlUnescape }}</p>
+  <details class="pub-abstract">
+    <summary>Abstract</summary>
+    <p class="pub-summary">{{ . | plainify | htmlUnescape }}</p>
+  </details>
   {{- end }}
 </li>

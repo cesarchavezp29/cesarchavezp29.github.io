@@ -14,22 +14,23 @@
 {{- $current := where $all "Params.earlier" "!=" true }}
 {{- $earlier := where $all "Params.earlier" true }}
 
-{{- /* Sections in editorial order. Membership comes only from the declared status
-       (partials/paper_status.html), so each paper appears in exactly one section. */ -}}
+{{- /* Two groups, as on most economics job-market sites: Publications (accepted
+       first, then published) and Working Papers (R&R first, then under review, then
+       working papers). The status line under each title carries the distinction.
+       Membership comes only from partials/paper_status.html. */ -}}
 {{- $sections := slice
-  (dict "key" "published"       "id" "publications"    "title" "Publications"           "note" "Peer-reviewed journal articles.")
-  (dict "key" "accepted"        "id" "accepted"        "title" "Forthcoming & Accepted" "note" "")
-  (dict "key" "revise_resubmit" "id" "revise-resubmit" "title" "Revise & Resubmit"      "note" "")
-  (dict "key" "submitted"       "id" "submitted"       "title" "Submitted Manuscripts"  "note" "Under review at the journal shown.")
-  (dict "key" "working_paper"   "id" "working-papers"  "title" "Working Papers"         "note" "")
+  (dict "id" "publications"   "title" "Publications"   "statuses" (slice "accepted" "published"))
+  (dict "id" "working-papers" "title" "Working Papers" "statuses" (slice "revise_resubmit" "submitted" "working_paper"))
 }}
 
 {{- /* Bucket once, reuse for the section index and the sections themselves. */ -}}
 {{- $buckets := dict }}
 {{- range $sec := $sections }}
   {{- $items := slice }}
-  {{- range $current }}{{ if eq (partial "paper_status.html" .).key $sec.key }}{{ $items = $items | append . }}{{ end }}{{ end }}
-  {{- $buckets = merge $buckets (dict $sec.key $items) }}
+  {{- range $st := $sec.statuses }}
+    {{- range $current }}{{ if eq (partial "paper_status.html" .).key $st }}{{ $items = $items | append . }}{{ end }}{{ end }}
+  {{- end }}
+  {{- $buckets = merge $buckets (dict $sec.id $items) }}
 {{- end }}
 
 {{- $topics := slice }}
@@ -37,7 +38,7 @@
 {{- $topics = $topics | uniq | sort }}
 
 <nav class="pub-toc" aria-label="Research sections">
-  {{- range $sec := $sections }}{{ if index $buckets $sec.key }}<a href="#{{ $sec.id }}">{{ $sec.title }}</a>{{ end }}{{ end }}
+  {{- range $sec := $sections }}{{ if index $buckets $sec.id }}<a href="#{{ $sec.id }}">{{ $sec.title }}</a>{{ end }}{{ end }}
   {{- if $earlier }}<a href="#earlier">Earlier Research</a>{{ end }}
 </nav>
 
@@ -50,11 +51,10 @@
 </div>
 
 {{- range $sec := $sections }}
-{{- $items := index $buckets $sec.key }}
+{{- $items := index $buckets $sec.id }}
 {{- if $items }}
 <section class="pub-section" id="{{ $sec.id }}">
   <h2 class="pub-section-title">{{ $sec.title }}</h2>
-  {{- with $sec.note }}<p class="pub-section-note">{{ . }}</p>{{ end }}
   <ul class="pub-list">
     {{- range $items }}{{ partial "pub_item.html" . }}{{ end }}
   </ul>

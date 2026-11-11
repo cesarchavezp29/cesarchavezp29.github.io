@@ -160,7 +160,22 @@ a.pub-title:hover { color: var(--accent) !important; text-decoration: none; }
 }
 .pub-section-note { font-size: 0.92rem; color: var(--muted); margin: -0.5rem 0 1.1rem; }
 .pub-section--earlier .pub-title { font-size: 1.04rem; }
-.pub-section--earlier .pub-summary { display: none; }
+.pub-section--earlier .pub-abstract { display: none; }
+.pub-abstract { margin-top: 0.15rem; }
+.pub-abstract summary {
+  display: inline;
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--accent);
+  list-style: none;
+}
+.pub-abstract summary::-webkit-details-marker { display: none; }
+.pub-abstract summary::after { content: " \25B8"; font-size: 0.8em; }
+.pub-abstract[open] summary::after { content: " \25BE"; }
+.pub-abstract .pub-summary { margin-top: 0.4rem; }
+.pub-links { display: inline; }
+.pub-links + .pub-abstract { display: inline; margin-left: 0.45rem; }
+.pub-links + .pub-abstract[open] { display: block; margin-left: 0; }
 .pub-empty { color: var(--muted); }
 
 /* ---- Homepage -------------------------------------------------- */
