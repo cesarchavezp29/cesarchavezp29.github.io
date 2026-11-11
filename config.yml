@@ -48,7 +48,7 @@ params:
         givenName: "Carlos César"
         familyName: "Chávez Padilla"
         alternateName: ["Carlos Chávez", "Carlos Chavez", "Carlos C. Chávez Padilla"]
-        jobTitle: "Development Economist"
+        jobTitle: "Research Professional"
         affiliation: "University of Chicago"
         affiliationURL: "https://www.uchicago.edu/"
         affiliationUnit: "Center for the Economics of Human Development"
@@ -88,7 +88,7 @@ params:
         - og-image.png
     ogImageWidth: 1200
     ogImageHeight: 630
-    ogImageAlt: "Carlos César Chávez Padilla — Development Economist, University of Chicago"
+    ogImageAlt: "Carlos César Chávez Padilla — Research Professional, University of Chicago"
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -114,7 +114,8 @@ params:
           enabled: true
           title: Carlos César Chávez Padilla
           subtitle: "I am a Research Professional at the Center for the Economics of Human Development at the University of Chicago, where I collaborate with Prof. James J. Heckman on early childhood skill formation. I hold an MA in Public Policy from the Harris School of Public Policy. My research focuses on development economics, political economy, and Latin America, particularly Peru."
-          tagline: "Development Economist · University of Chicago"
+          tagline: "Research Professional · University of Chicago"
+          fields: "Macroeconomics · Political Economy · Identification"
           imageUrl: "picture.jpeg"
           imageWidth: 200
           imageHeight: 200

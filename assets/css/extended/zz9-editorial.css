@@ -194,7 +194,8 @@ a.pub-title:hover { color: var(--accent) !important; text-decoration: none; }
   object-fit: cover;
 }
 .home-name { font-size: 1.9rem; margin: 0; line-height: 1.2; }
-.home-tagline { color: var(--muted); margin: 0.25rem 0 0.8rem; font-size: 1rem; }
+.home-tagline { color: var(--muted); margin: 0.25rem 0 0.15rem; font-size: 1rem; }
+.home-fields { color: var(--ink); margin: 0 0 0.8rem; font-size: 0.95rem; letter-spacing: 0.01em; }
 .home-bio { font-size: 1rem; }
 .home-bio p { margin: 0 0 0.6rem; }
 .home-links { font-size: 0.95rem; margin: 0.6rem 0 0; }

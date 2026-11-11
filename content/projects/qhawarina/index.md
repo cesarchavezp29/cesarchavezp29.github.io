@@ -141,7 +141,7 @@ Real prices scraped every day across 42,000+ products. Base 100 = February 10, 2
 
 ## Links
 
-- **Live Platform**: [qhawarina.vercel.app](https://qhawarina.vercel.app) *(placeholder - update with actual URL)*
+- **Live Platform**: [qhawarina.pe](https://qhawarina.pe)
 - **GitHub**: [cesarchavezp29/qhawarina](https://github.com/cesarchavezp29/qhawarina)
 - **Data Exports**: JSON files updated daily
 

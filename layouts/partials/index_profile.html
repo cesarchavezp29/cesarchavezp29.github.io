@@ -11,6 +11,7 @@
     <div class="home-intro-text">
       <h1 class="home-name">{{ .title | default site.Title | markdownify }}</h1>
       {{- with .tagline }}<p class="home-tagline">{{ . | markdownify }}</p>{{ end }}
+      {{- with .fields }}<p class="home-fields">{{ . }}</p>{{ end }}
       {{- with .subtitle }}<div class="home-bio">{{ . | markdownify }}</div>{{ end }}
       <p class="home-links">
         {{- range $i, $s := site.Params.socialIcons }}{{ if ne $s.name "Location" }}{{ if $i }}<span class="home-links-sep" aria-hidden="true">&middot;</span>{{ end }}<a href="{{ $s.url | relURL }}"{{ if hasPrefix $s.url "http" }} rel="noopener" target="_blank"{{ end }}>{{ $s.name }}</a>{{ end }}{{ end }}
