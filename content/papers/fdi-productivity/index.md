@@ -8,7 +8,7 @@ journal: "Revista de Economia y Finanzas"
 tags: ["international economics","FDI","productivity","panel VAR"]
 author: "Carlos César Chávez Padilla"
 description: "Panel VAR analysis of FDI and aggregate productivity"
-summary: "344 views, 73 downloads. Panel VAR examining causal effects of FDI on aggregate productivity."
+summary: "Panel VAR examining causal effects of FDI on aggregate productivity."
 editPost:
     URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4225024"
     Text: "SSRN"
@@ -33,8 +33,3 @@ This paper uses panel VAR analysis to examine whether foreign direct investment 
 
 Foreign Direct Investment, Productivity, Panel VAR, International Economics
 
----
-
-##### Stats
-
-Views: 344 | Downloads: 73

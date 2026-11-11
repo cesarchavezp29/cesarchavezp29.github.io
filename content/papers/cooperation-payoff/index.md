@@ -1,16 +1,19 @@
 ---
 topic: "Macroeconomics, Firms & Investment"
-title: "Cooperation Pay-Off: An Analysis Across Latin America's Firms"
+title: "Latin American Firm Cooperation Payoff Evidence"
 date: 2024-01-01
 status: "published"
 journal: "The International Trade Journal"
+volume: "38"
+issue: "5"
+doi: "10.1080/08853908.2023.2293059"
 tags: ["development","firms","Latin America","cooperation","productivity"]
 author: "Carlos César Chávez Padilla"
 description: "Firm cooperation and productivity in Latin America"
-summary: "347 views, 45 downloads. Analyzes returns to cooperation across Latin American firms."
+summary: "Analyzes returns to cooperation across Latin American firms."
 editPost:
-    URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4234589"
-    Text: "SSRN"
+    URL: "https://doi.org/10.1080/08853908.2023.2293059"
+    Text: "Journal"
 
 ---
 
@@ -18,7 +21,8 @@ editPost:
 
 ##### Download
 
-+ [Paper (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4234589)
++ [Journal article (DOI)](https://doi.org/10.1080/08853908.2023.2293059)
++ [Working paper (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4234589)
 
 ---
 
@@ -34,6 +38,6 @@ Development Economics, Firms, Latin America, Cooperation, Productivity
 
 ---
 
-##### Stats
+##### Citation
 
-Views: 347 | Downloads: 45
+Chávez, Carlos. 2024. "Latin American Firm Cooperation Payoff Evidence." *The International Trade Journal* 38 (5): 490–519. https://doi.org/10.1080/08853908.2023.2293059

@@ -6,7 +6,7 @@ status: "working_paper"
 tags: ["international trade","tariffs","political economy","coercion"]
 author: "Carlos César Chávez Padilla"
 description: "When does economic leverage through tariffs work?"
-summary: "42 views, 16 downloads. Examines conditions under which tariff threats effectively coerce policy changes in target countries."
+summary: "Examines conditions under which tariff threats effectively coerce policy changes in target countries."
 editPost:
     URL: "/two-margins-economic-coercion.pdf"
     Text: "PDF"
@@ -33,8 +33,3 @@ This paper examines when tariff threats and economic coercion effectively change
 
 International Trade, Tariffs, Political Economy, Coercion, Trade Wars
 
----
-
-##### Stats
-
-Views: 42 | Downloads: 16

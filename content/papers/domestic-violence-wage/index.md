@@ -7,7 +7,7 @@ journal: "Review of Economics"
 tags: ["labor economics","domestic violence","minimum wage","Peru","gender"]
 author: "Carlos César Chávez Padilla"
 description: "Theory and evidence on minimum wage and domestic violence"
-summary: "811 views, 153 downloads. High-impact paper on minimum wage effects on domestic violence in Peru."
+summary: "High-impact paper on minimum wage effects on domestic violence in Peru."
 editPost:
     URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4224811"
     Text: "SSRN"
@@ -32,8 +32,3 @@ This paper develops theory and provides empirical evidence on how minimum wage c
 
 Labor Economics, Domestic Violence, Minimum Wage, Peru, Gender Economics
 
----
-
-##### Stats
-
-Views: 811 | Downloads: 153
