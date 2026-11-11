@@ -2,6 +2,9 @@
 topic: "Macroeconomics & Expectations"
 title: "Who Could Have Rational Expectations? Bounds Across People and Information Sets"
 date: 2026-08-01
+status: "working_paper"
+featured: true
+featuredRank: 4
 tags: ["rational expectations","subjective expectations","partial identification","mixture models","HRS"]
 author: "Carlos César Chávez Padilla"
 description: "How much of a population could still be rationalized as holding rational expectations, and how that share falls as the analyst attributes more information to the agent."

@@ -2,6 +2,7 @@
 topic: "Macroeconomics, Firms & Investment"
 title: "When Bad Institutions Meet Good Ones: The Peruvian Puzzle"
 date: 2026-01-01
+status: "working_paper"
 tags: ["Peru","central bank","sovereign spread","monetary policy","credibility","political instability"]
 author: "Carlos César Chávez Padilla"
 description: "Why Peru's sovereign spread fell to historic lows through 2016–2023 political chaos, traced to central-bank credibility under Governor Velarde."

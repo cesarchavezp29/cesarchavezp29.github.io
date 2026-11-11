@@ -2,6 +2,7 @@
 topic: "Political Economy"
 title: "Do Voters Punish Political Instability? Attribution, Electoral Subversion, and Material Disruption in Peru"
 date: 2026-06-19
+status: "working_paper"
 tags: ["political economy","elections","accountability","electoral subversion","democratic backsliding","Peru","Lava Jato","difference-in-differences"]
 author: "Carlos César Chávez Padilla"
 description: "Whether Peruvian voters punish political instability at the ballot box, across two episodes at opposite poles of attribution: an attributable vote-annulment offensive and an authorless infrastructure shock."

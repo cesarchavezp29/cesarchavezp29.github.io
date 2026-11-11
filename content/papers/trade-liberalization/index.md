@@ -1,8 +1,5 @@
 ---
 topic: "International Trade"
-peerReviewed: true
-journal: "Journal of Business (Universidad del Pacífico)"
-journalName: "Journal of Business, Universidad del Pacífico (Lima, Peru)"
 doi: "10.21678/jb.2026.2978"
 issn: "2078-9424"
 volume: "17"
@@ -10,7 +7,8 @@ issue: "2"
 pdf: "https://revistas.up.edu.pe/business/article/download/2978/1987"
 title: "Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data"
 date: 2026-07-31
-featured: true
+status: "published"
+journal: "Journal of Business (Universidad del Pacífico)"
 tags: ["international trade","innovation","liberalization","development","patents"]
 author: "Carlos César Chávez Padilla"
 description: "Long-term effects of trade liberalization on innovation in developing economies, using patent data"

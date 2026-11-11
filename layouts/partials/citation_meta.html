@@ -26,10 +26,12 @@
 {{- with .Params.summary }}
 <meta name="citation_abstract" content="{{ . | plainify }}">
 {{- end }}
-{{- /* journalName is the bare title; journal may carry a status prefix such as
-       "Accepted, ...", which must never reach citation_journal_title. */ -}}
-{{- with (.Params.journalName | default .Params.journal) }}
+{{- /* Only a publication commitment names the journal to Google Scholar; an R&R or a
+       submission does not, or Scholar would index it as published there. */ -}}
+{{- if and (eq .Section "papers") (partial "paper_status.html" .).formal }}
+{{- with .Params.journal }}
 <meta name="citation_journal_title" content="{{ . }}">
+{{- end }}
 {{- end }}
 {{- with .Params.doi }}
 <meta name="citation_doi" content="{{ . }}">

@@ -1,9 +1,10 @@
 ---
 topic: "Macroeconomics, Firms & Investment"
-peerReviewed: true
-journal: "Revista de Economia y Finanzas"
 title: "Does Foreign Investment Improve or Worsen Aggregate Productivity? A Panel VAR Analysis"
 date: 2023-01-01
+status: "published"
+earlier: true
+journal: "Revista de Economia y Finanzas"
 tags: ["international economics","FDI","productivity","panel VAR"]
 author: "Carlos César Chávez Padilla"
 description: "Panel VAR analysis of FDI and aggregate productivity"

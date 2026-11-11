@@ -1,5 +1,13 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
+    <nav class="footer-links" aria-label="Contact and profiles">
+        {{- range site.Params.socialIcons }}{{ if eq .name "Email" }}<a href="{{ .url }}">Email</a>{{ end }}{{ end }}
+        <a href="https://scholar.google.com/citations?user=LsVe9yQAAAAJ&amp;hl=en" rel="noopener" target="_blank">Google Scholar</a>
+        <a href="https://github.com/cesarchavezp29" rel="noopener" target="_blank">GitHub</a>
+        <a href="https://orcid.org/0000-0002-5885-7723" rel="noopener" target="_blank">ORCID</a>
+        <a href="https://carloschavezp29.substack.com" rel="noopener" target="_blank">Substack</a>
+        <a href="{{ "search/" | relURL }}">Search</a>
+    </nav>
     {{- if not site.Params.footer.hideCopyright }}
     {{- if site.Copyright }}
     <span>{{ site.Copyright | markdownify }}</span>

@@ -1,0 +1,223 @@
+/* =============================================================
+   Editorial system. Loads last (zz9) and supersedes the earlier
+   card/grid styling: one narrow reading column, serif titles,
+   grey metadata, garnet links only, no gold, no decoration.
+   ============================================================= */
+
+:root {
+  --theme:    #fdfbf7;          /* warm white */
+  --entry:    #fdfbf7;
+  --primary:  #14213d;          /* very dark navy: titles */
+  --content:  #2b2f38;          /* body text */
+  --secondary:#6b6f78;
+  --border:   #e8e3d8;
+  --ink:      #14213d;
+  --muted:    #6b6f78;          /* metadata */
+  --hairline: #e8e3d8;
+  --accent:   #7a1f2b;          /* garnet: links only */
+  --accent-dark: #5c1620;
+  --accent-soft: #f4ece4;
+  --accent-gold: #7a1f2b;       /* gold retired: alias to garnet */
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:  "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --main-width: 860px;
+  --nav-width: 860px;
+}
+.dark {
+  --theme: #15192b;
+  --entry: #15192b;
+  --primary: #ece6da;
+  --content: #d6d0c4;
+  --ink: #ece6da;
+  --muted: #9ea2b0;
+  --hairline: #2c3354;
+  --border: #2c3354;
+  --accent: #df9aa4;
+  --accent-dark: #c9808b;
+  --accent-soft: #241f33;
+  --accent-gold: #df9aa4;
+}
+
+body {
+  background: var(--theme);
+  color: var(--content);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ---- One reading column everywhere (the interactive rich paper keeps its width) */
+.main,
+.main:has(.profile),
+.main:has(.home),
+.main:has(.pub-controls) {
+  max-width: calc(var(--main-width) + var(--gap, 24px) * 2);
+}
+.nav { max-width: calc(var(--nav-width) + var(--gap, 24px) * 2); }
+
+/* ---- Header / menu ---------------------------------------- */
+.logo a { font-family: var(--serif); font-weight: 600; color: var(--ink); }
+#menu a { font-size: 0.95rem; }
+#menu a span { color: var(--content); }
+#menu a:hover span, #menu .active { color: var(--accent); }
+#menu .active { border-bottom: 1px solid var(--accent); }
+
+/* ---- Type --------------------------------------------------- */
+h1, h2, h3, .page-header h1, .post-title {
+  font-family: var(--serif);
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.page-header h1 { font-size: 2rem; }
+.post-content a, .home a, .footer a, .pub-section a { color: var(--accent); text-decoration: none; box-shadow: none; }
+.post-content a:hover, .home a:hover, .footer a:hover, .pub-section a:hover { text-decoration: underline; }
+.post-content h5 {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-top: 1.6rem;
+}
+.post-content hr { border: 0; border-top: 1px solid var(--hairline); margin: 1.8rem 0; }
+
+/* ---- Paper lists: no cards, no badges, one column ----------- */
+.pub-list, #pub-list, .featured-list {
+  display: block !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pub-item, #pub-list .pub-item {
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 1.35rem;
+}
+.pub-item[hidden] { display: none; }
+.pub-title, a.pub-title {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink) !important;
+  text-decoration: none;
+}
+a.pub-title:hover { color: var(--accent) !important; text-decoration: none; }
+.pub-authors { font-size: 0.92rem; color: var(--muted); margin-top: 0.15rem; }
+.pub-venue {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+.pub-summary {
+  font-size: 0.95rem;
+  color: var(--content);
+  margin: 0.35rem 0 0;
+  max-width: none !important;
+}
+.pub-links { font-size: 0.92rem; margin-top: 0.3rem; }
+.pub-links span[aria-hidden], .home-other span[aria-hidden], .home-links-sep { color: var(--muted); margin: 0 0.45rem; }
+.pub-badge, .pub-topic-tag, .pub-tags { display: none !important; }
+
+/* ---- Research page ------------------------------------------ */
+.pub-intro { color: var(--muted); }
+.pub-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  font-size: 0.93rem;
+  margin: 0.6rem 0 1.2rem;
+}
+.pub-toc a { color: var(--accent); }
+.pub-controls {
+  display: flex;
+  gap: 0.6rem;
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.6rem;
+}
+.pub-input, .pub-select {
+  font: inherit;
+  font-size: 0.93rem;
+  padding: 0.45rem 0.65rem;
+  color: var(--content);
+  background: transparent;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  margin: 0;
+}
+.pub-input { flex: 1 1 auto; min-width: 0; }
+.pub-select { flex: 0 0 auto; max-width: 45%; }
+.pub-section { margin: 0 0 2.4rem; scroll-margin-top: 1rem; }
+.pub-section-title {
+  font-size: 1.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--hairline);
+  margin: 0 0 1.1rem;
+}
+.pub-section-note { font-size: 0.92rem; color: var(--muted); margin: -0.5rem 0 1.1rem; }
+.pub-section--earlier .pub-title { font-size: 1.04rem; }
+.pub-section--earlier .pub-summary { display: none; }
+.pub-empty { color: var(--muted); }
+
+/* ---- Homepage -------------------------------------------------- */
+.home { margin-top: 1.2rem; }
+.home-intro {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+  margin-bottom: 2.6rem;
+}
+.home-photo {
+  width: 112px;
+  height: 112px;
+  flex: 0 0 112px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.home-name { font-size: 1.9rem; margin: 0; line-height: 1.2; }
+.home-tagline { color: var(--muted); margin: 0.25rem 0 0.8rem; font-size: 1rem; }
+.home-bio { font-size: 1rem; }
+.home-bio p { margin: 0 0 0.6rem; }
+.home-links { font-size: 0.95rem; margin: 0.6rem 0 0; }
+.home-block { margin: 0 0 2.4rem; }
+.home-block-title {
+  font-size: 1.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--hairline);
+  margin: 0 0 1.2rem;
+}
+.home-more, .home-other { font-size: 0.95rem; margin: 0.4rem 0 0; }
+
+/* Recognition: a short quiet list */
+.recognition .recog-list { list-style: none; margin: 0; padding: 0; }
+.recognition .recog-item { font-size: 0.93rem; margin: 0 0 0.55rem; color: var(--content); }
+.recognition .recog-source { font-weight: 600; }
+.recognition .recog-work { font-style: italic; }
+.recognition .recog-date { color: var(--muted); margin-left: 0.3rem; }
+
+/* ---- Writing --------------------------------------------------- */
+.writing-intro { color: var(--muted); }
+.essay-list { list-style: none; margin: 1.4rem 0 0; padding: 0; }
+.essay { margin: 0 0 1.4rem; }
+.essay-title { font-family: var(--serif); font-size: 1.16rem; font-weight: 600; color: var(--ink) !important; }
+.essay-title:hover { color: var(--accent) !important; text-decoration: none !important; }
+.essay-note { font-size: 0.92rem; color: var(--muted); margin: 0.25rem 0 0; }
+
+/* ---- Footer ---------------------------------------------------- */
+.footer { color: var(--muted); font-size: 0.85rem; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem 1.1rem; margin-bottom: 0.5rem; font-size: 0.92rem; }
+
+/* ---- Motion off: the old reveal/count-up classes stay inert ---- */
+.reveal, .js .reveal { opacity: 1 !important; transform: none !important; }
+
+/* ---- Phone width ------------------------------------------------ */
+@media (max-width: 640px) {
+  .home-intro { flex-direction: column; gap: 1rem; }
+  .home-photo { width: 88px; height: 88px; flex-basis: 88px; }
+  .pub-controls { flex-direction: column; }
+  .pub-select { max-width: none; }
+}

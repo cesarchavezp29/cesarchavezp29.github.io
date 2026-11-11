@@ -2,6 +2,7 @@
 topic: "Conflict, Violence & Political Instability"
 title: "Do Coups Move Migration to the OECD? Bounds from a Staggered Design"
 date: 2026-10-25
+status: "working_paper"
 tags: ["coups","political instability","international migration","asylum","difference-in-differences"]
 author: "Carlos César Chávez Padilla"
 description: "Whether successful coups raise migration to OECD countries, tested with staggered difference-in-differences event studies."

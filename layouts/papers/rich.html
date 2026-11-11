@@ -9,7 +9,7 @@
       </span>
       {{- end }}
       <span class="rich-meta-item">{{ .Date.Format "January 2006" }}</span>
-      {{- with .Params.journal }}<span class="rich-meta-item">{{ . }}</span>{{- end }}
+      <span class="rich-meta-item">{{ partial "paper_venue.html" . }}</span>
     </div>
     {{- with .Params.editPost }}
     <div class="rich-paper-actions">

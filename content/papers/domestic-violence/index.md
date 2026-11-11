@@ -2,6 +2,7 @@
 topic: "Labor, Gender & Inequality"
 title: "Mining Presence and Domestic Violence"
 date: 2023-02-20
+status: "working_paper"
 tags: ["development","mining","domestic violence","Peru","gender"]
 author: "Carlos César Chávez Padilla"
 description: "Evidence from Peru on mining activity and violence against women"

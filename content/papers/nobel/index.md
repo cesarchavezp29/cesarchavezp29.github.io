@@ -1,11 +1,11 @@
 ---
 topic: "Innovation & the Economics Profession"
-underReview: true
-journal: "Revise and resubmit, Empirical Economics"
-journalName: "Empirical Economics"
 title: "The Anatomy of a Nobel Prize (1969–2025)"
 date: 2025-12-01
+status: "revise_resubmit"
 featured: true
+featuredRank: 3
+journal: "Empirical Economics"
 tags: ["economics profession","Nobel Prize","scientometrics"]
 author: "Carlos César Chávez Padilla"
 description: "Patterns in Nobel Prize awards in Economics from 1969 to 2025"

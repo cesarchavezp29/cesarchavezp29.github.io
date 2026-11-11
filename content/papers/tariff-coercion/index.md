@@ -2,6 +2,7 @@
 topic: "International Trade"
 title: "The Two Margins of Economic Coercion: Leverage and Partial Compliance under Imposed Sanctions"
 date: 2026-02-05
+status: "working_paper"
 tags: ["international trade","tariffs","political economy","coercion"]
 author: "Carlos César Chávez Padilla"
 description: "When does economic leverage through tariffs work?"

@@ -1,17 +1,27 @@
 {{- /* Cite button: copies a BibTeX entry built from the paper's front matter. Papers only. */ -}}
 {{- if eq .Section "papers" }}
+{{- /* Co-authored papers list every author in front-matter order; the owner's name
+       keeps its BibTeX-escaped form. */ -}}
 {{- $author := "Ch\\'avez Padilla, Carlos C\\'esar" }}
+{{- if reflect.IsSlice .Params.author }}
+  {{- $names := slice }}
+  {{- range .Params.author }}{{ if eq . site.Params.identity.name }}{{ $names = $names | append $author }}{{ else }}{{ $names = $names | append . }}{{ end }}{{ end }}
+  {{- $author = delimit $names " and " }}
+{{- end }}
 {{- $year := .Date.Format "2006" }}
 {{- $base := .File.ContentBaseName }}{{ if eq $base "index" }}{{ $base = path.Base (path.Dir .File.Path) }}{{ end }}
 {{- $key := printf "chavez%s%s" $year (replace $base "-" "") }}
 {{- $j := .Params.journal | default "" }}
-{{- $jl := lower $j }}
-{{- $published := and (ne $j "") (not (or (in $jl "under review") (in $jl "r&r") (in $jl "revise") (in $jl "forthcoming") (in $jl "submitted"))) }}
+{{- $st := partial "paper_status.html" . }}
 {{- $bib := "" }}
-{{- if $published }}
+{{- if eq $st.key "published" }}
 {{- $bib = printf "@article{%s,\n  author  = {%s},\n  title   = {%s},\n  journal = {%s},\n  year    = {%s}\n}" $key $author .Title $j $year }}
+{{- else if eq $st.key "accepted" }}
+{{- $bib = printf "@article{%s,\n  author  = {%s},\n  title   = {%s},\n  journal = {%s},\n  note    = {Forthcoming},\n  year    = {%s}\n}" $key $author .Title $j $year }}
 {{- else }}
-{{- $note := cond (ne $j "") $j "Working paper" }}
+{{- /* R&R and under-review papers are cited as working papers: a journal name in the
+       note would read as a publication claim. */ -}}
+{{- $note := .Params.series | default "Working paper" }}
 {{- $bib = printf "@unpublished{%s,\n  author = {%s},\n  title  = {%s},\n  note   = {%s},\n  year   = {%s}\n}" $key $author .Title $note $year }}
 {{- end }}
 &nbsp;&middot;&nbsp;<button type="button" class="cite-btn" aria-label="Copy citation">Cite</button>

@@ -1,9 +1,9 @@
 ---
 topic: "Labor, Gender & Inequality"
-peerReviewed: true
-journal: "Mineral Economics"
 title: "Mining Presence on Inequality, Labor Income, and Poverty"
 date: 2023-01-01
+status: "published"
+journal: "Mineral Economics"
 tags: ["development","mining","Peru","inequality","poverty"]
 author: "Carlos César Chávez Padilla"
 description: "Evidence from Peru"

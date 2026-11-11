@@ -98,8 +98,8 @@
 {{- with .Params.summary }}{{ $article = merge $article (dict "abstract" (. | plainify)) }}{{ end }}
 {{- with .Params.topic }}{{ $article = merge $article (dict "about" .) }}{{ end }}
 {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end }}
-{{- with (.Params.journalName | default .Params.journal) }}{{ $article = merge $article (dict "publication" .) }}{{ end }}
-{{- $st := partial "paper_status.html" . }}{{ $article = merge $article (dict "creativeWorkStatus" $st) }}
+{{- $st := partial "paper_status.html" . }}{{ $article = merge $article (dict "creativeWorkStatus" $st.label) }}
+{{- if $st.formal }}{{ with .Params.journal }}{{ $article = merge $article (dict "publication" .) }}{{ end }}{{ end }}
 {{- /* sameAs accumulates: a paper can have both a DOI and a working-paper landing
        page, and merging one at a time would silently drop the earlier one. */ -}}
 {{- $sameAs := slice }}

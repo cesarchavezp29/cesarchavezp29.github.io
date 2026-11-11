@@ -1,0 +1,42 @@
+{{- define "main" }}
+{{- /* Data & Tools: the platform first, then datasets as academic entries. Reads the
+       projects/ and data/ sections, so adding a page there lists it here. */ -}}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+{{- with .Content }}<div class="post-content pub-intro">{{ . }}</div>{{ end }}
+
+{{- with site.GetPage "projects" }}{{ with .RegularPages.ByDate.Reverse }}
+<section class="pub-section" id="projects">
+  <h2 class="pub-section-title">Platforms</h2>
+  <ul class="pub-list">
+    {{- range . }}
+    <li class="pub-item">
+      <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{- with .Description }}<p class="pub-summary">{{ . }}</p>{{ end }}
+      <div class="pub-links"><a href="{{ .Permalink }}">Project page</a></div>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}{{ end }}
+
+{{- with site.GetPage "data" }}{{ with .RegularPages.ByDate.Reverse }}
+<section class="pub-section" id="datasets">
+  <h2 class="pub-section-title">Datasets &amp; Replication</h2>
+  <p class="pub-section-note">Built from public sources, no personal data, released under CC BY 4.0.</p>
+  <ul class="pub-list">
+    {{- range . }}
+    <li class="pub-item">
+      <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{- with .Description }}<p class="pub-summary">{{ . }}</p>{{ end }}
+      <div class="pub-links">
+        {{- with .Params.editPost }}<a href="{{ .URL | relURL }}">{{ .Text }}</a><span aria-hidden="true">&middot;</span>{{ end }}
+        <a href="{{ .Permalink }}">Documentation</a>
+      </div>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}{{ end }}
+{{- end }}

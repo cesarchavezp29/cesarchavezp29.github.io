@@ -2,6 +2,7 @@
 topic: "Macroeconomics, Firms & Investment"
 title: "Identifying Monetary Policy Shocks in an Administered-Rate Economy: Evidence from Peru"
 date: 2026-02-01
+status: "working_paper"
 tags: ["monetary policy","identification","SVAR","emerging markets","central banking","Peru"]
 author: "Carlos César Chávez Padilla"
 description: "Why standard monetary-policy identification fails when the policy rate is administered and there is no rate-futures market, and what survives, for Peru and similar emerging-market central banks."

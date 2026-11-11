@@ -1,6 +1,7 @@
 ---
 title: "The Macroeconomics of Automation: Sorting Frictions and the Asymmetry Between Robots and AI"
 date: 2026-08-10
+status: "working_paper"
 topic: "Innovation & the Economics Profession"
 tags: ["automation","robots","artificial intelligence","task reinstatement","sorting frictions","labor share","skill premium","directed technical change","optimal policy"]
 author: "Carlos César Chávez Padilla"

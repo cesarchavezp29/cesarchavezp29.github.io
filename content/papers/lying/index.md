@@ -2,6 +2,7 @@
 topic: "Political Economy of Information"
 title: "A Simple Mathematical Model of Lying"
 date: 2024-12-01
+status: "working_paper"
 tags: ["political economy","game theory","misinformation","political manipulation"]
 author: "Carlos César Chávez Padilla"
 description: "Strategic deception and political manipulation"

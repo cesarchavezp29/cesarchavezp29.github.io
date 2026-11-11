@@ -1,14 +1,7 @@
-{{- /* One paper entry in the grouped Research list. Context: a paper Page. */ -}}
-{{- $venue := .Params.journal -}}
-{{- if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end -}}
-<li class="pub-item">
-  <div class="pub-head">
-    <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
-    <span class="pub-meta">
-      {{- .Date.Format "2006" -}}
-      {{- with $venue }}&nbsp;&middot;&nbsp;{{ . }}{{ end -}}
-    </span>
-  </div>
+{{- /* One paper entry: black title, grey editorial line beneath it. Context: a paper Page. */ -}}
+<li class="pub-item" data-date="{{ .Date.Format "2006-01-02" }}" data-topic="{{ .Params.topic }}" data-title="{{ lower .Title }}">
+  <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
+  <div class="pub-venue">{{ partial "paper_venue.html" . }}&nbsp;&middot;&nbsp;{{ .Date.Format "2006" }}</div>
   {{- with .Summary }}
   <p class="pub-summary">{{ . | plainify | htmlUnescape }}</p>
   {{- end }}

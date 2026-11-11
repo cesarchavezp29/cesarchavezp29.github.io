@@ -1,147 +1,57 @@
-{{- /* Custom homepage — wide two-column layout that fills the frame. Overrides theme partial. */ -}}
-<div class="profile">
-    {{- with site.Params.profileMode }}
-    <div class="profile_inner">
-        <div class="hero">
-            <div class="hero-photo">
-                <img draggable="false" loading="eager"
-                     src="{{ (.imageUrl | default "picture.jpeg") | absURL }}"
-                     alt="{{ .title | default site.Title }}"
-                     width="200" height="200" />
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-name">{{ .title | default site.Title | markdownify }}</h1>
-                {{- with .tagline }}
-                <p class="hero-tagline">{{ . | markdownify }}</p>
-                {{- end }}
-                {{- with .subtitle }}
-                <div class="hero-bio">{{ . | markdownify }}</div>
-                {{- end }}
-                <div class="hero-social">
-                    {{- partial "social_icons.html" -}}
-                </div>
-            </div>
-        </div>
+{{- /* Homepage: short introduction, a small set of selected papers, then quiet links
+       to the rest. Selection is declared in front matter (featured + featuredRank);
+       every editorial line comes from partials/paper_venue.html. */ -}}
+{{- $me := site.Params.identity.name }}
+<div class="home">
+  {{- with site.Params.profileMode }}
+  <header class="home-intro">
+    <img class="home-photo" draggable="false" loading="eager"
+         src="{{ (.imageUrl | default "picture.jpeg") | absURL }}"
+         alt="{{ .title | default site.Title }}" width="112" height="112" />
+    <div class="home-intro-text">
+      <h1 class="home-name">{{ .title | default site.Title | markdownify }}</h1>
+      {{- with .tagline }}<p class="home-tagline">{{ . | markdownify }}</p>{{ end }}
+      {{- with .subtitle }}<div class="home-bio">{{ . | markdownify }}</div>{{ end }}
+      <p class="home-links">
+        {{- range $i, $s := site.Params.socialIcons }}{{ if ne $s.name "Location" }}{{ if $i }}<span class="home-links-sep" aria-hidden="true">&middot;</span>{{ end }}<a href="{{ $s.url | relURL }}"{{ if hasPrefix $s.url "http" }} rel="noopener" target="_blank"{{ end }}>{{ $s.name }}</a>{{ end }}{{ end }}
+      </p>
     </div>
-    {{- end }}
+  </header>
+  {{- end }}
+
+  {{- $papers := where site.RegularPages "Section" "papers" }}
+  {{- $selected := sort (where $papers "Params.featured" true) "Params.featuredRank" }}
+  {{- with $selected }}
+  <section class="home-block">
+    <h2 class="home-block-title">Selected Research</h2>
+    <ul class="pub-list pub-list--selected">
+      {{- range . }}
+      {{- $coauthors := slice }}
+      {{- if reflect.IsSlice .Params.author }}{{ range .Params.author }}{{ if ne . $me }}{{ $coauthors = $coauthors | append . }}{{ end }}{{ end }}{{ end }}
+      <li class="pub-item">
+        <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- with $coauthors }}<div class="pub-authors">with {{ delimit . ", " " and " }}</div>{{ end }}
+        <div class="pub-venue">{{ partial "paper_venue.html" . }}&nbsp;&middot;&nbsp;{{ .Date.Format "2006" }}</div>
+        <div class="pub-links">
+          {{- with .Params.pdf }}<a href="{{ . | relURL }}">PDF</a><span aria-hidden="true">&middot;</span>{{ else }}{{ with .Params.editPost }}<a href="{{ .URL }}"{{ if hasPrefix .URL "http" }} rel="noopener" target="_blank"{{ end }}>{{ .Text }}</a><span aria-hidden="true">&middot;</span>{{ end }}{{ end }}
+          <a href="{{ .Permalink }}">Abstract</a>
+        </div>
+      </li>
+      {{- end }}
+    </ul>
+    <p class="home-more"><a href="{{ "papers/" | relURL }}">View all research &rarr;</a></p>
+  </section>
+  {{- end }}
+
+  <section class="home-block">
+    <h2 class="home-block-title">Other Work</h2>
+    <p class="home-other">
+      <a href="{{ "papers/#publications" | relURL }}">Publications</a><span aria-hidden="true">&middot;</span>
+      <a href="{{ "papers/#working-papers" | relURL }}">Working Papers</a><span aria-hidden="true">&middot;</span>
+      <a href="{{ "writing/" | relURL }}">Essays &amp; Public Writing</a><span aria-hidden="true">&middot;</span>
+      <a href="{{ "teaching/" | relURL }}">Teaching</a>
+    </p>
+  </section>
+
+  {{ partial "recognition.html" . }}
 </div>
-
-{{- $papers := where site.RegularPages "Section" "papers" }}
-
-{{- /* Status comes from partials/paper_status.html, the same source the Research page
-       and the paper pages use, so the counters can never drift from the badges. */ -}}
-{{- $published := slice }}{{ $accepted := slice }}{{ $review := slice }}{{ $working := slice }}
-{{- range $papers }}
-  {{- $st := partial "paper_status.html" . }}
-  {{- if eq $st "Published" }}{{ $published = $published | append . }}
-  {{- else if eq $st "Accepted" }}{{ $accepted = $accepted | append . }}
-  {{- else if eq $st "Under review" }}{{ $review = $review | append . }}
-  {{- else }}{{ $working = $working | append . }}{{ end }}
-{{- end }}
-{{- /* Accepted is a publication commitment, not pipeline, so it counts with Published
-       here and keeps its own precise badge everywhere a paper is listed. */ -}}
-{{- $publishedCount := add (len $published) (len $accepted) }}
-
-{{- /* distinct topics with counts, for the sidebar */ -}}
-{{- $topicNames := slice }}
-{{- range $papers }}{{ with .Params.topic }}{{ $topicNames = $topicNames | append . }}{{ end }}{{ end }}
-{{- $topicNames = $topicNames | uniq | sort }}
-
-{{- /* Counts are rendered server-side as text. The count-up animation resets them to 0
-       and runs from there, so the real figures are in the HTML for crawlers and for
-       anyone without JS, while the on-screen behaviour is unchanged. */ -}}
-<section class="home-stats reveal">
-  <div class="stat"><span class="stat-num" data-target="{{ len $papers }}">{{ len $papers }}</span><span class="stat-lbl">Papers</span></div>
-  <div class="stat"><span class="stat-num" data-target="{{ $publishedCount }}">{{ $publishedCount }}</span><span class="stat-lbl">Published</span></div>
-  <div class="stat"><span class="stat-num" data-target="{{ len $review }}">{{ len $review }}</span><span class="stat-lbl">Under Review</span></div>
-  <div class="stat"><span class="stat-num" data-target="{{ len $topicNames }}">{{ len $topicNames }}</span><span class="stat-lbl">Fields</span></div>
-</section>
-
-<div class="home-grid">
-  <main class="home-main">
-    <section class="home-section reveal">
-      <h2 class="home-section-title">Recent Research</h2>
-      <ul class="pub-list pub-list--flat home-recent">
-        {{- range first 6 $papers.ByDate.Reverse }}
-        {{- $status := partial "paper_status.html" . }}
-        {{- $venue := .Params.journal }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
-        {{- $cls := index (dict "Published" "pub" "Accepted" "acc" "Under review" "rev" "Working paper" "wp") $status }}
-        <li class="pub-item">
-          <div class="pub-head">
-            <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
-            <span class="pub-meta">{{ .Date.Format "2006" }}{{ with $venue }}&nbsp;&middot;&nbsp;{{ . }}{{ end }}</span>
-          </div>
-          <div class="pub-tags">
-            <span class="pub-badge pub-badge--{{ $cls }}">{{ $status }}</span>
-            {{- with .Params.topic }}<span class="pub-topic-tag">{{ . }}</span>{{ end }}
-          </div>
-        </li>
-        {{- end }}
-      </ul>
-      <div class="home-section-foot"><a href="{{ "papers/" | relURL }}">Browse all {{ len $papers }} papers &nbsp;&rarr;</a></div>
-    </section>
-
-    {{ partial "recognition.html" . }}
-  </main>
-
-  <aside class="home-side">
-    <section class="home-section reveal">
-      <h2 class="home-section-title">Research Areas</h2>
-      <div class="topic-cards">
-        {{- range $topicNames }}
-        {{- $tp := . }}
-        {{- $n := len (where $papers "Params.topic" $tp) }}
-        <a class="topic-card" href="{{ (printf "papers/?topic=%s" (urlquery $tp)) | relURL }}">
-          <span class="topic-name">{{ $tp }}</span>
-          <span class="topic-count">{{ $n }}</span>
-        </a>
-        {{- end }}
-      </div>
-    </section>
-
-    {{- with site.GetPage "papers/automation" }}
-    <section class="home-section reveal">
-      <h2 class="home-section-title">Featured</h2>
-      <a href="{{ .RelPermalink }}" class="featured-card">
-        <div class="featured-eyebrow">Interactive paper</div>
-        <h3 class="featured-title">{{ .Title }}</h3>
-        <p class="featured-summary">A two-frontier task model showing why aggregate automation hides opposite skill-premium effects of robots and AI, with a live in-browser simulation.</p>
-        <span class="featured-cta">Open paper &nbsp;&rarr;</span>
-      </a>
-    </section>
-    {{- end }}
-  </aside>
-</div>
-
-<script>
-(function(){
-  var reveals = document.querySelectorAll('.reveal');
-  var stats = document.querySelectorAll('.stat-num');
-
-  // Without IntersectionObserver nothing would ever be revealed, and .js .reveal is
-  // opacity:0. Only claim the js class once we know we can undo it.
-  if (!('IntersectionObserver' in window)) return;
-  document.documentElement.classList.add('js');
-
-  var revealIO = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in-view'); revealIO.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(function(el){ revealIO.observe(el); });
-
-  // The server already rendered the true figure. Animate from 0 up to it, then restore
-  // the exact text so a dropped frame can never leave a wrong number on screen.
-  function countTo(el){
-    var target = +el.dataset.target, dur = 1100, start = performance.now();
-    function frame(now){
-      var t = Math.min(1, (now - start) / dur), ease = 1 - Math.pow(1 - t, 3);
-      el.textContent = t < 1 ? Math.round(target * ease) : target;
-      if (t < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-  var counterIO = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counterIO.unobserve(e.target); } });
-  }, { threshold: 0.5 });
-  stats.forEach(function(el){ counterIO.observe(el); });
-})();
-</script>

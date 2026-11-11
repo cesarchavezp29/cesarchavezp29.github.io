@@ -1,9 +1,9 @@
 ---
 topic: "Innovation & the Economics Profession"
-peerReviewed: true
-journal: "AI and Ethics"
 title: "A Theory of (Illusional) Progress"
 date: 2025-01-01
+status: "published"
+journal: "AI and Ethics"
 tags: ["AI ethics","technological innovation","philosophy","civilization"]
 author: "Carlos César Chávez Padilla"
 description: "Balancing technological innovation and civilizational advancement"

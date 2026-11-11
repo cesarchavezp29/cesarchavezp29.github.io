@@ -2,6 +2,7 @@
 topic: "Innovation & the Economics Profession"
 title: "Automation Is Not a Sufficient Statistic: Robots, AI, and Inequality"
 date: 2026-02-10
+status: "working_paper"
 layout: rich
 math: true
 tags: ["automation","AI","inequality","labor economics","technology"]

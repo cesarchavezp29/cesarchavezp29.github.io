@@ -11,140 +11,107 @@
 {{- end }}
 
 {{- $all := .RegularPages.ByDate.Reverse }}
+{{- $current := where $all "Params.earlier" "!=" true }}
+{{- $earlier := where $all "Params.earlier" true }}
 
-{{- /* Selected research: strongest / strong-venue papers, featured at the top */ -}}
-{{- $featured := where $all "Params.featured" true }}
-{{- with $featured }}
-<section class="featured-research">
-  <h2 class="featured-research-title">Selected research</h2>
-  <ul class="pub-list pub-list--flat featured-list">
-    {{- range . }}
-    {{- $status := partial "paper_status.html" . }}
-    {{- $venue := .Params.journal | default "" }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
-    {{- $cls := index (dict "Published" "pub" "Accepted" "acc" "Under review" "rev" "Working paper" "wp") $status }}
-    <li class="pub-item">
-      <div class="pub-head"><a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a><span class="pub-meta">{{ .Date.Format "2006" }}{{ with $venue }}&nbsp;&middot;&nbsp;{{ . }}{{ end }}</span></div>
-      <div class="pub-tags"><span class="pub-badge pub-badge--{{ $cls }}">{{ $status }}</span>{{ with .Params.topic }}<span class="pub-topic-tag">{{ . }}</span>{{ end }}</div>
-      {{- with .Summary }}<p class="pub-summary">{{ . | plainify | htmlUnescape }}</p>{{ end }}
-    </li>
-    {{- end }}
-  </ul>
-</section>
+{{- /* Sections in editorial order. Membership comes only from the declared status
+       (partials/paper_status.html), so each paper appears in exactly one section. */ -}}
+{{- $sections := slice
+  (dict "key" "published"       "id" "publications"    "title" "Publications"           "note" "Peer-reviewed journal articles.")
+  (dict "key" "accepted"        "id" "accepted"        "title" "Forthcoming & Accepted" "note" "")
+  (dict "key" "revise_resubmit" "id" "revise-resubmit" "title" "Revise & Resubmit"      "note" "")
+  (dict "key" "submitted"       "id" "submitted"       "title" "Submitted Manuscripts"  "note" "Under review at the journal shown.")
+  (dict "key" "working_paper"   "id" "working-papers"  "title" "Working Papers"         "note" "")
+}}
+
+{{- /* Bucket once, reuse for the section index and the sections themselves. */ -}}
+{{- $buckets := dict }}
+{{- range $sec := $sections }}
+  {{- $items := slice }}
+  {{- range $current }}{{ if eq (partial "paper_status.html" .).key $sec.key }}{{ $items = $items | append . }}{{ end }}{{ end }}
+  {{- $buckets = merge $buckets (dict $sec.key $items) }}
 {{- end }}
 
-{{- /* distinct topics, for the topic filter */ -}}
 {{- $topics := slice }}
 {{- range $all }}{{ with .Params.topic }}{{ $topics = $topics | append . }}{{ end }}{{ end }}
 {{- $topics = $topics | uniq | sort }}
 
-<div class="pub-controls" role="group" aria-label="Filter and sort papers">
-  <input type="search" id="pub-search" class="pub-input" placeholder="Search papers&hellip;" aria-label="Search papers">
-  <div class="pub-controls-row">
-    <select id="pub-sort" class="pub-select" aria-label="Sort papers">
-      <option value="date-desc">Newest first</option>
-      <option value="date-asc">Oldest first</option>
-      <option value="title">Title A&ndash;Z</option>
-    </select>
-    <select id="pub-topic" class="pub-select" aria-label="Filter by topic">
-      <option value="">All topics</option>
-      {{- range $topics }}<option value="{{ . }}">{{ . }}</option>{{ end }}
-    </select>
-    <div class="pub-chips" id="pub-status" role="group" aria-label="Filter by status">
-      <button type="button" class="pub-chip is-active" data-status="">All</button>
-      <button type="button" class="pub-chip" data-status="Published">Published</button>
-      <button type="button" class="pub-chip" data-status="Accepted">Accepted</button>
-      <button type="button" class="pub-chip" data-status="Under review">Under review</button>
-      <button type="button" class="pub-chip" data-status="Working paper">Working papers</button>
-    </div>
-  </div>
-  {{- /* Rendered server-side so the page states its own size without JS. The filter
-         script overwrites it as the visible set changes. */ -}}
-  <p class="pub-count" id="pub-count">{{ len $all }} papers</p>
+<nav class="pub-toc" aria-label="Research sections">
+  {{- range $sec := $sections }}{{ if index $buckets $sec.key }}<a href="#{{ $sec.id }}">{{ $sec.title }}</a>{{ end }}{{ end }}
+  {{- if $earlier }}<a href="#earlier">Earlier Research</a>{{ end }}
+</nav>
+
+<div class="pub-controls" role="group" aria-label="Filter papers">
+  <input type="search" id="pub-search" class="pub-input" placeholder="Search titles" aria-label="Search papers">
+  <select id="pub-topic" class="pub-select" aria-label="Filter by field">
+    <option value="">All fields</option>
+    {{- range $topics }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+  </select>
 </div>
 
-<ul class="pub-list pub-list--flat" id="pub-list">
-  {{- range $all }}
-  {{- $status := partial "paper_status.html" . }}
-  {{- $venue := .Params.journal | default "" }}{{ if not $venue }}{{ with .Params.editPost }}{{ $venue = .Text }}{{ end }}{{ end }}
-  {{- $cls := index (dict "Published" "pub" "Accepted" "acc" "Under review" "rev" "Working paper" "wp") $status }}
-  <li class="pub-item" data-date="{{ .Date.Format "2006-01-02" }}" data-status="{{ $status }}" data-topic="{{ .Params.topic }}" data-title="{{ lower .Title }}">
-    <div class="pub-head">
-      <a class="pub-title" href="{{ .Permalink }}">{{ .Title }}</a>
-      <span class="pub-meta">{{ .Date.Format "2006" }}{{ with $venue }}&nbsp;&middot;&nbsp;{{ . }}{{ end }}</span>
-    </div>
-    <div class="pub-tags">
-      <span class="pub-badge pub-badge--{{ $cls }}">{{ $status }}</span>
-      {{- with .Params.topic }}<span class="pub-topic-tag">{{ . }}</span>{{ end }}
-    </div>
-    {{- with .Summary }}
-    <p class="pub-summary">{{ . | plainify | htmlUnescape }}</p>
-    {{- end }}
-  </li>
-  {{- end }}
-</ul>
+{{- range $sec := $sections }}
+{{- $items := index $buckets $sec.key }}
+{{- if $items }}
+<section class="pub-section" id="{{ $sec.id }}">
+  <h2 class="pub-section-title">{{ $sec.title }}</h2>
+  {{- with $sec.note }}<p class="pub-section-note">{{ . }}</p>{{ end }}
+  <ul class="pub-list">
+    {{- range $items }}{{ partial "pub_item.html" . }}{{ end }}
+  </ul>
+</section>
+{{- end }}
+{{- end }}
+
+{{- if $earlier }}
+<section class="pub-section pub-section--earlier" id="earlier">
+  <h2 class="pub-section-title">Earlier Research</h2>
+  <p class="pub-section-note">Earlier articles, kept here and in the CV.</p>
+  <ul class="pub-list">
+    {{- range $earlier }}{{ partial "pub_item.html" . }}{{ end }}
+  </ul>
+</section>
+{{- end }}
+
 <p class="pub-empty" id="pub-empty" hidden>No papers match these filters.</p>
+
+<section class="pub-section pub-section--more">
+  <h2 class="pub-section-title">Data &amp; Projects</h2>
+  <p class="pub-section-note"><a href="{{ "data/" | relURL }}">Data</a> &middot; <a href="{{ "projects/" | relURL }}">Projects</a> &middot; <a href="{{ "talks/" | relURL }}">Talks</a></p>
+</section>
 
 <script>
 (function () {
-  var list = document.getElementById('pub-list');
-  if (!list) return;
-  var items = Array.prototype.slice.call(list.children);
   var search = document.getElementById('pub-search');
-  var sortSel = document.getElementById('pub-sort');
   var topicSel = document.getElementById('pub-topic');
-  var statusWrap = document.getElementById('pub-status');
+  if (!search || !topicSel) return;
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.pub-section[id]:not(.pub-section--more)'));
   var empty = document.getElementById('pub-empty');
-  var count = document.getElementById('pub-count');
-  var status = '';
 
   function apply() {
     var q = (search.value || '').toLowerCase().trim();
     var topic = topicSel.value;
-    var visible = items.filter(function (it) {
-      if (q && it.getAttribute('data-title').indexOf(q) < 0) return false;
-      if (topic && it.getAttribute('data-topic') !== topic) return false;
-      if (status && it.getAttribute('data-status') !== status) return false;
-      return true;
+    var shown = 0;
+    sections.forEach(function (sec) {
+      var n = 0;
+      sec.querySelectorAll('.pub-item').forEach(function (it) {
+        var ok = (!q || it.getAttribute('data-title').indexOf(q) >= 0) &&
+                 (!topic || it.getAttribute('data-topic') === topic);
+        it.hidden = !ok;
+        if (ok) n++;
+      });
+      sec.hidden = n === 0;
+      shown += n;
     });
-    var key = sortSel.value;
-    visible.sort(function (a, b) {
-      if (key === 'title') return a.getAttribute('data-title').localeCompare(b.getAttribute('data-title'));
-      var da = a.getAttribute('data-date'), db = b.getAttribute('data-date');
-      return key === 'date-asc' ? da.localeCompare(db) : db.localeCompare(da);
-    });
-    items.forEach(function (it) { it.style.display = 'none'; });
-    visible.forEach(function (it) { it.style.display = ''; list.appendChild(it); });
-    empty.hidden = visible.length > 0;
-    if (count) count.textContent = visible.length + (visible.length === 1 ? ' paper' : ' papers');
+    empty.hidden = shown > 0;
   }
-
   search.addEventListener('input', apply);
-  sortSel.addEventListener('change', apply);
   topicSel.addEventListener('change', apply);
-  statusWrap.addEventListener('click', function (e) {
-    var btn = e.target.closest('.pub-chip');
-    if (!btn) return;
-    status = btn.getAttribute('data-status');
-    Array.prototype.forEach.call(statusWrap.children, function (c) {
-      c.classList.toggle('is-active', c === btn);
-    });
-    apply();
-  });
 
-  // deep-link from the homepage: /papers/?topic=...&status=...
-  var params = new URLSearchParams(location.search);
-  var pt = params.get('topic');
+  // deep link: /papers/?topic=...
+  var pt = new URLSearchParams(location.search).get('topic');
   if (pt) {
     for (var i = 0; i < topicSel.options.length; i++) {
       if (topicSel.options[i].value === pt) { topicSel.value = pt; break; }
-    }
-  }
-  var ps = params.get('status');
-  if (ps) {
-    var chip = statusWrap.querySelector('.pub-chip[data-status="' + ps + '"]');
-    if (chip) {
-      status = ps;
-      Array.prototype.forEach.call(statusWrap.children, function (c) { c.classList.toggle('is-active', c === chip); });
     }
   }
   apply();

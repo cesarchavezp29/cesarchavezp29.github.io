@@ -2,6 +2,7 @@
 topic: "Labor, Gender & Inequality"
 title: "Missing Mass and Minimum Wages: Distributional Changes around Four Minimum Wage Increases in Peru"
 date: 2026-03-01
+status: "working_paper"
 tags: ["minimum wage","bunching","distributional effects","informality","Peru","labor economics"]
 author: "Carlos César Chávez Padilla"
 description: "What three minimum-wage increases did to the Peruvian wage distribution, using a bunching estimator adapted to a national setting without control jurisdictions."

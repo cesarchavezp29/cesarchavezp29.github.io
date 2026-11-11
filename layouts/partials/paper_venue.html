@@ -1,0 +1,19 @@
+{{- /*
+  The editorial line shown under a paper title, as plain text:
+    published        Journal Name
+    accepted         Accepted · Journal Name
+    revise_resubmit  Revise & Resubmit · Journal Name
+    submitted        Under review · Journal Name
+    working_paper    Series (e.g. IMF Working Paper 2022/180) or "Working paper"
+*/ -}}
+{{- $st := partial "paper_status.html" . -}}
+{{- $j := .Params.journal | default "" -}}
+{{- $out := "" -}}
+{{- if eq $st.key "published" -}}
+  {{- $out = $j -}}
+{{- else if eq $st.key "working_paper" -}}
+  {{- $out = .Params.series | default "Working paper" -}}
+{{- else -}}
+  {{- $out = printf "%s · %s" $st.label $j -}}
+{{- end -}}
+{{- return $out -}}

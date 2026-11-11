@@ -1,27 +1,33 @@
 {{- /*
-  Single source of truth for a paper's publication status.
-  Was duplicated in four places (papers/list.html twice, index_profile.html twice),
-  and the copies had drifted: the featured list bucketed "forthcoming" as Under review.
+  Single source of truth for a paper's editorial status.
 
-  Returns one of: Published | Accepted | Under review | Working paper.
-  Accepted covers accepted-and-forthcoming, which is a publication commitment,
-  not pipeline, and so is never reported as Under review.
+  The status is DECLARED in front matter (`status:`), never inferred from the journal
+  text. `journal:` holds the journal name only. An undeclared or unknown status fails
+  the build, so a stale or mistyped status cannot reach the live site silently.
+
+    published        peer-reviewed article in print or online
+    accepted         accepted / forthcoming
+    revise_resubmit  formal R&R from the journal named in `journal`
+    submitted        under review at the journal named in `journal`
+    working_paper    not under review (optionally `series:`, e.g. IMF Working Paper)
+
+  Returns a dict: key (as above), label (display text), order (section order),
+  and formal (true when the journal relationship is a publication commitment, so
+  citations and Scholar metadata may name the journal).
 */ -}}
-{{- $j := lower (.Params.journal | default "") -}}
-{{- $status := "Working paper" -}}
-{{- if .Params.accepted -}}
-  {{- $status = "Accepted" -}}
-{{- else if .Params.peerReviewed -}}
-  {{- $status = "Published" -}}
-{{- else if .Params.underReview -}}
-  {{- $status = "Under review" -}}
-{{- else if $j -}}
-  {{- if or (in $j "accepted") (in $j "forthcoming") -}}
-    {{- $status = "Accepted" -}}
-  {{- else if or (in $j "under review") (in $j "r&r") (in $j "revise") (in $j "submitted") -}}
-    {{- $status = "Under review" -}}
-  {{- else -}}
-    {{- $status = "Published" -}}
-  {{- end -}}
+{{- $defs := dict
+  "published"       (dict "label" "Published"           "order" 1 "formal" true)
+  "accepted"        (dict "label" "Accepted"            "order" 2 "formal" true)
+  "revise_resubmit" (dict "label" "Revise & Resubmit"   "order" 3 "formal" false)
+  "submitted"       (dict "label" "Under review"        "order" 4 "formal" false)
+  "working_paper"   (dict "label" "Working paper"       "order" 5 "formal" false)
+-}}
+{{- $key := .Params.status | default "" -}}
+{{- $def := index $defs $key -}}
+{{- if not $def -}}
+  {{- errorf "paper %q: status %q is not one of published, accepted, revise_resubmit, submitted, working_paper" .File.Path $key -}}
 {{- end -}}
-{{- return $status -}}
+{{- if and (in (slice "published" "accepted" "revise_resubmit" "submitted") $key) (not .Params.journal) -}}
+  {{- errorf "paper %q: status %q needs a journal" .File.Path $key -}}
+{{- end -}}
+{{- return merge $def (dict "key" $key) -}}

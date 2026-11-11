@@ -18,6 +18,7 @@
 
 - kind: research
   source: National Affairs
+  highlight: true
   description: >-
     Selected for Findings, the daily roundup of academic studies.
   work: '"The Macroeconomics of Asymmetric Automation" and "Robots Reinstate, AI Doesn''t"'
@@ -30,6 +31,7 @@
 
 - kind: writing
   source: World Bank — Development Impact
+  highlight: true
   description: >-
     David McKenzie summarised and discussed the essay in the blog's weekly links.
   work: Why Macro Never Had a Credibility Revolution
@@ -41,6 +43,7 @@
 
 - kind: writing
   source: Marginal Revolution
+  highlight: true
   description: >-
     Tyler Cowen selected the essay for Wednesday assorted links.
   work: Why Economists Linearize Everything

@@ -1,9 +1,9 @@
 ---
 topic: "Labor, Gender & Inequality"
-peerReviewed: true
-journal: "Journal of Economics, Race, and Policy"
 title: "Minimum Wage and Ethnic Gaps"
 date: 2024-01-01
+status: "published"
+journal: "Journal of Economics, Race, and Policy"
 tags: ["labor economics","minimum wage","ethnicity","Peru","inequality"]
 author: "Carlos César Chávez Padilla"
 description: "Published in Journal of Economics, Race, and Policy"

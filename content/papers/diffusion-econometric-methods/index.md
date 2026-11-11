@@ -2,9 +2,7 @@
 topic: "Innovation & the Economics Profession"
 title: "The Diffusion of Econometric Methods: A Structural Model of the Credibility Revolution"
 date: 2026-06-28
-underReview: true
-journal: "Under review, Journal of Applied Econometrics"
-journalName: "Journal of Applied Econometrics"
+status: "working_paper"
 tags: ["economics profession","econometrics","credibility revolution","diffusion","discrete choice","network externalities"]
 author: "Carlos César Chávez Padilla"
 description: "Why the credibility revolution spread widely without converging on one method, tested with a structural discrete-choice model of method adoption."
@@ -16,7 +14,7 @@ summary: "A multinomial discrete-choice model of method adoption in the AER and 
 
 ##### Status
 
-Under review, *Journal of Applied Econometrics*.
+Working paper.
 
 ---
 
@@ -40,4 +38,4 @@ Coordination Games, Network Externalities, Discrete Choice, Social Interactions,
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "The Diffusion of Econometric Methods: A Structural Model of the Credibility Revolution." Under review, *Journal of Applied Econometrics*.
+Chávez Padilla, Carlos César. 2026. "The Diffusion of Econometric Methods: A Structural Model of the Credibility Revolution." Working paper.

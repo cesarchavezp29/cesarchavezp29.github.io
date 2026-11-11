@@ -1,9 +1,9 @@
 ---
 topic: "Macroeconomics, Firms & Investment"
-peerReviewed: true
-journal: "Latin American Journal of Trade Policy"
 title: "Heterogeneous Effects of Monetary Policy on Industries"
 date: 2023-01-01
+status: "published"
+journal: "Latin American Journal of Trade Policy"
 tags: ["monetary policy","Peru","firm-level data","heterogeneity"]
 author: "Carlos César Chávez Padilla"
 description: "Evidence from publicly traded firms in Peru"

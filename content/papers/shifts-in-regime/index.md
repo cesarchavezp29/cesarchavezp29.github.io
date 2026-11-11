@@ -2,11 +2,10 @@
 topic: "Conflict, Violence & Political Instability"
 title: "Cohort Effects of Democratization on Diffuse Regime Support and Emancipative Values"
 date: 2026-01-01
+status: "submitted"
+journal: "Political Behavior"
 tags: ["democratization","political attitudes","formative window","World Values Survey","Latinobarómetro","emancipative values"]
 author: "Carlos César Chávez Padilla"
-underReview: true
-journal: "Under review, Political Behavior"
-journalName: "Political Behavior"
 description: "Whether coming of age under democracy durably shapes political attitudes, tested with birth-cohort variation in democratic exposure."
 summary: "Using birth-cohort variation in democratic exposure across first-transition countries, the paper finds no formative effect on regime support, and shows that the apparent formative effect on emancipative values is observationally equivalent to a secular cohort trend."
 editPost:

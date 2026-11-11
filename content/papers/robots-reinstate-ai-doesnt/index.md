@@ -1,6 +1,7 @@
 ---
 title: "Wider Frontier or Higher Rate? Decomposing Complementary Task Creation Across Automation Frontiers"
 date: 2026-02-01
+status: "working_paper"
 topic: "Innovation & the Economics Profession"
 tags: ["automation","task creation","reinstatement","robots","artificial intelligence","directed technical change","wage dynamics"]
 author: "Carlos César Chávez Padilla"
