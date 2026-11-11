@@ -3,6 +3,7 @@ topic: "Conflict, Violence & Political Instability"
 title: "The Macroeconomic Consequences of Political Instability"
 date: 2024-06-01
 status: "working_paper"
+selectedWP: true
 tags: ["political economy","macroeconomics","coups","total factor productivity","local projections","democracy"]
 author: "Carlos César Chávez Padilla"
 description: "Whether all coups carry the same economic cost, and why the productivity damage concentrates in the coups that dismantle democratic institutions."

@@ -14,13 +14,15 @@
 {{- $current := where $all "Params.earlier" "!=" true }}
 {{- $earlier := where $all "Params.earlier" true }}
 
-{{- /* Two groups, as on most economics job-market sites: Publications (accepted
-       first, then published) and Working Papers (R&R first, then under review, then
-       working papers). The status line under each title carries the distinction.
-       Membership comes only from partials/paper_status.html. */ -}}
+{{- /* Publications (accepted first, then published); Under Review (R&R first, then
+       submitted), with the status line under each title; Working Papers, limited to
+       the papers marked `selectedWP: true`. Unselected working papers keep their
+       pages and stay in the CV, but are not listed here.
+       Status membership comes only from partials/paper_status.html. */ -}}
 {{- $sections := slice
-  (dict "id" "publications"   "title" "Publications"   "statuses" (slice "accepted" "published"))
-  (dict "id" "working-papers" "title" "Working Papers" "statuses" (slice "revise_resubmit" "submitted" "working_paper"))
+  (dict "id" "publications"   "title" "Publications"   "statuses" (slice "accepted" "published")          "selectedOnly" false)
+  (dict "id" "under-review"   "title" "Under Review"   "statuses" (slice "revise_resubmit" "submitted")   "selectedOnly" false)
+  (dict "id" "working-papers" "title" "Working Papers" "statuses" (slice "working_paper")                "selectedOnly" true)
 }}
 
 {{- /* Bucket once, reuse for the section index and the sections themselves. */ -}}
@@ -28,7 +30,7 @@
 {{- range $sec := $sections }}
   {{- $items := slice }}
   {{- range $st := $sec.statuses }}
-    {{- range $current }}{{ if eq (partial "paper_status.html" .).key $st }}{{ $items = $items | append . }}{{ end }}{{ end }}
+    {{- range $current }}{{ if and (eq (partial "paper_status.html" .).key $st) (or (not $sec.selectedOnly) .Params.selectedWP) }}{{ $items = $items | append . }}{{ end }}{{ end }}
   {{- end }}
   {{- $buckets = merge $buckets (dict $sec.id $items) }}
 {{- end }}

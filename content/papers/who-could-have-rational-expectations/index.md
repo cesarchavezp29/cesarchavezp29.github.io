@@ -3,6 +3,7 @@ topic: "Macroeconomics & Expectations"
 title: "Who Could Have Rational Expectations? Bounds Across People and Information Sets"
 date: 2026-08-01
 status: "working_paper"
+selectedWP: true
 featured: true
 featuredRank: 4
 tags: ["rational expectations","subjective expectations","partial identification","mixture models","HRS"]

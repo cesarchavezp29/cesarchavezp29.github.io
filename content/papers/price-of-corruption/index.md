@@ -3,6 +3,7 @@ topic: "Corruption & Political Economy"
 title: "The Price of Corruption: Evidence from Lava Jato and the Construction Club in Peru"
 date: 2026-08-12
 status: "working_paper"
+selectedWP: true
 tags: ["corruption","procurement","collusion","bid-rigging","Peru","infrastructure","auctions"]
 author: "Carlos César Chávez Padilla"
 description: "Two judicial records of Peruvian road corruption, Odebrecht bribery and a sanctioned bid-rigging cartel, used to measure what the corruption cost the State and the households living beside the works, and to grade collusion-detection screens on tenders whose status a ruling settles one at a time."

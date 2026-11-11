@@ -3,6 +3,7 @@ topic: "Innovation & the Economics Profession"
 title: "How Economists Adopt Methods: Methodological Choice, Specialization, and Scientific Communities"
 date: 2026-06-19
 status: "working_paper"
+selectedWP: true
 tags: ["economics profession","econometrics","methodology","diffusion","specialization","scientometrics"]
 author: "Carlos César Chávez Padilla"
 description: "How new methods spread through the economics profession, and why some become mainstream, through entry barriers, specialization, and community sorting."

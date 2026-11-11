@@ -3,6 +3,7 @@ topic: "Labor, Gender & Inequality"
 title: "Closing Peru's Ethnic Gaps Amidst Sustained Economic Growth"
 date: 2022-09-01
 status: "working_paper"
+selectedWP: true
 series: "IMF Working Paper 2022/180"
 tags: ["development","Peru","inequality","ethnicity","labor markets"]
 author: ["Gonzalo Salinas","Carlos César Chávez Padilla","Zahid Yuri"]
