@@ -2,8 +2,8 @@
 topic: "Innovation & the Economics Profession"
 title: "How Economists Adopt Methods: Methodological Choice, Specialization, and Scientific Communities"
 date: 2026-06-19
-status: "working_paper"
-selectedWP: true
+status: "revise_resubmit"
+journal: "Journal of Economic Methodology"
 tags: ["economics profession","econometrics","methodology","diffusion","specialization","scientometrics"]
 author: "Carlos César Chávez Padilla"
 description: "How new methods spread through the economics profession, and why some become mainstream, through entry barriers, specialization, and community sorting."
@@ -18,7 +18,7 @@ editPost:
 
 ##### Status
 
-Working paper.
+Revise and resubmit, *Journal of Economic Methodology*.
 
 ---
 
@@ -42,4 +42,4 @@ Economics Profession, Econometrics, Methodology, Diffusion of Ideas, Specializat
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "How Economists Adopt Methods: Methodological Choice, Specialization, and Scientific Communities." Working paper.
+Chávez Padilla, Carlos César. 2026. "How Economists Adopt Methods: Methodological Choice, Specialization, and Scientific Communities." Revise and resubmit, *Journal of Economic Methodology*.
