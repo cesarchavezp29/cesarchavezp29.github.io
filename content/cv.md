@@ -25,8 +25,7 @@ Development economist working on human capital and political economy, combining 
 
 ##### Research Interests
 
-**Primary:** Development Economics · Early Childhood Development  
-**Secondary:** Political Economy · Labor Economics
+Development economics · early childhood development · political economy · labor economics
 
 ---
 
@@ -101,27 +100,4 @@ Publications, papers under review and working papers, with their current editori
 
 ---
 
-##### Technical Skills
-
-**Programming:** Stata (advanced) · R (advanced) · Python (proficient) · Matlab (proficient)  
-**Software:** LaTeX · ArcGIS · MySQL  
-**Methods:** Structural estimation · panel data econometrics · causal inference · instrumental variables · machine learning · NLP  
-**Languages:** Spanish (native) · English (fluent)
-
----
-
-##### Professional Affiliations
-
-American Economic Association · Royal Economic Society · Econometric Society
-
----
-
-##### References
-
-**James J. Heckman** — Henry Schultz Distinguished Service Professor of Economics, Department of Economics and Harris School, University of Chicago. [jjh@uchicago.edu](mailto:jjh@uchicago.edu).
-
-**Amory Gethin** — Economist, Development Research Group, World Bank. [agethin@worldbank.org](mailto:agethin@worldbank.org).
-
-**Vincent Pons** — Byron Wien Professor of Business Administration, Harvard Business School. [vpons@hbs.edu](mailto:vpons@hbs.edu).
-
-*Additional references available upon request.*
+*Technical skills, affiliations and references are in the [Academic CV (PDF)](../cv.pdf).*
