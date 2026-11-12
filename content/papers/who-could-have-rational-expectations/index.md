@@ -1,6 +1,6 @@
 ---
 topic: "Macroeconomics & Expectations"
-title: "Who Could Have Rational Expectations? Bounds Across People and Information Sets"
+title: "The Macroeconomics of Partially Identified Expectations"
 date: 2026-08-01
 status: "working_paper"
 selectedWP: true

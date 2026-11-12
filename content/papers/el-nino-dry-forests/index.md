@@ -2,8 +2,6 @@
 title: "The impact of El Niño phenomenon on dry forest-dependent communities' welfare in the northern coast of Peru"
 date: 2020-01-01
 status: "published"
-featured: true
-featuredRank: 5
 journal: "Ecological Economics"
 author: "Carlos César Chávez Padilla"
 description: "Welfare effects of the El Niño phenomenon on dry-forest-dependent communities in northern Peru."
