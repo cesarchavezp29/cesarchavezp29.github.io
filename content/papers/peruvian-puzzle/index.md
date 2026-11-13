@@ -1,29 +1,26 @@
 ---
 topic: "Macroeconomics, Firms & Investment"
-title: "When Bad Institutions Meet Good Ones: The Peruvian Puzzle"
-date: 2026-01-01
+title: "Central Bank Credibility and Political Instability"
+date: 2026-10-01
 status: "working_paper"
+selectedWP: true
 tags: ["Peru","central bank","sovereign spread","monetary policy","credibility","political instability"]
-author: "Carlos César Chávez Padilla"
-description: "Why Peru's sovereign spread fell to historic lows through 2016–2023 political chaos, traced to central-bank credibility under Governor Velarde."
-summary: "Between 2016 and 2023 Peru cycled through seven presidents, a self-coup, and deadly protests, yet its sovereign spread fell to historic lows. The decoupling is traced to the credibility of the Central Reserve Bank under Governor Velarde, and rationalized with a delegation-and-learning model."
-editPost:
-    URL: "/peruvian-puzzle.pdf"
-    Text: "PDF"
-pdf: "peruvian-puzzle.pdf"
+author: ["Alex Carrasco", "Carlos César Chávez Padilla", "Luis Yépez"]
+description: "Why Peru's sovereign spread fell to historic lows through 2016–2023 political turmoil, traced to the credibility the central bank built under Governor Velarde."
+summary: "With Alex Carrasco and Luis Yépez. Between 2016 and 2023 Peru cycled through seven presidents, a self-coup and deadly protests, yet its sovereign spread fell to historic lows. A political event raised the spread by 18 basis points before 2006 and has no detectable effect afterward."
 ---
 
 ---
 
 ##### Download
 
-+ [Paper (PDF)](/peruvian-puzzle.pdf)
++ Paper (available upon request)
 
 ---
 
 ##### Abstract
 
-Between 2016 and 2023 Peru cycled through seven presidents, a presidential self-coup, and deadly mass protests, yet its sovereign spread fell to historic lows. We document this over 2000–2025 and trace it to the credibility of the Central Reserve Bank of Peru under Governor Julio Velarde, appointed in 2006. Before 2006 the average political event moved Peru's sovereign spread by 41 basis points; afterward the response is indistinguishable from zero. The instability–spread correlation flips from +0.55 to −0.23, daily spread volatility falls more than threefold, and the market response decays with the governor's tenure. We rationalize these facts with a model combining monetary-policy delegation, sovereign-spread pricing, and Bayesian learning about the governor's type, which yields an insulation theorem, a variance-reduction ratio, and a tenure-decay coefficient, each matched to an estimate. An endogenous structural-break test rejects a sharp 2006 transition in favor of gradual accumulation through the Velarde era, and the decoupling survives global controls.
+Between 2016 and 2023 Peru cycled through seven presidents, a presidential self-coup, and deadly mass protests, yet its sovereign spread fell to historic lows. We document this *Peruvian Puzzle* over 2000–2025 and trace it to the credibility the Central Reserve Bank of Peru built under Governor Julio Velarde, appointed in 2006. In a daily event study, a political event raised Peru's spread by 18 basis points before 2006. Afterward the response is indistinguishable from zero. The volatility of daily spread changes halves. The signed event-study response collapses at the start of the Velarde regime, while the absolute event-window response continues to decline with tenure, by about 0.4 basis points per year within the Velarde era. A model combining monetary-policy delegation, sovereign-spread pricing, and Bayesian learning about the governor's type rationalizes these facts and yields an insulation theorem and a tenure-decay coefficient. Credibility is not exhausted by a one-off regime change. An initial shift is followed by further accumulation with tenure, and the insulation it buys rests on one governor's continuation.
 
 ---
 
@@ -35,4 +32,4 @@ Central Bank Credibility, Sovereign Spreads, Monetary-Policy Delegation, Politic
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "When Bad Institutions Meet Good Ones: The Peruvian Puzzle." Working paper.
+Carrasco, Alex, Carlos César Chávez Padilla, and Luis Yépez. 2026. "Central Bank Credibility and Political Instability." Working paper.
