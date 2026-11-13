@@ -4,6 +4,8 @@ title: "Central Bank Credibility and Political Instability"
 date: 2026-10-01
 status: "working_paper"
 selectedWP: true
+featured: true
+featuredRank: 6
 tags: ["Peru","central bank","sovereign spread","monetary policy","credibility","political instability"]
 author: ["Alex Carrasco", "Carlos César Chávez Padilla", "Luis Yépez"]
 description: "Why Peru's sovereign spread fell to historic lows through 2016–2023 political turmoil, traced to the credibility the central bank built under Governor Velarde."
