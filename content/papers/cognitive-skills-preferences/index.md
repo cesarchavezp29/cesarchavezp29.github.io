@@ -8,7 +8,7 @@ journal: "Journal of Labor Economics"
 topic: "Labor, Gender & Inequality"
 author: ["Carlos César Chávez Padilla", "S. Feng", "James J. Heckman", "Z. Yang"]
 description: "Structural model of cognitive ability, personality, and economic preferences in Chinese children. Accepted at the Journal of Labor Economics."
-summary: "First author with S. Feng, J.J. Heckman, and Z. Yang. Structural modeling with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences."
+summary: "With S. Feng, J.J. Heckman, and Z. Yang. Structural modeling with sophisticated error structures separates preferences from deliberation quality; cognitive ability affects decision precision more than underlying risk preferences."
 
 ---
 
