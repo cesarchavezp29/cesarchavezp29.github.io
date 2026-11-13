@@ -22,7 +22,7 @@ Accepted, *Journal of Labor Economics*.
 
 ##### Authors
 
-Carlos César Chávez Padilla (first author), S. Feng, James J. Heckman, and Z. Yang.
+Carlos César Chávez Padilla, S. Feng, James J. Heckman, and Z. Yang.
 
 ---
 
