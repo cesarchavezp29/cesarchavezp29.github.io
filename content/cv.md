@@ -25,7 +25,7 @@ Peruvian economist working at the intersection of macroeconomics and political e
 
 ##### Research Interests
 
-Macroeconomics · political economy · econometrics · labor economics
+Political economy · macroeconomics · identification
 
 ---
 
