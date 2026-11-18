@@ -9,7 +9,7 @@ description: "Curriculum Vitae of Carlos César Chávez Padilla"
 
 <small>Also available: [one-page resume](../resume.pdf) · [one-page policy resume](../resume-policy.pdf)</small>
 
-Development economist working on human capital and political economy, combining structural estimation with high-frequency data. Research Professional with **James J. Heckman** at the University of Chicago, and builder of [**Qhawarina**](../projects/qhawarina/), a real-time open-data platform for Peru.
+Peruvian economist working at the intersection of macroeconomics and political economy, combining theoretical models and structural estimation. Currently a Research Professional under the supervision of **James J. Heckman** at the University of Chicago.
 
 ---
 
