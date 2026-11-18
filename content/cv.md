@@ -25,7 +25,7 @@ Peruvian economist working at the intersection of macroeconomics and political e
 
 ##### Research Interests
 
-Development economics · early childhood development · political economy · labor economics
+Macroeconomics · political economy · econometrics · labor economics
 
 ---
 
