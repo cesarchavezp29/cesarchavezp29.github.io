@@ -25,7 +25,7 @@ Peruvian economist working at the intersection of macroeconomics and political e
 
 ##### Research Interests
 
-Political economy · macroeconomics · identification
+Political economy and macroeconomics, especially how political instability, institutions and central bank credibility shape macroeconomic outcomes and expectations, and identification in economic models, from partial identification and bounds to structural estimation.
 
 ---
 

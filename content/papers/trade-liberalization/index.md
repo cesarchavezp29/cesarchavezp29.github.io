@@ -8,7 +8,7 @@ pdf: "https://revistas.up.edu.pe/business/article/download/2978/1987"
 title: "Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data"
 date: 2026-07-31
 status: "published"
-journal: "Journal of Business (Universidad del Pacífico)"
+journal: "Journal of Business"
 tags: ["international trade","innovation","liberalization","development","patents"]
 author: "Carlos César Chávez Padilla"
 description: "Long-term effects of trade liberalization on innovation in developing economies, using patent data"
@@ -23,7 +23,7 @@ editPost:
 
 ##### Published version
 
-+ [Article (Journal of Business, Universidad del Pacífico)](https://revistas.up.edu.pe/business/article/view/2978)
++ [Article (Journal of Business)](https://revistas.up.edu.pe/business/article/view/2978)
 + [PDF](https://revistas.up.edu.pe/business/article/download/2978/1987)
 + DOI: [10.21678/jb.2026.2978](https://doi.org/10.21678/jb.2026.2978)
 + [Earlier working paper (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4225025)
@@ -38,7 +38,7 @@ This paper investigates the long-term effects of trade liberalization on innovat
 
 ##### Citation
 
-Chávez, C. (2026). "Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data." *Journal of Business*, 17(2). Universidad del Pacífico. https://doi.org/10.21678/jb.2026.2978
+Chávez, C. (2026). "Did the Uruguay Round Spark Innovation? Evidence from Developing Countries Using Patent Data." *Journal of Business*, 17(2). https://doi.org/10.21678/jb.2026.2978
 
 ---
 
