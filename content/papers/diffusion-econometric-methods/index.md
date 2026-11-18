@@ -3,6 +3,9 @@ topic: "Innovation & the Economics Profession"
 title: "The Diffusion of Econometric Methods: A Structural Model of the Credibility Revolution"
 date: 2026-06-28
 status: "working_paper"
+selectedWP: true
+featured: true
+featuredRank: 7
 tags: ["economics profession","econometrics","credibility revolution","diffusion","discrete choice","network externalities"]
 author: "Carlos César Chávez Padilla"
 description: "Why the credibility revolution spread widely without converging on one method, tested with a structural discrete-choice model of method adoption."
