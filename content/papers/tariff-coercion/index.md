@@ -1,6 +1,6 @@
 ---
 topic: "International Trade"
-title: "The Two Margins of Economic Coercion: Leverage and Partial Compliance under Imposed Sanctions"
+title: "The Two Margins of Economic Coercion: Trade Leverage and Graded Sanction Outcomes"
 date: 2026-02-05
 status: "working_paper"
 tags: ["international trade","tariffs","political economy","coercion"]

@@ -38,7 +38,7 @@ params:
         threshold: 0.4
         minMatchCharLength: 2
         keys: ["title", "permalink", "summary", "content"]
-    description: "Carlos César Chávez Padilla is a Development Economist at the University of Chicago, Center for the Economics of Human Development. Research on development economics, political economy, human capital, and Latin America, with a focus on Peru."
+    description: "Carlos César Chávez Padilla is a Peruvian economist working at the intersection of macroeconomics and political economy, combining theoretical models and structural estimation. Research Professional at the University of Chicago, Center for the Economics of Human Development."
     author: Carlos César Chávez Padilla
 
     # --- Canonical identity. Used by schema.org JSON-LD, Open Graph and author meta.

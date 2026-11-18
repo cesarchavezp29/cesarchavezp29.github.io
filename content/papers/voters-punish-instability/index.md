@@ -1,6 +1,6 @@
 ---
 topic: "Political Economy"
-title: "Do Voters Punish Political Instability? Attribution, Electoral Subversion, and Material Disruption in Peru"
+title: "Do Voters Punish Political Instability? Attribution, Electoral Slack, and Targeted Subversion in Peru"
 date: 2026-06-19
 status: "working_paper"
 tags: ["political economy","elections","accountability","electoral subversion","democratic backsliding","Peru","Lava Jato","difference-in-differences"]
@@ -42,4 +42,4 @@ The district-level replication data are available on the [Data](/data/voters-pun
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "Do Voters Punish Political Instability? Attribution, Electoral Subversion, and Material Disruption in Peru." Working paper.
+Chávez Padilla, Carlos César. 2026. "Do Voters Punish Political Instability? Attribution, Electoral Slack, and Targeted Subversion in Peru." Working paper.
