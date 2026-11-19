@@ -2,12 +2,11 @@
 topic: "Conflict, Violence & Political Instability"
 title: "The Macroeconomic Consequences of Political Instability"
 date: 2024-06-01
-status: "submitted"
-journal: "Journal of Economic Growth"
-tags: ["political economy","macroeconomics","coups","total factor productivity","local projections","democracy"]
+status: "working_paper"
+tags: ["political economy","macroeconomics","coups","total factor productivity","growth accounting","event study","local projections","democracy"]
 author: "Carlos César Chávez Padilla"
-description: "Whether all coups carry the same economic cost, and why the productivity damage concentrates in the coups that dismantle democratic institutions."
-summary: "A first-event local projection on the Bjørnskov–Rode panel of 180 countries (1960–2022) shows the impact-year TFP contraction is 4.2 percent for coups that displace a democracy and negligible otherwise. An option-value framework and a two-block structural estimation organize the asymmetry."
+description: "How coups d'état lower productivity at once, why the loss of income lasts longer than the loss of productivity, and how the cost differs with the regime a coup produces."
+summary: "Coups are followed by a fall in total factor productivity of about three percent on impact and four percent a year later, robust across comparison designs. Productivity recovers, GDP per capita stays lower for up to eight years, and growth accounting shows capital and employment taking over the shortfall."
 editPost:
     URL: "/macroeconomic-consequences-political-instability.pdf"
     Text: "PDF"
@@ -24,16 +23,16 @@ pdf: "macroeconomic-consequences-political-instability.pdf"
 
 ##### Abstract
 
-Do all coups d'état carry the same economic cost? Using a first-event-only local projection on the Bjørnskov–Rode regime panel of 180 countries from 1960 to 2022, we estimate the response of total factor productivity to coups classified by the institutional transition each one produces. The impact-year productivity contraction is 4.2 percent in coups that displace a sitting democracy and statistically negligible in failed coups and coups that leave the regime unchanged, with the pairwise contrast rejecting equality at the 5 percent level. The estimate survives country jackknife, leave-one-region-out, alternative regime-classification timing, and a wild cluster bootstrap. An option-value adoption framework organizes the asymmetry, and a two-block structural estimation matches its qualitative predictions. The economic cost of political instability concentrates in the coups that dismantle democratic institutions, so the productivity stakes of instability lie in protecting democratic survival.
+Coups d'état are followed by a fall in total factor productivity of about three percent on impact, which deepens to four percent a year later and holds across comparison designs, balancing choices and estimators. I obtain this result with the Bjørnskov–Rode panel of the world's regimes and Penn World Table productivity, using a stacked, entropy-balanced event study of clean recurrent coup episodes and local projections for countries' first coups. Productivity then recovers, and I find suggestive evidence that GDP per capita remains lower for up to eight years after the coup. Growth accounting shows that productivity drives the initial contraction of output, while capital and employment account for a growing part of the shortfall at longer horizons, as private credit and private investment fall for years. Successful coups lower productivity on impact by close to six percent, against about one percent for failed attempts. An option-value model of irreversible adoption, estimated on the responses by type of regime transition, organizes the impact responses around a common coup component and additional heterogeneity associated with political coalitions.
 
 ---
 
 ##### Keywords
 
-Coups d'état, Institutional Change, Local Projections, Total Factor Productivity, Democracy, Political Instability
+Coups d'état, Institutional change, Local projections, Total factor productivity, Growth accounting, Option-value framework, Regime transitions
 
 ---
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2024. "The Macroeconomic Consequences of Political Instability." Under review, *Journal of Economic Growth*.
+Chávez Padilla, Carlos César. 2026. "The Macroeconomic Consequences of Political Instability." Working paper.
