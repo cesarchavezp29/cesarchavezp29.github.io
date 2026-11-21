@@ -2,7 +2,8 @@
 topic: "Political Economy of Information"
 title: "Electoral Pressure and Factual Communication: Evidence from U.S. House Primaries"
 date: 2026-11-18
-status: "working_paper"
+status: "submitted"
+journal: "Political Communication"
 tags: ["electoral pressure","primary elections","political communication","factual claims","misinformation","language models"]
 author: "Carlos César Chávez Padilla"
 description: "How electoral pressure changes the factual content of what U.S. House incumbents say in public during partisan primaries."

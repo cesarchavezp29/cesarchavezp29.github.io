@@ -2,7 +2,8 @@
 topic: "Political Economy"
 title: "When No State Is Possible: Credibility, Coercion, and the Limits of Extraction"
 date: 2026-09-04
-status: "working_paper"
+status: "submitted"
+journal: "Journal of Politics"
 tags: ["state capacity","coercion","extraction","political economy theory","resources"]
 author: "Carlos César Chávez Padilla"
 description: "A theory of the limits of state extraction when the coercive apparatus that represses is also the apparatus that can depose the ruler."

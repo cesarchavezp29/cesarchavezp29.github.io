@@ -23,7 +23,8 @@ pdf: "macroeconomics-asymmetric-automation.pdf"
 
 ##### Abstract
 
-Does automation rebuild work around those it displaces, and does the answer differ for robots and AI? I model both frontiers advancing together, each reinstating tasks it destroys, workers sorting across the rest. Displacement scales come from commuting-zone moments under design-based inference, with the cognitive moments net of a college-wage trend that predates AI and runs out by 2012. Physical task creation is calibrated from firm-level evidence and carried across its full range. Within zones, AI-exposed occupations lose relative wage in both skill groups after 2010. Robots deliver about twice the productivity per unit of advance that AI does, and the ranking holds across the whole physical calibration range and in every bootstrap draw. The case for tilting research toward robots is distributional, and a planner averse to inequality supports robot research about 70 percent more. Sorting disruption is consistent with the evidence and not separately identified.
+
+Does automation rebuild work around those it displaces, and does the answer differ for robots and AI? I model both frontiers advancing together, each reinstating tasks it destroys, workers sorting across the rest. Displacement scales come from commuting-zone moments under design-based inference, with the cognitive moments net of a college-wage trend that predates AI and ends by 2012. Physical task creation is calibrated from firm-level evidence and reported across its full range. Within zones, AI-exposed occupations lose relative wage in both skill groups after 2010. Robots deliver about twice the productivity per unit of advance that AI does, and the ranking holds across the whole physical calibration range and in every bootstrap draw. The case for tilting research toward robots is distributional, and a planner averse to inequality supports robot research about 70 percent more.
 
 ---
 

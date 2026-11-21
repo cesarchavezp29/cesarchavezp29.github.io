@@ -2,7 +2,8 @@
 topic: "Econometric Methods"
 title: "Measuring the Dimension of Heterogeneous Effects: The Cost of Compression"
 date: 2026-09-04
-status: "working_paper"
+status: "submitted"
+journal: "Journal of Business & Economic Statistics"
 tags: ["heterogeneous effects","reduced rank","inference","Job Corps","econometrics"]
 author: "Carlos César Chávez Padilla"
 description: "The dimension of heterogeneous effects, defined as the smallest rank that reproduces them up to a declared prediction-loss tolerance."

@@ -5,8 +5,8 @@ date: 2026-06-19
 status: "working_paper"
 tags: ["political economy","elections","accountability","electoral subversion","democratic backsliding","Peru","Lava Jato","difference-in-differences"]
 author: "Carlos César Chávez Padilla"
-description: "Whether Peruvian voters punish political instability at the ballot box, across two episodes at opposite poles of attribution: an attributable vote-annulment offensive and an authorless infrastructure shock."
-summary: "A district-level electoral panel for Peru tests whether voters punish an attributable electoral-subversion offensive and an authorless material shock. Both yield no differential punishment, and two-round coordination helps explain why subversion can go locally unpunished."
+description: "Whether Peruvian voters punish political instability, from the 2021 vote-annulment petitions and the Lava Jato paralysis of infrastructure megaprojects."
+summary: "Links 942 annulment petitions from Peru's 2021 runoff to electoral returns and finds no additional electoral penalty in targeted districts when Keiko Fujimori returned to the ballot in 2026."
 editPost:
     URL: "/voters-punish-instability.pdf"
     Text: "PDF"
@@ -24,7 +24,8 @@ pdf: "voters-punish-instability.pdf"
 
 ##### Abstract
 
-Do voters punish political instability at the ballot box? We assemble a district-level electoral panel for Peru (2006–2026) spanning two episodes at attribution's poles: Fuerza Popular's 2021 offensive of over a thousand petitions to annul tallies after Keiko Fujimori narrowly lost the runoff to Pedro Castillo and ran again in 2026, and the paralysis of Lava Jato megaprojects, a shock with no local culprit. Comparing targeted with profile-matched control districts, clustered by province, we find no differential runoff penalty (seven hundredths of a point, robust across thirty-six specifications). We rule out a penalty above five points under conservative trends but not smaller ones. A first-round withdrawal is inseparable from the left's collapse, and the material shock moves nothing. The runoff coordinates voters against the left, so the offensive costs its author little, which helps explain why subversion can pay. Deterrence then falls to courts more than the electorate.
+
+Do voters punish political instability? We study two episodes in Peru: the paralysis of major infrastructure projects during the Lava Jato corruption scandal and Fuerza Popular's attempt to annul votes following its narrow defeat in the 2021 presidential election. Linking 942 annulment petitions to electoral returns, we find no additional electoral penalty in targeted districts when Keiko Fujimori returned to the ballot in 2026 and won the presidency. The same pattern emerges from comparisons of polling places directly affected by the petitions. Protest voting follows heterogeneous patterns across districts exposed to the Lava Jato megaprojects. We develop a framework in which electoral accountability depends on the attribution of responsibility, the support an actor retains, and the alternatives available to voters. The findings reveal how the geography of political instability can constrain the electoral punishment intended to discipline it.
 
 ---
 

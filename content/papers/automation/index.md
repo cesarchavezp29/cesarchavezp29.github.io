@@ -23,7 +23,8 @@ pdf: "automation.pdf"
 
 ## Abstract
 
-This paper develops a two-frontier task model in which robots and AI displace labor along distinct task continua — a *physical* sector and a *cognitive* sector. Within a nested CES production structure with two skill types and worker mobility across sectors, the partial effects of robot and AI shocks on the skill premium have **opposite signs** under pure displacement, and remain opposite under symmetric reinstatement regimes. Aggregate automation is therefore *not a sufficient statistic* for inequality: any test that lumps robots and AI into a single index masks economically meaningful heterogeneity.
+
+Empirical work on automation and inequality often collapses technological change into a single exposure index. This paper studies whether that scalar is a sufficient statistic for the direction of inequality change. Across 722 U.S. commuting zones between 2005 and 2019, robot exposure tracks rising wages for both education groups and a compressing skill premium, while AI exposure tracks rising college wages and a widening one. Because the two carry opposite signs, a pooled index of the two explains 4 percent of the cross-zone variation against 31 percent for the separated frontiers, and under controls it changes sign. The sign of the aggregate coefficient therefore depends on the mix of the two frontiers as much as on the strength of either. A two-frontier task model, in which physical and cognitive automation displace and create different tasks, locates the switch at a robot share of roughly two-thirds.
 
 ## Setup
 
