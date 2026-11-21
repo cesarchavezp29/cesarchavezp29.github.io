@@ -32,4 +32,4 @@ State Capacity, Coercion, Extraction, Natural Resources, Political Economy Theor
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "When No State Is Possible: Credibility, Coercion, and the Limits of Extraction." Working paper.
+Chávez Padilla, Carlos César. 2026. "When No State Is Possible: Credibility, Coercion, and the Limits of Extraction." Under review, *Journal of Politics*.

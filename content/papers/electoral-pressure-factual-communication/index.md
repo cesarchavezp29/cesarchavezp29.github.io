@@ -32,4 +32,4 @@ Electoral Pressure, Primary Elections, Political Communication, Factual Claims, 
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "Electoral Pressure and Factual Communication: Evidence from U.S. House Primaries." Working paper.
+Chávez Padilla, Carlos César. 2026. "Electoral Pressure and Factual Communication: Evidence from U.S. House Primaries." Under review, *Political Communication*.

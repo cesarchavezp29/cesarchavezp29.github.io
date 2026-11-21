@@ -32,4 +32,4 @@ Heterogeneous Effects, Reduced Rank, High-Dimensional Fixed Effects, Multiway Cl
 
 ##### Citation
 
-Chávez Padilla, Carlos César. 2026. "Measuring the Dimension of Heterogeneous Effects: The Cost of Compression." Working paper.
+Chávez Padilla, Carlos César. 2026. "Measuring the Dimension of Heterogeneous Effects: The Cost of Compression." Under review, *Journal of Business & Economic Statistics*.
